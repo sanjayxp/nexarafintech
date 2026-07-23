@@ -15,7 +15,7 @@ export const stats = [
 
 export const testimonial = {
   quote:
-    "NecNexara's connected banking layer let us launch agency banking across three states in under four months, with reconciliation and compliance handled end-to-end. Their team behaved like an extension of our own technology function.",
+    "Nexara's connected banking layer let us launch agency banking across three states in under four months, with reconciliation and compliance handled end-to-end. Their team behaved like an extension of our own technology function.",
   name: "Head of Digital Banking",
   title: "Regional Cooperative Bank",
 };

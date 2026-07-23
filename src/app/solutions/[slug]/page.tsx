@@ -25,7 +25,7 @@ export async function generateMetadata({
   const solution = getSolutionBySlug(slug);
   if (!solution) return {};
   return {
-    title: `${solution.name} | NecNexara Fintech`,
+    title: `${solution.name} | Nexara Fintech`,
     description: solution.overview,
   };
 }

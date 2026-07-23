@@ -7,9 +7,9 @@ import Stats from "@/components/Stats";
 import Testimonial from "@/components/Testimonial";
 
 export const metadata: Metadata = {
-  title: "About | NecNexara Fintech",
+  title: "About | Nexara Fintech",
   description:
-    "NecNexara Fintech builds agency banking, payments, and connected banking infrastructure for regulated financial institutions across India.",
+    "Nexara Fintech builds agency banking, payments, and connected banking infrastructure for regulated financial institutions across India.",
 };
 
 export default function AboutPage() {
@@ -18,7 +18,7 @@ export default function AboutPage() {
       <Nav />
       <main className="flex-1">
         <PageHero
-          eyebrow="About NecNexara"
+          eyebrow="About Nexara"
           title="Infrastructure for the next billion banking relationships"
           description="We build exclusively for regulated financial institutions, which means every product is designed around compliance, auditability, and uptime first, features second."
           breadcrumb={[{ label: "About" }]}

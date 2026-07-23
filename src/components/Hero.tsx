@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+import GlobeGraphic from "./GlobeGraphic";
 
 const points = [
   "RBI & NPCI aligned compliance",
@@ -20,6 +21,7 @@ export default function Hero() {
             "radial-gradient(ellipse 60% 50% at 80% 0%, rgba(14,165,163,0.35), transparent 60%)",
         }}
       />
+      <GlobeGraphic />
       <div className="container-page relative py-24 lg:py-32">
         <p className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-medium tracking-wide text-brand-teal-light uppercase">
           Banking & Fintech Infrastructure
@@ -28,7 +30,7 @@ export default function Hero() {
           Agency banking, payments and connected banking, engineered as one platform.
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
-          NecNexara Fintech builds the infrastructure banks, NBFCs and fintech
+          Nexara Fintech builds the infrastructure banks, NBFCs and fintech
           startups use to reach the last mile — business correspondent
           networks, real-time payment switching, open banking APIs, and
           compliance, unified under one contract and one integration.

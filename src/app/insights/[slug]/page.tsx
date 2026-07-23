@@ -20,7 +20,7 @@ export async function generateMetadata({
   const insight = getInsightBySlug(slug);
   if (!insight) return {};
   return {
-    title: `${insight.title} | NecNexara Fintech`,
+    title: `${insight.title} | Nexara Fintech`,
     description: insight.excerpt,
   };
 }

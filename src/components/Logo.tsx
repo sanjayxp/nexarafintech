@@ -13,7 +13,7 @@ export default function Logo({ dark = false }: { dark?: boolean }) {
         />
       </span>
       <span className={dark ? "text-white" : "text-brand-navy"}>
-        NecNexara<span className="text-brand-teal">Fintech</span>
+        Nexara<span className="text-brand-teal">Fintech</span>
       </span>
     </span>
   );

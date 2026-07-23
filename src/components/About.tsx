@@ -29,7 +29,7 @@ export default function About({ compact = false }: { compact?: boolean }) {
           {!compact && (
             <>
               <h2 className="text-sm font-semibold uppercase tracking-wide text-brand-teal">
-                About NecNexara
+                About Nexara
               </h2>
               <p className="mt-3 text-3xl font-semibold tracking-tight text-brand-navy sm:text-4xl">
                 Infrastructure for the next billion banking relationships
@@ -37,7 +37,7 @@ export default function About({ compact = false }: { compact?: boolean }) {
             </>
           )}
           <p className="mt-6 text-lg leading-8 text-brand-slate first:mt-0">
-            NecNexara Fintech builds the connective tissue between core
+            Nexara Fintech builds the connective tissue between core
             banking systems and the last mile — agents, merchants,
             wallets, and payment rails. We work exclusively with regulated
             financial institutions, which means every product on our

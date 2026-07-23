@@ -7,9 +7,9 @@ import PageHero from "@/components/PageHero";
 import { insights } from "@/lib/insights";
 
 export const metadata: Metadata = {
-  title: "Insights | NecNexara Fintech",
+  title: "Insights | Nexara Fintech",
   description:
-    "Perspectives on agency banking, payments, connected banking, compliance and lending infrastructure from the NecNexara Fintech team.",
+    "Perspectives on agency banking, payments, connected banking, compliance and lending infrastructure from the Nexara Fintech team.",
 };
 
 export default function InsightsIndex() {

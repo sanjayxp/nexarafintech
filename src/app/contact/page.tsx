@@ -5,9 +5,9 @@ import PageHero from "@/components/PageHero";
 import Contact from "@/components/Contact";
 
 export const metadata: Metadata = {
-  title: "Contact | NecNexara Fintech",
+  title: "Contact | Nexara Fintech",
   description:
-    "Talk to the NecNexara Fintech solutions team about agency banking, payments, cards, compliance, or lending infrastructure.",
+    "Talk to the Nexara Fintech solutions team about agency banking, payments, cards, compliance, or lending infrastructure.",
 };
 
 export default function ContactPage() {

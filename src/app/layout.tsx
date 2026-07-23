@@ -9,9 +9,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "NecNexara Fintech | Agency Banking, Payments & Connected Banking Solutions",
+  title: "Nexara Fintech | Agency Banking, Payments & Connected Banking Solutions",
   description:
-    "NecNexara Fintech builds agency banking, payments, and connected banking infrastructure for banks, NBFCs, MFIs and fintech startups across India.",
+    "Nexara Fintech builds agency banking, payments, and connected banking infrastructure for banks, NBFCs, MFIs and fintech startups across India.",
 };
 
 export default function RootLayout({

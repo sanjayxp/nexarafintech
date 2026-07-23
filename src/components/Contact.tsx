@@ -34,7 +34,7 @@ export default function Contact({ compact = false }: { compact?: boolean }) {
           <div className="mt-8 flex flex-col gap-4">
             <div className="flex items-center gap-3 text-sm text-brand-navy">
               <Mail size={18} className="text-brand-teal" />
-              hello@necnexarafintech.com
+              hello@nexarafintech.com
             </div>
             <div className="flex items-center gap-3 text-sm text-brand-navy">
               <Phone size={18} className="text-brand-teal" />

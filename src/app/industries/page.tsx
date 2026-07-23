@@ -8,9 +8,9 @@ import { industries } from "@/lib/industries";
 import { getSolutionBySlug } from "@/lib/solutions";
 
 export const metadata: Metadata = {
-  title: "Industries | NecNexara Fintech",
+  title: "Industries | Nexara Fintech",
   description:
-    "How banks, NBFCs, MFIs, fintech startups, cooperative banks, and government programs use NecNexara Fintech's infrastructure.",
+    "How banks, NBFCs, MFIs, fintech startups, cooperative banks, and government programs use Nexara Fintech's infrastructure.",
 };
 
 export default function IndustriesPage() {

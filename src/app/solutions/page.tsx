@@ -7,7 +7,7 @@ import PageHero from "@/components/PageHero";
 import { categories, getSolutionsByCategory } from "@/lib/solutions";
 
 export const metadata: Metadata = {
-  title: "Solutions | NecNexara Fintech",
+  title: "Solutions | Nexara Fintech",
   description:
     "28 banking and fintech solutions across agency banking, cards, merchant acquiring, transaction banking, compliance, lending, and core banking.",
 };
