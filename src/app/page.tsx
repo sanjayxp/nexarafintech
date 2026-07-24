@@ -1,6 +1,8 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
+import TrustStrip from "@/components/TrustStrip";
 import Solutions from "@/components/Solutions";
+import Capabilities from "@/components/Capabilities";
 import Stats from "@/components/Stats";
 import Testimonial from "@/components/Testimonial";
 import Industries from "@/components/Industries";
@@ -17,7 +19,9 @@ export default function Home() {
       <Nav />
       <main className="flex-1">
         <Hero />
+        <TrustStrip />
         <Solutions />
+        <Capabilities />
         <Stats />
         <Testimonial />
         <Industries />

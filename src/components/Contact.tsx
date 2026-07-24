@@ -2,6 +2,8 @@
 
 import { useState, FormEvent } from "react";
 import { Mail, Phone, MapPin } from "lucide-react";
+import { categories } from "@/lib/solutions";
+import Reveal from "./Reveal";
 
 export default function Contact({ compact = false }: { compact?: boolean }) {
   const [submitted, setSubmitted] = useState(false);
@@ -14,7 +16,7 @@ export default function Contact({ compact = false }: { compact?: boolean }) {
   return (
     <section id="contact" className="py-24 bg-brand-surface">
       <div className="container-page grid grid-cols-1 gap-12 lg:grid-cols-5">
-        <div className="lg:col-span-2">
+        <Reveal className="lg:col-span-2">
           {!compact && (
             <>
               <h2 className="text-sm font-semibold uppercase tracking-wide text-brand-teal">
@@ -25,13 +27,15 @@ export default function Contact({ compact = false }: { compact?: boolean }) {
               </p>
             </>
           )}
-          <p className="mt-4 text-brand-slate leading-7 first:mt-0">
-            Whether you&apos;re scoping a new agency banking network or
-            upgrading a payment switch, our solutions team can walk you
-            through architecture, compliance, and timelines.
-          </p>
+          {!compact && (
+            <p className="mt-4 text-brand-slate leading-7">
+              Whether you&apos;re scoping a new agency banking network or
+              upgrading a payment switch, our solutions team can walk you
+              through architecture, compliance, and timelines.
+            </p>
+          )}
 
-          <div className="mt-8 flex flex-col gap-4">
+          <div className="mt-8 flex flex-col gap-4 first:mt-0">
             <div className="flex items-center gap-3 text-sm text-brand-navy">
               <Mail size={18} className="text-brand-teal" />
               hello@nexarafintech.com
@@ -45,9 +49,9 @@ export default function Contact({ compact = false }: { compact?: boolean }) {
               BKC, Mumbai, Maharashtra, India
             </div>
           </div>
-        </div>
+        </Reveal>
 
-        <div className="lg:col-span-3">
+        <Reveal delay={100} className="lg:col-span-3">
           {submitted ? (
             <div className="flex h-full min-h-[320px] flex-col items-center justify-center rounded-2xl border border-brand-border bg-white p-10 text-center">
               <p className="text-xl font-semibold text-brand-navy">
@@ -104,13 +108,11 @@ export default function Contact({ compact = false }: { compact?: boolean }) {
                     defaultValue=""
                   >
                     <option value="" disabled>
-                      Select a solution
+                      Select a solution area
                     </option>
-                    <option>Agency Banking</option>
-                    <option>Connected & Open Banking</option>
-                    <option>Payments & Switching</option>
-                    <option>Card Issuance & Management</option>
-                    <option>Compliance, AML & KYC</option>
+                    {categories.map((category) => (
+                      <option key={category.slug}>{category.shortName}</option>
+                    ))}
                     <option>Other</option>
                   </select>
                 </div>
@@ -133,7 +135,7 @@ export default function Contact({ compact = false }: { compact?: boolean }) {
               </button>
             </form>
           )}
-        </div>
+        </Reveal>
       </div>
     </section>
   );

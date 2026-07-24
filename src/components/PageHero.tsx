@@ -1,20 +1,35 @@
 import Link from "next/link";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, type LucideIcon } from "lucide-react";
 
 export default function PageHero({
   eyebrow,
   title,
   description,
   breadcrumb,
+  icon: Icon,
 }: {
   eyebrow: string;
   title: string;
   description?: string;
   breadcrumb?: { label: string; href?: string }[];
+  icon?: LucideIcon;
 }) {
   return (
-    <section className="bg-brand-navy text-white">
-      <div className="container-page py-16 lg:py-20">
+    <section className="relative overflow-hidden bg-brand-navy text-white">
+      <div className="bg-hero-gradient pointer-events-none absolute inset-0" />
+      <div className="bg-dot-grid pointer-events-none absolute inset-0 opacity-30" />
+
+      {Icon && (
+        <div className="pointer-events-none absolute inset-0 hidden lg:block">
+          <div
+            className="animate-float-card absolute right-[8%] top-1/2 flex h-16 w-16 -translate-y-1/2 items-center justify-center rounded-2xl bg-white/10 backdrop-blur-md ring-1 ring-white/20"
+          >
+            <Icon size={28} className="text-brand-teal-light" />
+          </div>
+        </div>
+      )}
+
+      <div className="container-page relative py-20 lg:py-24">
         {breadcrumb && (
           <nav className="mb-6 flex flex-wrap items-center gap-1.5 text-sm text-slate-400">
             <Link href="/" className="hover:text-white transition-colors">

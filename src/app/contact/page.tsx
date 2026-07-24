@@ -3,6 +3,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import Contact from "@/components/Contact";
+import { Mail } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Contact | Nexara Fintech",
@@ -20,6 +21,7 @@ export default function ContactPage() {
           title="Let's build your banking rail"
           description="Whether you're scoping a new agency banking network or upgrading a payment switch, our solutions team can walk you through architecture, compliance, and timelines."
           breadcrumb={[{ label: "Contact" }]}
+          icon={Mail}
         />
         <Contact compact />
       </main>

@@ -1,4 +1,5 @@
 import { ShieldCheck, Zap, Layers3 } from "lucide-react";
+import Reveal from "./Reveal";
 
 const pillars = [
   {
@@ -25,7 +26,7 @@ export default function About({ compact = false }: { compact?: boolean }) {
   return (
     <section id="about" className="py-24 bg-white">
       <div className="container-page grid grid-cols-1 gap-16 lg:grid-cols-2 lg:items-start">
-        <div>
+        <Reveal>
           {!compact && (
             <>
               <h2 className="text-sm font-semibold uppercase tracking-wide text-brand-teal">
@@ -49,9 +50,9 @@ export default function About({ compact = false }: { compact?: boolean }) {
             functions from scoping through go-live, and stay on for ongoing
             operations, monitoring, and regulatory updates.
           </p>
-        </div>
+        </Reveal>
 
-        <div className="flex flex-col gap-8">
+        <Reveal delay={100} className="flex flex-col gap-8">
           {pillars.map(({ icon: Icon, title, description }) => (
             <div key={title} className="flex gap-5">
               <div className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-brand-navy/5 text-brand-navy">
@@ -67,7 +68,7 @@ export default function About({ compact = false }: { compact?: boolean }) {
               </div>
             </div>
           ))}
-        </div>
+        </Reveal>
       </div>
     </section>
   );
