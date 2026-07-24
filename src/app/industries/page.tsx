@@ -25,6 +25,7 @@ export default function IndustriesPage() {
           description="From national banks to district-level cooperative networks, each institution type works with a different slice of our platform. Here's how."
           breadcrumb={[{ label: "Industries" }]}
           icon={Handshake}
+          photo="/images/hero-industries.jpg"
         />
 
         <div className="container-page py-24">

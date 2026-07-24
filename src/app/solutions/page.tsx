@@ -24,6 +24,7 @@ export default function SolutionsIndex() {
           description="Organized across seven categories, from last-mile agency banking to core banking infrastructure. Each solution ships as a standalone module or as part of one integrated platform."
           breadcrumb={[{ label: "Solutions" }]}
           icon={SquaresFour}
+          photo="/images/hero-solutions.jpg"
         />
 
         <div className="container-page py-24">

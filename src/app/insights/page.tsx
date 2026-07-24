@@ -24,6 +24,7 @@ export default function InsightsIndex() {
           description="Notes from building and operating banking infrastructure — regulatory shifts, design lessons, and what actually breaks at scale."
           breadcrumb={[{ label: "Insights" }]}
           icon={Newspaper}
+          photo="/images/hero-insights.jpg"
         />
 
         <div className="container-page py-24">

@@ -7,9 +7,7 @@ import Stats from "@/components/Stats";
 import Testimonial from "@/components/Testimonial";
 import Industries from "@/components/Industries";
 import Insights from "@/components/Insights";
-import About from "@/components/About";
 import CtaBanner from "@/components/CtaBanner";
-import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -24,10 +22,8 @@ export default function Home() {
         <Stats />
         <Testimonial />
         <Industries />
-        <About />
         <Insights />
         <CtaBanner />
-        <Contact />
       </main>
       <Footer />
     </>

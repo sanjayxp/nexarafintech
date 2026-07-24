@@ -22,6 +22,7 @@ export default function ContactPage() {
           description="Whether you're scoping a new agency banking network or upgrading a payment switch, our solutions team can walk you through architecture, compliance, and timelines."
           breadcrumb={[{ label: "Contact" }]}
           icon={EnvelopeSimple}
+          photo="/images/hero-contact.jpg"
         />
         <Contact compact />
       </main>
