@@ -6,7 +6,6 @@ import Capabilities from "@/components/Capabilities";
 import Stats from "@/components/Stats";
 import Testimonial from "@/components/Testimonial";
 import Industries from "@/components/Industries";
-import TrackRecord from "@/components/TrackRecord";
 import Insights from "@/components/Insights";
 import About from "@/components/About";
 import CtaBanner from "@/components/CtaBanner";
@@ -25,7 +24,6 @@ export default function Home() {
         <Stats />
         <Testimonial />
         <Industries />
-        <TrackRecord />
         <About />
         <Insights />
         <CtaBanner />

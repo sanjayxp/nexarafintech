@@ -87,22 +87,21 @@ export default function Hero() {
         })}
       </div>
 
-      <div className="container-page relative py-24 lg:py-32">
+      <div className="container-page relative py-14 lg:py-20">
         <div className="max-w-2xl lg:max-w-xl">
           <p className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-medium tracking-wide text-brand-teal-light uppercase">
             Banking & Fintech Infrastructure
           </p>
-          <h1 className="mt-6 text-4xl font-semibold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
+          <h1 className="mt-5 text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
             Agency banking, payments and connected banking, engineered as one platform.
           </h1>
-          <p className="mt-6 text-lg leading-8 text-slate-300">
+          <p className="mt-5 text-lg leading-8 text-slate-300">
             Nexara Fintech builds the infrastructure banks, NBFCs and fintech
-            startups use to reach the last mile — business correspondent
-            networks, real-time payment switching, open banking APIs, and
-            compliance, unified under one contract and one integration.
+            startups use to reach the last mile, unified under one contract
+            and one integration.
           </p>
 
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
+          <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
             <Link
               href="/contact"
               className="inline-flex items-center justify-center gap-2 rounded-md bg-brand-teal px-6 py-3.5 text-sm font-semibold text-brand-navy hover:bg-teal-300 transition-colors"
@@ -118,7 +117,7 @@ export default function Hero() {
             </Link>
           </div>
 
-          <ul className="mt-12 flex flex-col gap-3 sm:flex-row sm:gap-8">
+          <ul className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-8">
             {points.map((point) => (
               <li
                 key={point}

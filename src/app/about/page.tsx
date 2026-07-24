@@ -6,6 +6,7 @@ import PageHero from "@/components/PageHero";
 import About from "@/components/About";
 import Stats from "@/components/Stats";
 import Testimonial from "@/components/Testimonial";
+import TrackRecord from "@/components/TrackRecord";
 import Reveal from "@/components/Reveal";
 import { Building2 } from "lucide-react";
 
@@ -50,6 +51,7 @@ export default function AboutPage() {
         </section>
 
         <About compact />
+        <TrackRecord />
         <Stats />
         <Testimonial />
       </main>
