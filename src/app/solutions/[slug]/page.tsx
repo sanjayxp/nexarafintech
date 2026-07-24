@@ -42,6 +42,7 @@ export default async function SolutionDetail({
 
   const category = getCategoryBySlug(solution.category);
   const related = getRelatedSolutions(solution.slug);
+  const accent = category?.color ?? "#0ea5a3";
 
   return (
     <>
@@ -113,8 +114,14 @@ export default async function SolutionDetail({
 
             <div className="lg:col-span-1">
               <Reveal delay={80} className="lg:sticky lg:top-24">
-                <div className="rounded-2xl border border-brand-border bg-brand-surface p-7">
-                  <h3 className="text-sm font-semibold uppercase tracking-wide text-brand-teal">
+                <div
+                  className="rounded-2xl border border-t-4 border-brand-border bg-brand-surface p-7"
+                  style={{ borderTopColor: accent }}
+                >
+                  <h3
+                    className="text-sm font-semibold uppercase tracking-wide"
+                    style={{ color: accent }}
+                  >
                     Why it matters
                   </h3>
                   <ul className="mt-5 flex flex-col gap-4">
@@ -123,7 +130,8 @@ export default async function SolutionDetail({
                         <CheckCircle
                           size={18}
                           weight="duotone"
-                          className="mt-0.5 shrink-0 text-brand-teal"
+                          className="mt-0.5 shrink-0"
+                          style={{ color: accent }}
                         />
                         <span className="text-sm leading-6 text-brand-navy">
                           {benefit}
@@ -158,7 +166,10 @@ export default async function SolutionDetail({
                         href={`/solutions/${item.slug}`}
                         className="group rounded-2xl border border-brand-border p-6 transition-colors hover:border-brand-teal/50 hover:bg-brand-surface"
                       >
-                        <div className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-brand-navy/5 text-brand-navy group-hover:bg-brand-teal/10 group-hover:text-brand-teal transition-colors">
+                        <div
+                          className="inline-flex h-11 w-11 items-center justify-center rounded-lg"
+                          style={{ backgroundColor: `${accent}1A`, color: accent }}
+                        >
                           <RelIcon size={22} weight="duotone" />
                         </div>
                         <h3 className="mt-5 text-base font-semibold text-brand-navy">

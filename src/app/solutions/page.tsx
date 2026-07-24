@@ -33,7 +33,10 @@ export default function SolutionsIndex() {
               return (
                 <div key={category.slug} id={category.slug} className="scroll-mt-24">
                   <Reveal>
-                    <div className="max-w-2xl border-l-2 border-brand-teal pl-5">
+                    <div
+                      className="max-w-2xl border-l-2 pl-5"
+                      style={{ borderColor: category.color }}
+                    >
                       <span className="text-xs font-semibold text-brand-slate-light">
                         {String(catIndex + 1).padStart(2, "0")} / {String(categories.length).padStart(2, "0")}
                       </span>
@@ -55,7 +58,10 @@ export default function SolutionsIndex() {
                             href={`/solutions/${solution.slug}`}
                             className="group flex h-full flex-col rounded-2xl border border-brand-border p-6 transition-colors hover:border-brand-teal/50 hover:bg-brand-surface"
                           >
-                            <div className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-brand-navy/5 text-brand-navy group-hover:bg-brand-teal/10 group-hover:text-brand-teal transition-colors">
+                            <div
+                              className="inline-flex h-11 w-11 items-center justify-center rounded-lg"
+                              style={{ backgroundColor: `${category.color}1A`, color: category.color }}
+                            >
                               <Icon size={22} weight="duotone" />
                             </div>
                             <h3 className="mt-5 text-base font-semibold text-brand-navy">

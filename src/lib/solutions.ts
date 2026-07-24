@@ -35,6 +35,8 @@ export type Category = {
   name: string;
   shortName: string;
   description: string;
+  color: string;
+  photo: string;
 };
 
 export type Solution = {
@@ -56,6 +58,8 @@ export const categories: Category[] = [
     shortName: "Agency Banking",
     description:
       "Business correspondent networks, mobile money and wallet infrastructure that extend banking to the last mile.",
+    color: "#0ea5a3",
+    photo: "/images/agent-mobile-banking.jpg",
   },
   {
     slug: "cards-issuance",
@@ -63,6 +67,8 @@ export const categories: Category[] = [
     shortName: "Cards Issuance",
     description:
       "Debit, credit, prepaid and neobanking account platforms with full program lifecycle management.",
+    color: "#1c4ed8",
+    photo: "/images/category-cards.jpg",
   },
   {
     slug: "merchant-acquiring",
@@ -70,6 +76,8 @@ export const categories: Category[] = [
     shortName: "Merchant Acquiring",
     description:
       "POS, QR and soundbox acceptance infrastructure with settlement built in for offline and online commerce.",
+    color: "#d97706",
+    photo: "/images/category-merchant.jpg",
   },
   {
     slug: "transaction-banking",
@@ -77,6 +85,8 @@ export const categories: Category[] = [
     shortName: "Transaction Banking",
     description:
       "Payment switching, bill payments, bulk payouts and remittance rails that move money reliably at scale.",
+    color: "#6366f1",
+    photo: "/images/category-transaction.jpg",
   },
   {
     slug: "compliance-risk",
@@ -84,6 +94,8 @@ export const categories: Category[] = [
     shortName: "Compliance & Risk",
     description:
       "Onboarding, KYC, fraud monitoring and reconciliation tooling built to regulatory expectations.",
+    color: "#334155",
+    photo: "/images/category-compliance.jpg",
   },
   {
     slug: "lending",
@@ -91,6 +103,8 @@ export const categories: Category[] = [
     shortName: "Lending",
     description:
       "Origination, servicing, BNPL and embedded credit infrastructure for banks and lending-focused fintechs.",
+    color: "#16a34a",
+    photo: "/images/category-lending.jpg",
   },
   {
     slug: "core-connected-banking",
@@ -98,6 +112,8 @@ export const categories: Category[] = [
     shortName: "Core Banking",
     description:
       "Core banking, digital banking and open API layers that everything else in the stack plugs into.",
+    color: "#0f766e",
+    photo: "/images/category-core-banking.jpg",
   },
 ];
 

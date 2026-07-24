@@ -43,7 +43,7 @@ export default function Solutions() {
               className="group relative flex h-full min-h-[420px] flex-col justify-end overflow-hidden rounded-2xl p-7 text-white lg:min-h-full"
             >
               <Image
-                src="/images/agent-mobile-banking.jpg"
+                src={featured.photo}
                 alt=""
                 fill
                 sizes="(min-width: 1024px) 33vw, 100vw"
@@ -76,23 +76,43 @@ export default function Solutions() {
                 <Reveal key={category.slug} delay={i * 60}>
                   <Link
                     href={`/solutions#${category.slug}`}
-                    className="group flex h-full flex-col rounded-2xl border border-brand-border p-6 transition-colors hover:border-brand-teal/50 hover:bg-brand-surface"
+                    className="group flex h-full flex-col overflow-hidden rounded-2xl border border-brand-border transition-colors hover:border-brand-teal/50"
                   >
-                    {FeaturedIcon && (
-                      <div className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-brand-navy/5 text-brand-navy group-hover:bg-brand-teal/10 group-hover:text-brand-teal transition-colors">
-                        <FeaturedIcon size={22} weight="duotone" />
-                      </div>
-                    )}
-                    <h3 className="mt-5 text-base font-semibold text-brand-navy">
-                      {category.name}
-                    </h3>
-                    <p className="mt-2 text-sm leading-6 text-brand-slate">
-                      {category.description}
-                    </p>
-                    <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-blue group-hover:gap-2.5 transition-all">
-                      {items.length} solutions
-                      <ArrowRight size={14} />
-                    </span>
+                    <div className="relative h-28 w-full overflow-hidden">
+                      <Image
+                        src={category.photo}
+                        alt=""
+                        fill
+                        sizes="(min-width: 1024px) 25vw, 50vw"
+                        className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div
+                        className="absolute inset-0 opacity-55"
+                        style={{
+                          background: `linear-gradient(160deg, ${category.color} 0%, transparent 75%)`,
+                        }}
+                      />
+                      {FeaturedIcon && (
+                        <div
+                          className="absolute bottom-3 left-3 inline-flex h-9 w-9 items-center justify-center rounded-lg bg-white/95 shadow-sm"
+                          style={{ color: category.color }}
+                        >
+                          <FeaturedIcon size={18} weight="duotone" />
+                        </div>
+                      )}
+                    </div>
+                    <div className="flex flex-1 flex-col p-5 group-hover:bg-brand-surface transition-colors">
+                      <h3 className="text-base font-semibold text-brand-navy">
+                        {category.name}
+                      </h3>
+                      <p className="mt-2 flex-1 text-sm leading-6 text-brand-slate">
+                        {category.description}
+                      </p>
+                      <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-blue group-hover:gap-2.5 transition-all">
+                        {items.length} solutions
+                        <ArrowRight size={14} />
+                      </span>
+                    </div>
                   </Link>
                 </Reveal>
               );

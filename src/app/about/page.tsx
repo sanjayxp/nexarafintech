@@ -4,6 +4,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import About from "@/components/About";
+import Team from "@/components/Team";
 import Stats from "@/components/Stats";
 import Testimonial from "@/components/Testimonial";
 import TrackRecord from "@/components/TrackRecord";
@@ -34,8 +35,8 @@ export default function AboutPage() {
             <Reveal>
               <div className="relative aspect-[21/9] w-full overflow-hidden rounded-2xl">
                 <Image
-                  src="/images/hero-team-tablet.jpg"
-                  alt="Nexara Fintech solutions team reviewing a client rollout"
+                  src="/images/about-team.jpg"
+                  alt="Nexara Fintech team collaborating in the office"
                   fill
                   sizes="100vw"
                   className="object-cover object-center"
@@ -51,6 +52,7 @@ export default function AboutPage() {
         </section>
 
         <About compact />
+        <Team />
         <TrackRecord />
         <Stats />
         <Testimonial />

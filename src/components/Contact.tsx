@@ -42,7 +42,7 @@ export default function Contact({ compact = false }: { compact?: boolean }) {
             </div>
             <div className="flex items-center gap-3 text-sm text-brand-navy">
               <Phone size={18} weight="duotone" className="text-brand-teal" />
-              +91 22 4000 1234
+              +91 9971886999
             </div>
             <div className="flex items-center gap-3 text-sm text-brand-navy">
               <MapPin size={18} weight="duotone" className="text-brand-teal" />
