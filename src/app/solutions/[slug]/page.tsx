@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle } from "@phosphor-icons/react/ssr";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
@@ -120,8 +120,9 @@ export default async function SolutionDetail({
                   <ul className="mt-5 flex flex-col gap-4">
                     {solution.benefits.map((benefit) => (
                       <li key={benefit} className="flex gap-3">
-                        <CheckCircle2
+                        <CheckCircle
                           size={18}
+                          weight="duotone"
                           className="mt-0.5 shrink-0 text-brand-teal"
                         />
                         <span className="text-sm leading-6 text-brand-navy">
@@ -158,7 +159,7 @@ export default async function SolutionDetail({
                         className="group rounded-2xl border border-brand-border p-6 transition-colors hover:border-brand-teal/50 hover:bg-brand-surface"
                       >
                         <div className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-brand-navy/5 text-brand-navy group-hover:bg-brand-teal/10 group-hover:text-brand-teal transition-colors">
-                          <RelIcon size={22} />
+                          <RelIcon size={22} weight="duotone" />
                         </div>
                         <h3 className="mt-5 text-base font-semibold text-brand-navy">
                           {item.name}

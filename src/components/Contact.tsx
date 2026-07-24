@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, FormEvent } from "react";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { EnvelopeSimple, Phone, MapPin } from "@phosphor-icons/react/ssr";
 import { categories } from "@/lib/solutions";
 import Reveal from "./Reveal";
 
@@ -37,15 +37,15 @@ export default function Contact({ compact = false }: { compact?: boolean }) {
 
           <div className="mt-8 flex flex-col gap-4 first:mt-0">
             <div className="flex items-center gap-3 text-sm text-brand-navy">
-              <Mail size={18} className="text-brand-teal" />
+              <EnvelopeSimple size={18} weight="duotone" className="text-brand-teal" />
               hello@nexarafintech.com
             </div>
             <div className="flex items-center gap-3 text-sm text-brand-navy">
-              <Phone size={18} className="text-brand-teal" />
+              <Phone size={18} weight="duotone" className="text-brand-teal" />
               +91 22 4000 1234
             </div>
             <div className="flex items-center gap-3 text-sm text-brand-navy">
-              <MapPin size={18} className="text-brand-teal" />
+              <MapPin size={18} weight="duotone" className="text-brand-teal" />
               BKC, Mumbai, Maharashtra, India
             </div>
           </div>

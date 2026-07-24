@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Newspaper } from "lucide-react";
+import { ArrowRight, Newspaper } from "@phosphor-icons/react/ssr";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";

@@ -1,9 +1,17 @@
-import { Building2, Banknote, Users, Layers, Landmark, Globe2, LucideIcon } from "lucide-react";
+import type { Icon } from "@phosphor-icons/react";
+import {
+  Bank,
+  HandCoins,
+  UsersThree,
+  Rocket,
+  Buildings,
+  Globe,
+} from "@phosphor-icons/react/ssr";
 
 export type Industry = {
   slug: string;
   name: string;
-  icon: LucideIcon;
+  icon: Icon;
   summary: string;
   challenges: string[];
   relevantSolutions: string[];
@@ -13,7 +21,7 @@ export const industries: Industry[] = [
   {
     slug: "banks",
     name: "Public & Private Sector Banks",
-    icon: Building2,
+    icon: Bank,
     summary:
       "Banks use our platform to extend reach through agency networks, modernise payment switching, and launch digital-first products without replacing their core banking system.",
     challenges: [
@@ -31,7 +39,7 @@ export const industries: Industry[] = [
   {
     slug: "nbfcs",
     name: "NBFCs & Housing Finance Companies",
-    icon: Banknote,
+    icon: HandCoins,
     summary:
       "NBFCs rely on our origination, servicing, and account aggregator integrations to underwrite faster and service larger loan books without linear growth in operations headcount.",
     challenges: [
@@ -49,7 +57,7 @@ export const industries: Industry[] = [
   {
     slug: "mfis",
     name: "Microfinance Institutions",
-    icon: Users,
+    icon: UsersThree,
     summary:
       "MFIs use our agency banking and financial inclusion wallet infrastructure to reach borrower groups in low-connectivity areas while keeping disbursal and collection auditable.",
     challenges: [
@@ -67,7 +75,7 @@ export const industries: Industry[] = [
   {
     slug: "fintech-startups",
     name: "Fintech Startups & Neobanks",
-    icon: Layers,
+    icon: Rocket,
     summary:
       "Fintech startups build on our neobanking, card issuance, and BNPL modules to launch consumer or embedded-finance products without acquiring their own banking or card licences.",
     challenges: [
@@ -85,7 +93,7 @@ export const industries: Industry[] = [
   {
     slug: "cooperative-rural-banks",
     name: "Cooperative & Regional Rural Banks",
-    icon: Landmark,
+    icon: Buildings,
     summary:
       "Cooperative and regional rural banks deploy our AePS, micro-ATM, and remittance rails to serve members and customers across district-level networks with minimal infrastructure investment.",
     challenges: [
@@ -103,7 +111,7 @@ export const industries: Industry[] = [
   {
     slug: "government-psu",
     name: "Government & PSU Payment Programs",
-    icon: Globe2,
+    icon: Globe,
     summary:
       "Government and PSU programs use our financial inclusion wallets and bulk payout platform to run direct benefit transfer and welfare disbursal at state or national scale.",
     challenges: [

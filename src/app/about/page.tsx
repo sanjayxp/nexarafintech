@@ -8,7 +8,7 @@ import Stats from "@/components/Stats";
 import Testimonial from "@/components/Testimonial";
 import TrackRecord from "@/components/TrackRecord";
 import Reveal from "@/components/Reveal";
-import { Building2 } from "lucide-react";
+import { Buildings } from "@phosphor-icons/react/ssr";
 
 export const metadata: Metadata = {
   title: "About | Nexara Fintech",
@@ -26,7 +26,7 @@ export default function AboutPage() {
           title="Infrastructure for the next billion banking relationships"
           description="The team, the approach, and the standards behind every module on the Nexara platform."
           breadcrumb={[{ label: "About" }]}
-          icon={Building2}
+          icon={Buildings}
         />
 
         <section className="bg-white pt-24">

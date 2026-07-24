@@ -1,32 +1,34 @@
+import type { Icon } from "@phosphor-icons/react";
 import {
-  Landmark,
-  Users,
+  Bank,
+  UsersThree,
   Wallet,
-  HeartHandshake,
-  Smartphone,
+  HandHeart,
+  Fingerprint,
   CreditCard,
-  BadgeIndianRupee,
-  Building2,
-  ScanLine,
+  IdentificationCard,
+  Coins,
+  Buildings,
+  Scan,
   QrCode,
-  Volume2,
-  Store,
-  Network,
+  SpeakerHigh,
+  Storefront,
+  ArrowsLeftRight,
   Receipt,
-  SendHorizonal,
-  Globe2,
-  ScanEye,
-  ShieldAlert,
-  GitCompareArrows,
-  FileStack,
-  FileSearch,
-  Banknote,
-  CalendarClock,
-  Layers3,
-  Boxes,
-  Cpu,
-  LucideIcon,
-} from "lucide-react";
+  PaperPlaneTilt,
+  Money,
+  Globe,
+  UserFocus,
+  ShieldWarning,
+  ArrowsClockwise,
+  Stack,
+  MagnifyingGlass,
+  CalendarCheck,
+  CurrencyInr,
+  Database,
+  DeviceMobile,
+  ShareNetwork,
+} from "@phosphor-icons/react/ssr";
 
 export type Category = {
   slug: string;
@@ -40,7 +42,7 @@ export type Solution = {
   category: string;
   name: string;
   tagline: string;
-  icon: LucideIcon;
+  icon: Icon;
   overview: string;
   features: { title: string; description: string }[];
   howItWorks: string[];
@@ -106,7 +108,7 @@ export const solutions: Solution[] = [
     category: "agency-banking-financial-inclusion",
     name: "Agency Banking Platform",
     tagline: "Turn any storefront into a banking touchpoint",
-    icon: Landmark,
+    icon: Bank,
     overview:
       "A plug-and-play platform that lets banks, NBFCs and MFIs stand up a business correspondent network without building agent management, transaction switching, and settlement infrastructure from scratch. Agents onboard, transact, and reconcile through one system, while the institution keeps full visibility and control.",
     features: [
@@ -132,7 +134,7 @@ export const solutions: Solution[] = [
     category: "agency-banking-financial-inclusion",
     name: "BC Onboarding & Lifecycle Management",
     tagline: "Manage business correspondents end-to-end, not just at signup",
-    icon: Users,
+    icon: UsersThree,
     overview:
       "Corporate BC networks need more than onboarding — they need ongoing performance tracking, training, compliance renewal, and offboarding. This module manages the full lifecycle of business correspondents and their sub-agents across a multi-level hierarchy.",
     features: [
@@ -184,7 +186,7 @@ export const solutions: Solution[] = [
     category: "agency-banking-financial-inclusion",
     name: "Financial Inclusion & DBT Wallets",
     tagline: "Purpose-built rails for benefit transfer and micro-savings",
-    icon: HeartHandshake,
+    icon: HandHeart,
     overview:
       "Government and institutional direct benefit transfer programs need wallets that work in low-connectivity districts, support Aadhaar-based verification, and reconcile against beneficiary lists automatically. This solution is scoped specifically for that use case.",
     features: [
@@ -210,7 +212,7 @@ export const solutions: Solution[] = [
     category: "agency-banking-financial-inclusion",
     name: "AePS & Micro-ATM",
     tagline: "Cash access wherever the nearest agent is",
-    icon: Smartphone,
+    icon: Fingerprint,
     overview:
       "Aadhaar-enabled Payment System integration and micro-ATM device provisioning that brings cash-in/cash-out, balance enquiry, and mini-statement services to areas without a nearby bank branch or ATM.",
     features: [
@@ -264,7 +266,7 @@ export const solutions: Solution[] = [
     category: "cards-issuance",
     name: "Credit Card Issuance",
     tagline: "One hub to design, launch and manage a credit program",
-    icon: BadgeIndianRupee,
+    icon: IdentificationCard,
     overview:
       "An end-to-end credit card issuance and management hub covering application, underwriting hooks, statement generation, billing, and collections — built for institutions launching or scaling a co-branded credit card program.",
     features: [
@@ -290,7 +292,7 @@ export const solutions: Solution[] = [
     category: "cards-issuance",
     name: "Prepaid Card Issuance",
     tagline: "Load, spend, and track — without a bank account",
-    icon: Wallet,
+    icon: Coins,
     overview:
       "Rapid issuance of co-branded prepaid cards for payroll, gifting, and closed-loop use cases, with top-up, spend monitoring, and expiry management handled through a single admin console.",
     features: [
@@ -316,7 +318,7 @@ export const solutions: Solution[] = [
     category: "cards-issuance",
     name: "Neobanking Account Platform",
     tagline: "A fully digital account, no branch required",
-    icon: Building2,
+    icon: Buildings,
     overview:
       "An online-only account platform covering account opening, transaction processing, and a collections engine, for institutions and fintechs building a neobank product on top of a partner bank's licence.",
     features: [
@@ -344,7 +346,7 @@ export const solutions: Solution[] = [
     category: "merchant-acquiring",
     name: "POS Terminal Solution",
     tagline: "Card and UPI acceptance at the counter",
-    icon: ScanLine,
+    icon: Scan,
     overview:
       "Point-of-sale terminal deployment and management for merchants, supporting card, UPI, and contactless acceptance with same-day settlement reporting and terminal health monitoring.",
     features: [
@@ -396,7 +398,7 @@ export const solutions: Solution[] = [
     category: "merchant-acquiring",
     name: "Soundbox Payment Devices",
     tagline: "Audible payment confirmation for busy counters",
-    icon: Volume2,
+    icon: SpeakerHigh,
     overview:
       "A portable, battery-powered soundbox device that gives merchants and agents an audible confirmation for every inward payment, reducing disputes and missed-payment fraud at high-footfall counters.",
     features: [
@@ -422,7 +424,7 @@ export const solutions: Solution[] = [
     category: "merchant-acquiring",
     name: "Merchant Acquiring & Settlement",
     tagline: "Onboard, acquire, and settle — under one merchant ID",
-    icon: Store,
+    icon: Storefront,
     overview:
       "The acquiring backbone that ties POS, QR, and soundbox channels together under a single merchant onboarding and settlement process, with revenue-share and fee configuration per merchant segment.",
     features: [
@@ -450,7 +452,7 @@ export const solutions: Solution[] = [
     category: "transaction-banking",
     name: "Payment Switch",
     tagline: "Real-time routing across UPI, IMPS, NEFT and RTGS",
-    icon: Network,
+    icon: ArrowsLeftRight,
     overview:
       "A high-throughput payment switch that routes transactions across UPI, IMPS, NEFT and RTGS rails, with intelligent routing, retry logic, and reconciliation built to handle national payment volumes without a re-platform.",
     features: [
@@ -502,7 +504,7 @@ export const solutions: Solution[] = [
     category: "transaction-banking",
     name: "Bulk Payout & Disbursement Platform",
     tagline: "Move money to thousands of accounts in one batch",
-    icon: SendHorizonal,
+    icon: PaperPlaneTilt,
     overview:
       "A bulk payment and disbursement platform for vendor payouts, salary disbursal, and loan disbursement, with approval workflows, multi-rail routing, and a real-time status dashboard for every payout batch.",
     features: [
@@ -528,7 +530,7 @@ export const solutions: Solution[] = [
     category: "transaction-banking",
     name: "Domestic Money Remittance",
     tagline: "Cash-to-account transfers for the unbanked sender",
-    icon: Banknote,
+    icon: Money,
     overview:
       "A domestic remittance rail that lets a sender walk into any agent location, hand over cash, and have it credited to a receiver's bank account in real time — compliant with RBI's remittance guidelines throughout.",
     features: [
@@ -554,7 +556,7 @@ export const solutions: Solution[] = [
     category: "transaction-banking",
     name: "Cross-Border Remittance",
     tagline: "Compliant inbound remittance for retail and wholesale flows",
-    icon: Globe2,
+    icon: Globe,
     overview:
       "An inbound cross-border remittance solution covering retail personal transfers and wholesale corridor volumes, with the compliance checks, FX handling, and correspondent banking integration such flows require.",
     features: [
@@ -582,7 +584,7 @@ export const solutions: Solution[] = [
     category: "compliance-risk",
     name: "Onboarding, e-KYC & Video KYC",
     tagline: "Verify a customer in minutes, not branch visits",
-    icon: ScanEye,
+    icon: UserFocus,
     overview:
       "A digital onboarding suite covering e-KYC via Aadhaar/PAN, and RBI-compliant video KYC with liveness detection, so institutions can open accounts and issue products without a physical branch visit.",
     features: [
@@ -608,7 +610,7 @@ export const solutions: Solution[] = [
     category: "compliance-risk",
     name: "Fraud & Risk Management (FRM)",
     tagline: "Catch the fraudulent transaction before it settles",
-    icon: ShieldAlert,
+    icon: ShieldWarning,
     overview:
       "Real-time transaction monitoring and rule-based scoring that flags suspicious activity — velocity anomalies, device mismatches, geo-inconsistencies — before a fraudulent transaction settles, with a case management workflow for investigation teams.",
     features: [
@@ -634,7 +636,7 @@ export const solutions: Solution[] = [
     category: "compliance-risk",
     name: "Reconciliation Engine",
     tagline: "Every transaction matched, every day, automatically",
-    icon: GitCompareArrows,
+    icon: ArrowsClockwise,
     overview:
       "An automated reconciliation engine that matches transactions across switch logs, bank statements, and biller or partner settlement files, surfacing only the exceptions that need a human to look at them.",
     features: [
@@ -662,7 +664,7 @@ export const solutions: Solution[] = [
     category: "lending",
     name: "Loan Management System (LMS)",
     tagline: "Servicing, repayments, and collections after disbursal",
-    icon: FileStack,
+    icon: Stack,
     overview:
       "A loan servicing platform that takes over after disbursal — EMI scheduling, repayment collection, delinquency tracking, and restructuring — with dashboards that give portfolio-level visibility across every active loan.",
     features: [
@@ -688,7 +690,7 @@ export const solutions: Solution[] = [
     category: "lending",
     name: "Loan Origination System (LOS)",
     tagline: "Application to disbursal, with automated credit decisioning",
-    icon: FileSearch,
+    icon: MagnifyingGlass,
     overview:
       "An origination platform covering application capture, bureau pulls, automated credit decisioning, and disbursal, built for institutions and lending marketplaces that need to underwrite at volume without growing underwriting headcount linearly.",
     features: [
@@ -714,7 +716,7 @@ export const solutions: Solution[] = [
     category: "lending",
     name: "BNPL Platform",
     tagline: "Embedded short-term credit at the point of sale",
-    icon: CalendarClock,
+    icon: CalendarCheck,
     overview:
       "A buy-now-pay-later platform that plugs into merchant checkout flows, offering short-term credit lines with instant eligibility checks and repayment collection handled entirely in the background.",
     features: [
@@ -740,7 +742,7 @@ export const solutions: Solution[] = [
     category: "lending",
     name: "Credit Line on UPI",
     tagline: "Pre-approved credit, spent through any UPI app",
-    icon: Cpu,
+    icon: CurrencyInr,
     overview:
       "A solution that links a pre-approved credit line to a customer's UPI handle, letting them spend against sanctioned credit at any UPI-accepting merchant, with repayment and interest computation handled behind the scenes.",
     features: [
@@ -768,7 +770,7 @@ export const solutions: Solution[] = [
     category: "core-connected-banking",
     name: "Core Banking Platform",
     tagline: "The system of record everything else plugs into",
-    icon: Layers3,
+    icon: Database,
     overview:
       "A core banking platform covering deposits, accounts, and product configuration, deployable on-premises or in the cloud, built as the system of record that agency banking, cards, and payments modules all integrate with.",
     features: [
@@ -794,7 +796,7 @@ export const solutions: Solution[] = [
     category: "core-connected-banking",
     name: "Connected & Open Banking APIs",
     tagline: "Consent-based data sharing across the fintech ecosystem",
-    icon: Network,
+    icon: ShareNetwork,
     overview:
       "Account aggregator integration and open API banking layers that let institutions share and consume financial data under explicit customer consent, connecting core banking systems to the wider lending, PFM, and fintech ecosystem.",
     features: [
@@ -820,7 +822,7 @@ export const solutions: Solution[] = [
     category: "core-connected-banking",
     name: "Digital Banking Suite",
     tagline: "Retail and corporate banking, on every device",
-    icon: Boxes,
+    icon: DeviceMobile,
     overview:
       "A digital banking front-end covering retail and corporate banking journeys — account opening, transfers, statements, and corporate approval workflows — delivered consistently across mobile, web, and assisted-agent channels.",
     features: [

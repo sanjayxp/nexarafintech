@@ -3,12 +3,12 @@ import Link from "next/link";
 import type { CSSProperties } from "react";
 import {
   ArrowRight,
-  CheckCircle2,
-  Landmark,
+  CheckCircle,
+  Bank,
   CreditCard,
-  Network,
+  ArrowsLeftRight,
   ShieldCheck,
-} from "lucide-react";
+} from "@phosphor-icons/react/ssr";
 const points = [
   "RBI & NPCI aligned compliance",
   "API-first core integration",
@@ -16,8 +16,8 @@ const points = [
 ];
 
 const modules = [
-  { icon: Landmark, label: "Agency Banking" },
-  { icon: Network, label: "Payments" },
+  { icon: Bank, label: "Agency Banking" },
+  { icon: ArrowsLeftRight, label: "Payments" },
   { icon: CreditCard, label: "Cards" },
   { icon: ShieldCheck, label: "Compliance" },
 ];
@@ -77,7 +77,7 @@ export default function Hero() {
               }
             >
               <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-teal-light text-brand-teal">
-                <Icon size={16} />
+                <Icon size={16} weight="duotone" />
               </span>
               <span className="text-xs font-semibold text-brand-navy whitespace-nowrap">
                 {mod.label}
@@ -123,7 +123,7 @@ export default function Hero() {
                 key={point}
                 className="flex items-center gap-2 text-sm text-slate-300"
               >
-                <CheckCircle2 size={16} className="text-brand-teal shrink-0" />
+                <CheckCircle size={16} weight="duotone" className="text-brand-teal shrink-0" />
                 {point}
               </li>
             ))}

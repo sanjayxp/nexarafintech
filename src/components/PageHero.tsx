@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { ChevronRight, type LucideIcon } from "lucide-react";
+import type { Icon as PhosphorIcon } from "@phosphor-icons/react";
+import { CaretRight } from "@phosphor-icons/react/ssr";
 
 export default function PageHero({
   eyebrow,
@@ -12,7 +13,7 @@ export default function PageHero({
   title: string;
   description?: string;
   breadcrumb?: { label: string; href?: string }[];
-  icon?: LucideIcon;
+  icon?: PhosphorIcon;
 }) {
   return (
     <section className="relative overflow-hidden bg-brand-navy text-white">
@@ -24,7 +25,7 @@ export default function PageHero({
           <div
             className="animate-float-card absolute right-[8%] top-1/2 flex h-16 w-16 -translate-y-1/2 items-center justify-center rounded-2xl bg-white/10 backdrop-blur-md ring-1 ring-white/20"
           >
-            <Icon size={28} className="text-brand-teal-light" />
+            <Icon size={28} weight="duotone" className="text-brand-teal-light" />
           </div>
         </div>
       )}
@@ -37,7 +38,7 @@ export default function PageHero({
             </Link>
             {breadcrumb.map((item) => (
               <span key={item.label} className="flex items-center gap-1.5">
-                <ChevronRight size={14} />
+                <CaretRight size={14} />
                 {item.href ? (
                   <Link
                     href={item.href}

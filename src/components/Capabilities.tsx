@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { Zap, ShieldCheck, TrendingUp, ArrowRight } from "lucide-react";
+import { Lightning, ShieldCheck, TrendUp, ArrowRight } from "@phosphor-icons/react/ssr";
 import Reveal from "./Reveal";
 
 const capabilities = [
   {
-    icon: Zap,
+    icon: Lightning,
     title: "Move at agent speed",
     description:
       "Launch a new agency banking territory, payment rail, or card program in weeks. Modular services mean you configure and ship instead of waiting on a core release cycle.",
@@ -22,7 +22,7 @@ const capabilities = [
     gradient: "linear-gradient(120deg, #0f2444 0%, #1c4ed8 140%)",
   },
   {
-    icon: TrendingUp,
+    icon: TrendUp,
     title: "Scale without re-platforming",
     description:
       "From a single-district agent network to a national payment switch, the same architecture carries the volume. No forced migration when your institution outgrows the pilot.",
@@ -58,7 +58,7 @@ export default function Capabilities() {
                 >
                   <div className="lg:col-span-2">
                     <div className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-white/10 text-white">
-                      <Icon size={22} />
+                      <Icon size={22} weight="duotone" />
                     </div>
                     <h3 className="mt-5 text-xl font-semibold text-white">
                       {cap.title}

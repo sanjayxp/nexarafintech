@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { List, X } from "@phosphor-icons/react/ssr";
 import Logo from "./Logo";
 import { nav } from "@/lib/content";
 
@@ -43,7 +43,7 @@ export default function Nav() {
           className="lg:hidden inline-flex items-center justify-center rounded-md p-2 text-brand-navy"
           onClick={() => setOpen((v) => !v)}
         >
-          {open ? <X size={24} /> : <Menu size={24} />}
+          {open ? <X size={24} /> : <List size={24} />}
         </button>
       </div>
 

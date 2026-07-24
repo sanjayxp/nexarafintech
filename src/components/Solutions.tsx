@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight } from "@phosphor-icons/react/ssr";
 import Reveal from "./Reveal";
 import { categories, getSolutionsByCategory } from "@/lib/solutions";
 
@@ -80,7 +80,7 @@ export default function Solutions() {
                   >
                     {FeaturedIcon && (
                       <div className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-brand-navy/5 text-brand-navy group-hover:bg-brand-teal/10 group-hover:text-brand-teal transition-colors">
-                        <FeaturedIcon size={22} />
+                        <FeaturedIcon size={22} weight="duotone" />
                       </div>
                     )}
                     <h3 className="mt-5 text-base font-semibold text-brand-navy">

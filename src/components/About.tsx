@@ -1,9 +1,9 @@
-import { ShieldCheck, Zap, Layers3 } from "lucide-react";
+import { ShieldCheck, Lightning, PuzzlePiece } from "@phosphor-icons/react/ssr";
 import Reveal from "./Reveal";
 
 const pillars = [
   {
-    icon: Layers3,
+    icon: PuzzlePiece,
     title: "One integration, full stack",
     description:
       "Agency banking, payments, cards and compliance run on a single API layer instead of a patchwork of vendors.",
@@ -15,7 +15,7 @@ const pillars = [
       "Built around RBI and NPCI frameworks from day one, with audit trails and reporting your compliance team can rely on.",
   },
   {
-    icon: Zap,
+    icon: Lightning,
     title: "Fast to deploy",
     description:
       "Modular architecture and pre-built connectors get most institutions live in weeks, not the industry-standard quarters.",
@@ -56,7 +56,7 @@ export default function About({ compact = false }: { compact?: boolean }) {
           {pillars.map(({ icon: Icon, title, description }) => (
             <div key={title} className="flex gap-5">
               <div className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-brand-navy/5 text-brand-navy">
-                <Icon size={22} />
+                <Icon size={22} weight="duotone" />
               </div>
               <div>
                 <h3 className="text-base font-semibold text-brand-navy">

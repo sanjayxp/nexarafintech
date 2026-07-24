@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Layers3 } from "lucide-react";
+import { ArrowRight, SquaresFour } from "@phosphor-icons/react/ssr";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
@@ -23,7 +23,7 @@ export default function SolutionsIndex() {
           title="Every product in the banking and fintech stack"
           description="Organized across seven categories, from last-mile agency banking to core banking infrastructure. Each solution ships as a standalone module or as part of one integrated platform."
           breadcrumb={[{ label: "Solutions" }]}
-          icon={Layers3}
+          icon={SquaresFour}
         />
 
         <div className="container-page py-24">
@@ -56,7 +56,7 @@ export default function SolutionsIndex() {
                             className="group flex h-full flex-col rounded-2xl border border-brand-border p-6 transition-colors hover:border-brand-teal/50 hover:bg-brand-surface"
                           >
                             <div className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-brand-navy/5 text-brand-navy group-hover:bg-brand-teal/10 group-hover:text-brand-teal transition-colors">
-                              <Icon size={22} />
+                              <Icon size={22} weight="duotone" />
                             </div>
                             <h3 className="mt-5 text-base font-semibold text-brand-navy">
                               {solution.name}

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, Globe2 } from "lucide-react";
+import { ArrowRight, CheckCircle, Handshake } from "@phosphor-icons/react/ssr";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
@@ -24,7 +24,7 @@ export default function IndustriesPage() {
           title="Built for every tier of India's financial system"
           description="From national banks to district-level cooperative networks, each institution type works with a different slice of our platform. Here's how."
           breadcrumb={[{ label: "Industries" }]}
-          icon={Globe2}
+          icon={Handshake}
         />
 
         <div className="container-page py-24">
@@ -39,7 +39,7 @@ export default function IndustriesPage() {
                   >
                     <div className="lg:col-span-1">
                       <div className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-brand-navy/5 text-brand-navy">
-                        <Icon size={24} />
+                        <Icon size={24} weight="duotone" />
                       </div>
                       <h2 className="mt-5 text-2xl font-semibold tracking-tight text-brand-navy">
                         {industry.name}
@@ -57,7 +57,7 @@ export default function IndustriesPage() {
                         <ul className="mt-4 flex flex-col gap-3">
                           {industry.challenges.map((c) => (
                             <li key={c} className="flex gap-2.5 text-sm text-brand-slate leading-6">
-                              <CheckCircle2 size={16} className="mt-0.5 shrink-0 text-brand-teal" />
+                              <CheckCircle size={16} weight="duotone" className="mt-0.5 shrink-0 text-brand-teal" />
                               {c}
                             </li>
                           ))}
