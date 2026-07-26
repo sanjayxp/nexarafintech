@@ -31,7 +31,7 @@ export default function Hero() {
       <div className="bg-hero-gradient pointer-events-none absolute inset-0" />
       <div className="bg-dot-grid pointer-events-none absolute inset-0 opacity-40" />
 
-      <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[46%] lg:block">
+      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 hidden w-[46%] lg:block">
         <div className="relative h-full w-full">
           <Image
             src="/images/hero-team-tablet.jpg"
