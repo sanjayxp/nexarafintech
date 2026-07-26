@@ -16,10 +16,10 @@ const points = [
 ];
 
 const modules = [
-  { icon: Bank, label: "Agency Banking" },
-  { icon: ArrowsLeftRight, label: "Payments" },
-  { icon: CreditCard, label: "Cards" },
-  { icon: ShieldCheck, label: "Compliance" },
+  { icon: Bank, label: "Agency Banking", href: "/solutions#agency-banking-financial-inclusion" },
+  { icon: ArrowsLeftRight, label: "Payments", href: "/solutions#transaction-banking" },
+  { icon: CreditCard, label: "Cards", href: "/solutions#cards-issuance" },
+  { icon: ShieldCheck, label: "Compliance", href: "/solutions#compliance-risk" },
 ];
 
 export default function Hero() {
@@ -65,9 +65,10 @@ export default function Hero() {
         {modules.map((mod, i) => {
           const Icon = mod.icon;
           return (
-            <div
+            <Link
               key={mod.label}
-              className="animate-float-card absolute flex items-center gap-2.5 rounded-xl bg-white px-4 py-3 shadow-xl"
+              href={mod.href}
+              className="animate-float-card pointer-events-auto absolute flex items-center gap-2.5 rounded-xl bg-white px-4 py-3 shadow-xl transition-transform hover:scale-105"
               style={
                 {
                   top: `${14 + i * 20}%`,
@@ -82,7 +83,7 @@ export default function Hero() {
               <span className="text-xs font-semibold text-brand-navy whitespace-nowrap">
                 {mod.label}
               </span>
-            </div>
+            </Link>
           );
         })}
       </div>
