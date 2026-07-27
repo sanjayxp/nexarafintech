@@ -4,6 +4,7 @@ export type Insight = {
   date: string;
   title: string;
   excerpt: string;
+  cover: string;
   body: { heading?: string; paragraphs: string[] }[];
 };
 
@@ -15,6 +16,7 @@ export const insights: Insight[] = [
     title: "What the RBI's revised BC guidelines mean for agency banking",
     excerpt:
       "A practical breakdown of the updated business correspondent framework and what banks need to change in their agent networks.",
+    cover: "/images/insight-regulatory.jpg",
     body: [
       {
         paragraphs: [
@@ -44,6 +46,7 @@ export const insights: Insight[] = [
     title: "Account aggregator adoption is plateauing — here's why",
     excerpt:
       "Consent flow friction and data-fetch latency are the two biggest blockers we see in AA integrations today.",
+    cover: "/images/insight-connected-banking.jpg",
     body: [
       {
         paragraphs: [
@@ -72,6 +75,7 @@ export const insights: Insight[] = [
     title: "Designing a payment switch that survives UPI's growth curve",
     excerpt:
       "Lessons from scaling switching infrastructure past a billion monthly transactions without a re-platform.",
+    cover: "/images/insight-payments.jpg",
     body: [
       {
         paragraphs: [
@@ -100,6 +104,7 @@ export const insights: Insight[] = [
     title: "How a cooperative bank network went live on AePS in 90 days",
     excerpt:
       "A look at the agent onboarding, device provisioning, and compliance workstreams that ran in parallel.",
+    cover: "/images/insight-case-study.jpg",
     body: [
       {
         paragraphs: [
@@ -128,6 +133,7 @@ export const insights: Insight[] = [
     title: "Video KYC at scale: what breaks past 10,000 verifications a day",
     excerpt:
       "Operational and technical bottlenecks in high-volume VKYC, and the queuing model that fixed them.",
+    cover: "/images/insight-compliance.jpg",
     body: [
       {
         paragraphs: [
@@ -156,6 +162,7 @@ export const insights: Insight[] = [
     title: "Wallets as a DBT rail: design notes from a state rollout",
     excerpt:
       "Why semi-closed wallets remain the fastest path to last-mile benefit transfer in low-connectivity districts.",
+    cover: "/images/insight-financial-inclusion.jpg",
     body: [
       {
         paragraphs: [
