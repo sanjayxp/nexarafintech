@@ -14,6 +14,12 @@ export default function AdminHeader() {
         </div>
         <nav className="flex items-center gap-6">
           <Link
+            href="/admin/insights"
+            className="text-sm font-medium text-brand-slate hover:text-brand-navy transition-colors"
+          >
+            Insights
+          </Link>
+          <Link
             href="/admin/partners"
             className="text-sm font-medium text-brand-slate hover:text-brand-navy transition-colors"
           >

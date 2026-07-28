@@ -6,11 +6,16 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
-import { insights, getInsightBySlug } from "@/lib/insights";
+import ShareLinks from "@/components/ShareLinks";
+import {
+  getPublishedArticleBySlug,
+  getPublishedArticles,
+  parseArticleContent,
+} from "@/lib/articles";
+import { formatArticleDate } from "@/lib/format-date";
+import { SITE_URL } from "@/lib/site";
 
-export function generateStaticParams() {
-  return insights.map((i) => ({ slug: i.slug }));
-}
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({
   params,
@@ -18,11 +23,11 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const insight = getInsightBySlug(slug);
-  if (!insight) return {};
+  const article = await getPublishedArticleBySlug(slug);
+  if (!article) return {};
   return {
-    title: `${insight.title} | Nexara Fintech`,
-    description: insight.excerpt,
+    title: `${article.title} | Nexara Fintech`,
+    description: article.excerpt,
   };
 }
 
@@ -32,35 +37,43 @@ export default async function InsightDetail({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const insight = getInsightBySlug(slug);
-  if (!insight) notFound();
+  const article = await getPublishedArticleBySlug(slug);
+  if (!article) notFound();
 
-  const more = insights.filter((i) => i.slug !== slug).slice(0, 3);
+  const allArticles = await getPublishedArticles();
+  const more = allArticles.filter((a) => a.slug !== slug).slice(0, 3);
+  const body = parseArticleContent(article.content);
+  const shareUrl = `${SITE_URL}/insights/${article.slug}`;
 
   return (
     <>
       <Nav />
       <main className="flex-1">
         <PageHero
-          eyebrow={`${insight.tag} · ${insight.date}`}
-          title={insight.title}
+          eyebrow={`${article.tag} · ${formatArticleDate(article.published_at)}`}
+          title={article.title}
           icon={Newspaper}
           breadcrumb={[
             { label: "Insights", href: "/insights" },
-            { label: insight.title },
+            { label: article.title },
           ]}
         />
 
         <div className="container-page py-24">
           <div className="mx-auto max-w-3xl">
             <Reveal>
-              <p className="text-xl leading-9 text-brand-navy">
-                {insight.excerpt}
-              </p>
+              <div className="flex flex-wrap items-center justify-between gap-4">
+                <p className="text-xl leading-9 text-brand-navy">
+                  {article.excerpt}
+                </p>
+              </div>
+              <div className="mt-6">
+                <ShareLinks url={shareUrl} title={article.title} />
+              </div>
             </Reveal>
 
             <div className="mt-10 flex flex-col gap-10">
-              {insight.body.map((block, i) => (
+              {body.map((block, i) => (
                 <Reveal key={i} delay={i * 80}>
                   <div>
                     {block.heading && (
@@ -81,17 +94,20 @@ export default async function InsightDetail({
             </div>
 
             <Reveal>
-              <div className="mt-14 rounded-2xl border border-brand-border bg-brand-surface p-8 text-center">
-                <p className="text-lg font-semibold text-brand-navy">
-                  Want to talk through how this applies to your network?
-                </p>
-                <Link
-                  href="/contact"
-                  className="mt-5 inline-flex items-center justify-center gap-2 rounded-md bg-brand-navy px-6 py-3 text-sm font-semibold text-white hover:bg-brand-navy-2 transition-colors"
-                >
-                  Talk to our team
-                  <ArrowRight size={16} />
-                </Link>
+              <div className="mt-14 flex flex-col items-center gap-6 rounded-2xl border border-brand-border bg-brand-surface p-8 text-center">
+                <ShareLinks url={shareUrl} title={article.title} />
+                <div>
+                  <p className="text-lg font-semibold text-brand-navy">
+                    Want to talk through how this applies to your network?
+                  </p>
+                  <Link
+                    href="/contact"
+                    className="mt-5 inline-flex items-center justify-center gap-2 rounded-md bg-brand-navy px-6 py-3 text-sm font-semibold text-white hover:bg-brand-navy-2 transition-colors"
+                  >
+                    Talk to our team
+                    <ArrowRight size={16} />
+                  </Link>
+                </div>
               </div>
             </Reveal>
           </div>

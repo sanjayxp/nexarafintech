@@ -13,7 +13,7 @@ export type Partner = {
 
 export async function getPartners(): Promise<Partner[]> {
   const { data, error } = await supabase
-    .from("partners")
+    .from("nexara_partners")
     .select("*")
     .order("sort_order", { ascending: true })
     .order("created_at", { ascending: true });
@@ -24,7 +24,7 @@ export async function getPartners(): Promise<Partner[]> {
 
 export async function getPartner(id: string): Promise<Partner | null> {
   const { data, error } = await supabase
-    .from("partners")
+    .from("nexara_partners")
     .select("*")
     .eq("id", id)
     .maybeSingle();
@@ -41,7 +41,7 @@ export async function createPartner(input: {
   sort_order: number;
 }): Promise<Partner> {
   const { data, error } = await supabase
-    .from("partners")
+    .from("nexara_partners")
     .insert(input)
     .select()
     .single();
@@ -61,7 +61,7 @@ export async function updatePartner(
   }>
 ): Promise<Partner> {
   const { data, error } = await supabase
-    .from("partners")
+    .from("nexara_partners")
     .update({ ...input, updated_at: new Date().toISOString() })
     .eq("id", id)
     .select()
@@ -79,16 +79,16 @@ export async function deletePartner(id: string): Promise<void> {
       .map(storagePathFromUrl)
       .filter((p): p is string => Boolean(p));
     if (paths.length) {
-      await supabase.storage.from("partners").remove(paths);
+      await supabase.storage.from("nexara-partners").remove(paths);
     }
   }
 
-  const { error } = await supabase.from("partners").delete().eq("id", id);
+  const { error } = await supabase.from("nexara_partners").delete().eq("id", id);
   if (error) throw new Error(error.message);
 }
 
 function storagePathFromUrl(url: string): string | null {
-  const marker = "/object/public/partners/";
+  const marker = "/object/public/nexara-partners/";
   const i = url.indexOf(marker);
   return i === -1 ? null : url.slice(i + marker.length);
 }
@@ -101,11 +101,11 @@ export async function uploadPartnerImage(
   const path = `${kind}/${crypto.randomUUID()}.${ext}`;
 
   const { error } = await supabase.storage
-    .from("partners")
+    .from("nexara-partners")
     .upload(path, file, { contentType: file.type, upsert: false });
 
   if (error) throw new Error(error.message);
 
-  const { data } = supabase.storage.from("partners").getPublicUrl(path);
+  const { data } = supabase.storage.from("nexara-partners").getPublicUrl(path);
   return data.publicUrl;
 }
