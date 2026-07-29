@@ -50,7 +50,7 @@ export default function IndustriesPage() {
                       </p>
                     </div>
 
-                    <div className="lg:col-span-2 grid grid-cols-1 gap-8 sm:grid-cols-2">
+                    <div className="lg:col-span-2 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:mt-[4.25rem]">
                       <div>
                         <h3 className="text-sm font-semibold uppercase tracking-wide text-brand-teal">
                           What they&apos;re solving for
