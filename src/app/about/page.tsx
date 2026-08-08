@@ -26,7 +26,7 @@ export default function AboutPage() {
           description="The team, the approach, and the standards behind every module on the Nexara platform."
           breadcrumb={[{ label: "About" }]}
           icon={Buildings}
-          photo="/images/about-team.jpg"
+          photo="/images/about-team-modern.jpg"
         />
 
         <About compact />

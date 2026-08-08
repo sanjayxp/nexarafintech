@@ -2,12 +2,26 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { List, X } from "@phosphor-icons/react/ssr";
+import { List, X, CaretDown } from "@phosphor-icons/react/ssr";
 import Logo from "./Logo";
 import { nav } from "@/lib/content";
+import { verticals } from "@/lib/verticals";
+import { industries } from "@/lib/industries";
+
+const dropdowns: Record<string, { label: string; href: string }[]> = {
+  "/solutions": [
+    ...verticals.map((v) => ({ label: v.name, href: `/solutions/${v.slug}` })),
+    { label: "All Business Units", href: "/solutions" },
+  ],
+  "/industries": [
+    ...industries.map((i) => ({ label: i.name, href: `/industries#${i.slug}` })),
+    { label: "All Industries", href: "/industries" },
+  ],
+};
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
+  const [expandedMobile, setExpandedMobile] = useState<string | null>(null);
 
   return (
     <header className="sticky top-0 z-50 pt-4 pb-2">
@@ -18,15 +32,47 @@ export default function Nav() {
           </Link>
 
           <nav className="hidden lg:flex items-center gap-8">
-            {nav.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="text-sm font-medium text-slate-200 hover:text-brand-teal-light transition-colors"
-              >
-                {item.label}
-              </Link>
-            ))}
+            {nav.map((item) => {
+              const children = dropdowns[item.href];
+              if (!children) {
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="text-sm font-medium text-slate-200 hover:text-brand-teal-light transition-colors"
+                  >
+                    {item.label}
+                  </Link>
+                );
+              }
+              return (
+                <div key={item.href} className="group relative">
+                  <Link
+                    href={item.href}
+                    className="flex items-center gap-1 text-sm font-medium text-slate-200 hover:text-brand-teal-light transition-colors"
+                  >
+                    {item.label}
+                    <CaretDown
+                      size={12}
+                      className="transition-transform duration-200 group-hover:rotate-180"
+                    />
+                  </Link>
+                  <div className="invisible absolute left-1/2 top-full w-64 -translate-x-1/2 pt-3 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100">
+                    <div className="overflow-hidden rounded-2xl border border-brand-border bg-white p-2 shadow-xl">
+                      {children.map((child) => (
+                        <Link
+                          key={child.href}
+                          href={child.href}
+                          className="block rounded-lg px-3 py-2.5 text-sm font-medium text-brand-navy hover:bg-brand-surface transition-colors"
+                        >
+                          {child.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </nav>
 
           <div className="hidden lg:block">
@@ -51,16 +97,55 @@ export default function Nav() {
         {open && (
           <div className="lg:hidden mt-2 overflow-hidden rounded-2xl border border-brand-border bg-white shadow-lg">
             <div className="flex flex-col gap-1 p-4">
-              {nav.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setOpen(false)}
-                  className="rounded-md px-2 py-2.5 text-sm font-medium text-brand-slate hover:bg-brand-surface hover:text-brand-navy"
-                >
-                  {item.label}
-                </Link>
-              ))}
+              {nav.map((item) => {
+                const children = dropdowns[item.href];
+                if (!children) {
+                  return (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setOpen(false)}
+                      className="rounded-md px-2 py-2.5 text-sm font-medium text-brand-slate hover:bg-brand-surface hover:text-brand-navy"
+                    >
+                      {item.label}
+                    </Link>
+                  );
+                }
+                const isExpanded = expandedMobile === item.href;
+                return (
+                  <div key={item.href}>
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setExpandedMobile(isExpanded ? null : item.href)
+                      }
+                      className="flex w-full items-center justify-between rounded-md px-2 py-2.5 text-sm font-medium text-brand-slate hover:bg-brand-surface hover:text-brand-navy"
+                    >
+                      {item.label}
+                      <CaretDown
+                        size={14}
+                        className={`transition-transform duration-200 ${
+                          isExpanded ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+                    {isExpanded && (
+                      <div className="ml-2 flex flex-col gap-1 border-l border-brand-border pl-3">
+                        {children.map((child) => (
+                          <Link
+                            key={child.href}
+                            href={child.href}
+                            onClick={() => setOpen(false)}
+                            className="rounded-md px-2 py-2 text-sm text-brand-slate hover:bg-brand-surface hover:text-brand-navy"
+                          >
+                            {child.label}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
               <Link
                 href="/contact"
                 onClick={() => setOpen(false)}

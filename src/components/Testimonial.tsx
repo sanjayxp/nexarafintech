@@ -17,7 +17,7 @@ export default function Testimonial() {
             <div className="lg:col-span-2">
               <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-2xl">
                 <Image
-                  src="/images/testimonial-portrait.jpg"
+                  src="/images/testimonial-portrait-v2.jpg"
                   alt="Head of Digital Banking, regional cooperative bank partner"
                   fill
                   sizes="(min-width: 1024px) 24rem, 80vw"

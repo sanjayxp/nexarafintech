@@ -24,7 +24,7 @@ export default function SolutionsIndex() {
           description="Enterprise banking APIs, last-mile agency banking, and market-entry advisory — each built to help banks, fintechs and enterprises move faster."
           breadcrumb={[{ label: "Solutions" }]}
           icon={SquaresFour}
-          photo="/images/hero-solutions.jpg"
+          photo="/images/hero-solutions-payment.jpg"
         />
 
         <div className="container-page py-24">

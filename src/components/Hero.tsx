@@ -29,7 +29,7 @@ export default function Hero() {
       <div className="pointer-events-none absolute inset-y-0 right-0 z-10 hidden w-[46%] lg:block">
         <div className="relative h-full w-full">
           <Image
-            src="/images/hero-team-tablet.jpg"
+            src="/images/hero-digital-infrastructure.jpg"
             alt=""
             fill
             priority
