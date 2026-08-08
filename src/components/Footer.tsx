@@ -19,13 +19,12 @@ function TwitterIcon() {
 
 const columns = [
   {
-    title: "Solutions",
+    title: "Business Units",
     links: [
-      { label: "Agency Banking", href: "/solutions/agency-banking" },
-      { label: "Payment Switch", href: "/solutions/payment-switch" },
-      { label: "Cards Issuance", href: "/solutions#cards-issuance" },
-      { label: "Lending Solutions", href: "/solutions#lending" },
-      { label: "All solutions", href: "/solutions" },
+      { label: "Connected Banking Platform", href: "/solutions/connected-banking-platform" },
+      { label: "Agency Banking Solutions", href: "/solutions/agency-banking-solutions" },
+      { label: "Consulting & Advisory", href: "/solutions/consulting-advisory" },
+      { label: "All business units", href: "/solutions" },
     ],
   },
   {

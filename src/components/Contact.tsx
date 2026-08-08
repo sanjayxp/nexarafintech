@@ -2,7 +2,7 @@
 
 import { useState, FormEvent } from "react";
 import { EnvelopeSimple, Phone, MapPin } from "@phosphor-icons/react/ssr";
-import { categories } from "@/lib/solutions";
+import { verticals } from "@/lib/verticals";
 import Reveal from "./Reveal";
 
 export default function Contact({ compact = false }: { compact?: boolean }) {
@@ -110,8 +110,8 @@ export default function Contact({ compact = false }: { compact?: boolean }) {
                     <option value="" disabled>
                       Select a solution area
                     </option>
-                    {categories.map((category) => (
-                      <option key={category.slug}>{category.shortName}</option>
+                    {verticals.map((vertical) => (
+                      <option key={vertical.slug}>{vertical.shortName}</option>
                     ))}
                     <option>Other</option>
                   </select>
@@ -129,7 +129,7 @@ export default function Contact({ compact = false }: { compact?: boolean }) {
               </div>
               <button
                 type="submit"
-                className="mt-6 inline-flex items-center justify-center rounded-md bg-brand-navy px-6 py-3 text-sm font-semibold text-white hover:bg-brand-navy-2 transition-colors"
+                className="mt-6 inline-flex items-center justify-center rounded-full bg-brand-navy px-6 py-3 text-sm font-semibold text-white hover:bg-brand-navy-2 transition-colors"
               >
                 Send message
               </button>

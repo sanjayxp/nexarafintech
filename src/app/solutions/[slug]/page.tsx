@@ -6,15 +6,10 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
-import {
-  solutions,
-  getSolutionBySlug,
-  getCategoryBySlug,
-  getRelatedSolutions,
-} from "@/lib/solutions";
+import { verticals, getVerticalBySlug } from "@/lib/verticals";
 
 export function generateStaticParams() {
-  return solutions.map((s) => ({ slug: s.slug }));
+  return verticals.map((v) => ({ slug: v.slug }));
 }
 
 export async function generateMetadata({
@@ -23,42 +18,38 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const solution = getSolutionBySlug(slug);
-  if (!solution) return {};
+  const vertical = getVerticalBySlug(slug);
+  if (!vertical) return {};
   return {
-    title: `${solution.name} | Nexara Fintech`,
-    description: solution.overview,
+    title: `${vertical.name} | Nexara Fintech`,
+    description: vertical.summary,
   };
 }
 
-export default async function SolutionDetail({
+export default async function VerticalDetail({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const solution = getSolutionBySlug(slug);
-  if (!solution) notFound();
+  const vertical = getVerticalBySlug(slug);
+  if (!vertical) notFound();
 
-  const category = getCategoryBySlug(solution.category);
-  const related = getRelatedSolutions(solution.slug);
-  const accent = category?.color ?? "#0ea5a3";
+  const related = verticals.filter((v) => v.slug !== slug);
+  const verticalIndex = verticals.findIndex((v) => v.slug === slug);
 
   return (
     <>
       <Nav />
       <main className="flex-1">
         <PageHero
-          eyebrow={category?.shortName ?? "Solution"}
-          title={solution.name}
-          description={solution.tagline}
-          icon={solution.icon}
+          eyebrow={`Business Unit ${String(verticalIndex + 1).padStart(2, "0")}`}
+          title={vertical.name}
+          description={vertical.tagline}
+          icon={vertical.icon}
           breadcrumb={[
             { label: "Solutions", href: "/solutions" },
-            ...(category
-              ? [{ label: category.shortName, href: `/solutions#${category.slug}` }]
-              : []),
-            { label: solution.name },
+            { label: vertical.name },
           ]}
         />
 
@@ -70,78 +61,174 @@ export default async function SolutionDetail({
                   Overview
                 </h2>
                 <p className="mt-4 text-lg leading-8 text-brand-slate">
-                  {solution.overview}
+                  {vertical.summary}
                 </p>
               </Reveal>
 
-              <Reveal delay={80}>
-                <h2 className="mt-14 text-2xl font-semibold tracking-tight text-brand-navy">
-                  Key features
-                </h2>
-                <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2">
-                  {solution.features.map((feature) => (
-                    <div
-                      key={feature.title}
-                      className="rounded-2xl border border-brand-border p-5"
-                    >
-                      <h3 className="text-sm font-semibold text-brand-navy">
-                        {feature.title}
-                      </h3>
-                      <p className="mt-1.5 text-sm leading-6 text-brand-slate">
-                        {feature.description}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </Reveal>
+              {vertical.vision && (
+                <Reveal delay={60}>
+                  <div
+                    className="mt-8 rounded-2xl border-l-4 bg-brand-surface p-6"
+                    style={{ borderColor: vertical.color }}
+                  >
+                    <h3 className="text-sm font-semibold uppercase tracking-wide" style={{ color: vertical.color }}>
+                      Vision
+                    </h3>
+                    <p className="mt-2 text-brand-navy leading-7">{vertical.vision}</p>
+                  </div>
+                </Reveal>
+              )}
 
-              <Reveal delay={160}>
-                <h2 className="mt-14 text-2xl font-semibold tracking-tight text-brand-navy">
-                  How it works
-                </h2>
-                <ol className="mt-6 flex flex-col gap-5">
-                  {solution.howItWorks.map((step, i) => (
-                    <li key={step} className="flex gap-4">
-                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-navy text-sm font-semibold text-white">
-                        {i + 1}
+              {vertical.valueProposition && (
+                <Reveal delay={80}>
+                  <div className="mt-6 rounded-2xl border border-brand-border p-6">
+                    <h3 className="text-sm font-semibold uppercase tracking-wide text-brand-teal">
+                      Value Proposition
+                    </h3>
+                    <p className="mt-2 text-brand-navy leading-7">
+                      {vertical.valueProposition}
+                    </p>
+                  </div>
+                </Reveal>
+              )}
+
+              {vertical.groups.map((group, gi) => (
+                <Reveal key={group.title} delay={100 + gi * 60}>
+                  <h2 className="mt-14 text-2xl font-semibold tracking-tight text-brand-navy">
+                    {group.title}
+                  </h2>
+                  <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                    {group.items.map((item) => (
+                      <div
+                        key={item}
+                        className="flex items-center gap-3 rounded-xl border border-brand-border p-4"
+                      >
+                        <CheckCircle
+                          size={18}
+                          weight="duotone"
+                          className="shrink-0"
+                          style={{ color: vertical.color }}
+                        />
+                        <span className="text-sm font-medium text-brand-navy">
+                          {item}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </Reveal>
+              ))}
+
+              {vertical.regions && (
+                <Reveal delay={160}>
+                  <h2 className="mt-14 text-2xl font-semibold tracking-tight text-brand-navy">
+                    Target Markets
+                  </h2>
+                  <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2">
+                    {vertical.regions.map((r) => (
+                      <div
+                        key={r.region}
+                        className="rounded-2xl border border-brand-border p-6"
+                      >
+                        <h3 className="text-base font-semibold text-brand-navy">
+                          {r.region}
+                        </h3>
+                        {r.items && r.items.length > 0 && (
+                          <ul className="mt-3 flex flex-col gap-2">
+                            {r.items.map((item) => (
+                              <li
+                                key={item}
+                                className="flex items-center gap-2 text-sm text-brand-slate"
+                              >
+                                <CheckCircle
+                                  size={14}
+                                  weight="duotone"
+                                  className="shrink-0 text-brand-teal"
+                                />
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </Reveal>
+              )}
+
+              {vertical.targetCustomers && (
+                <Reveal delay={180}>
+                  <h2 className="mt-14 text-2xl font-semibold tracking-tight text-brand-navy">
+                    Target Customers
+                  </h2>
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {vertical.targetCustomers.map((c) => (
+                      <span
+                        key={c}
+                        className="rounded-full border border-brand-border px-4 py-2 text-sm font-medium text-brand-navy"
+                      >
+                        {c}
                       </span>
-                      <p className="pt-1 text-brand-slate leading-7">{step}</p>
-                    </li>
-                  ))}
-                </ol>
-              </Reveal>
+                    ))}
+                  </div>
+                </Reveal>
+              )}
+
+              {vertical.benefits && (
+                <Reveal delay={200}>
+                  <h2 className="mt-14 text-2xl font-semibold tracking-tight text-brand-navy">
+                    Customer Benefits
+                  </h2>
+                  <ul className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                    {vertical.benefits.map((b) => (
+                      <li key={b} className="flex gap-3">
+                        <CheckCircle
+                          size={18}
+                          weight="duotone"
+                          className="mt-0.5 shrink-0"
+                          style={{ color: vertical.color }}
+                        />
+                        <span className="text-brand-slate leading-6">{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </Reveal>
+              )}
             </div>
 
             <div className="lg:col-span-1">
               <Reveal delay={80} className="lg:sticky lg:top-24">
                 <div
                   className="rounded-2xl border border-t-4 border-brand-border bg-brand-surface p-7"
-                  style={{ borderTopColor: accent }}
+                  style={{ borderTopColor: vertical.color }}
                 >
-                  <h3
-                    className="text-sm font-semibold uppercase tracking-wide"
-                    style={{ color: accent }}
-                  >
-                    Why it matters
-                  </h3>
-                  <ul className="mt-5 flex flex-col gap-4">
-                    {solution.benefits.map((benefit) => (
-                      <li key={benefit} className="flex gap-3">
-                        <CheckCircle
-                          size={18}
-                          weight="duotone"
-                          className="mt-0.5 shrink-0"
-                          style={{ color: accent }}
-                        />
-                        <span className="text-sm leading-6 text-brand-navy">
-                          {benefit}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
+                  {vertical.revenueModel && (
+                    <>
+                      <h3
+                        className="text-sm font-semibold uppercase tracking-wide"
+                        style={{ color: vertical.color }}
+                      >
+                        Revenue Model
+                      </h3>
+                      <ul className="mt-5 flex flex-col gap-4">
+                        {vertical.revenueModel.map((item) => (
+                          <li key={item} className="flex gap-3">
+                            <CheckCircle
+                              size={18}
+                              weight="duotone"
+                              className="mt-0.5 shrink-0"
+                              style={{ color: vertical.color }}
+                            />
+                            <span className="text-sm leading-6 text-brand-navy">
+                              {item}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </>
+                  )}
                   <Link
                     href="/contact"
-                    className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-md bg-brand-navy px-6 py-3 text-sm font-semibold text-white hover:bg-brand-navy-2 transition-colors"
+                    className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-navy px-6 py-3 text-sm font-semibold text-white hover:bg-brand-navy-2 transition-colors"
                   >
                     Talk to our team
                     <ArrowRight size={16} />
@@ -155,9 +242,9 @@ export default async function SolutionDetail({
             <div className="mt-20 border-t border-brand-border pt-14">
               <Reveal>
                 <h2 className="text-2xl font-semibold tracking-tight text-brand-navy">
-                  Related solutions
+                  Other business units
                 </h2>
-                <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2">
                   {related.map((item) => {
                     const RelIcon = item.icon;
                     return (
@@ -168,7 +255,7 @@ export default async function SolutionDetail({
                       >
                         <div
                           className="inline-flex h-11 w-11 items-center justify-center rounded-lg"
-                          style={{ backgroundColor: `${accent}1A`, color: accent }}
+                          style={{ backgroundColor: `${item.color}1A`, color: item.color }}
                         >
                           <RelIcon size={22} weight="duotone" />
                         </div>

@@ -5,12 +5,12 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
-import { categories, getSolutionsByCategory } from "@/lib/solutions";
+import { verticals } from "@/lib/verticals";
 
 export const metadata: Metadata = {
-  title: "Solutions | Nexara Fintech",
+  title: "What We Do | Nexara Fintech",
   description:
-    "28 banking and fintech solutions across agency banking, cards, merchant acquiring, transaction banking, compliance, lending, and core banking.",
+    "Nexara Fintech operates through three business units: Connected Banking Platform, Agency Banking Solutions, and Consulting & Advisory.",
 };
 
 export default function SolutionsIndex() {
@@ -19,68 +19,73 @@ export default function SolutionsIndex() {
       <Nav />
       <main className="flex-1">
         <PageHero
-          eyebrow="Solutions"
-          title="Every product in the banking and fintech stack"
-          description="Organized across seven categories, from last-mile agency banking to core banking infrastructure. Each solution ships as a standalone module or as part of one integrated platform."
+          eyebrow="What we do"
+          title="Three business units, one platform"
+          description="Enterprise banking APIs, last-mile agency banking, and market-entry advisory — each built to help banks, fintechs and enterprises move faster."
           breadcrumb={[{ label: "Solutions" }]}
           icon={SquaresFour}
           photo="/images/hero-solutions.jpg"
         />
 
         <div className="container-page py-24">
-          <div className="flex flex-col gap-20">
-            {categories.map((category, catIndex) => {
-              const items = getSolutionsByCategory(category.slug);
+          <div className="flex flex-col gap-8">
+            {verticals.map((vertical, i) => {
+              const Icon = vertical.icon;
+              const allItems = vertical.groups.flatMap((g) => g.items);
               return (
-                <div key={category.slug} id={category.slug} className="scroll-mt-24">
-                  <Reveal>
-                    <div
-                      className="max-w-2xl border-l-2 pl-5"
-                      style={{ borderColor: category.color }}
-                    >
+                <Reveal key={vertical.slug} delay={i * 60}>
+                  <div
+                    id={vertical.slug}
+                    className="grid scroll-mt-24 grid-cols-1 gap-10 rounded-2xl border border-brand-border p-8 lg:grid-cols-5 lg:p-10"
+                  >
+                    <div className="lg:col-span-2">
                       <span className="text-xs font-semibold text-brand-slate-light">
-                        {String(catIndex + 1).padStart(2, "0")} / {String(categories.length).padStart(2, "0")}
+                        BUSINESS UNIT {String(i + 1).padStart(2, "0")} / {String(verticals.length).padStart(2, "0")}
                       </span>
-                      <h2 className="mt-1 text-2xl font-semibold tracking-tight text-brand-navy">
-                        {category.name}
+                      <div
+                        className="mt-4 inline-flex h-12 w-12 items-center justify-center rounded-lg"
+                        style={{ backgroundColor: `${vertical.color}1A`, color: vertical.color }}
+                      >
+                        <Icon size={24} weight="duotone" />
+                      </div>
+                      <h2 className="mt-5 text-2xl font-semibold tracking-tight text-brand-navy">
+                        {vertical.name}
                       </h2>
-                      <p className="mt-2 text-brand-slate">
-                        {category.description}
+                      <p className="mt-3 text-brand-slate leading-7">
+                        {vertical.summary}
                       </p>
+                      <Link
+                        href={`/solutions/${vertical.slug}`}
+                        className="mt-6 inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold text-white transition-transform hover:scale-105"
+                        style={{ backgroundColor: vertical.color }}
+                      >
+                        View full details
+                        <ArrowRight size={16} />
+                      </Link>
                     </div>
-                  </Reveal>
 
-                  <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                    {items.map((solution, i) => {
-                      const Icon = solution.icon;
-                      return (
-                        <Reveal key={solution.slug} delay={i * 60}>
-                          <Link
-                            href={`/solutions/${solution.slug}`}
-                            className="group flex h-full flex-col rounded-2xl border border-brand-border p-6 transition-colors hover:border-brand-teal/50 hover:bg-brand-surface"
+                    <div className="lg:col-span-3">
+                      <h3 className="text-sm font-semibold uppercase tracking-wide text-brand-teal">
+                        {allItems.length} services &amp; capabilities
+                      </h3>
+                      <div className="mt-4 flex flex-wrap gap-2">
+                        {allItems.slice(0, 14).map((item) => (
+                          <span
+                            key={item}
+                            className="rounded-full border border-brand-border px-3 py-1.5 text-xs font-medium text-brand-slate"
                           >
-                            <div
-                              className="inline-flex h-11 w-11 items-center justify-center rounded-lg"
-                              style={{ backgroundColor: `${category.color}1A`, color: category.color }}
-                            >
-                              <Icon size={22} weight="duotone" />
-                            </div>
-                            <h3 className="mt-5 text-base font-semibold text-brand-navy">
-                              {solution.name}
-                            </h3>
-                            <p className="mt-2 flex-1 text-sm leading-6 text-brand-slate">
-                              {solution.tagline}
-                            </p>
-                            <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-blue group-hover:gap-2.5 transition-all">
-                              Learn more
-                              <ArrowRight size={14} />
-                            </span>
-                          </Link>
-                        </Reveal>
-                      );
-                    })}
+                            {item}
+                          </span>
+                        ))}
+                        {allItems.length > 14 && (
+                          <span className="rounded-full px-3 py-1.5 text-xs font-semibold text-brand-blue">
+                            +{allItems.length - 14} more
+                          </span>
+                        )}
+                      </div>
+                    </div>
                   </div>
-                </div>
+                </Reveal>
               );
             })}
           </div>

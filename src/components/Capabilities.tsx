@@ -17,8 +17,8 @@ const capabilities = [
     title: "Operate inside the compliance line",
     description:
       "Every module is built against RBI and NPCI frameworks from day one — audit trails, reporting, and KYC/AML checks are native to the platform, not bolted on after a regulator asks.",
-    href: "/solutions#compliance-risk",
-    linkLabel: "See compliance & risk tooling",
+    href: "/solutions/agency-banking-solutions",
+    linkLabel: "See risk management tooling",
     gradient: "linear-gradient(120deg, #0f2444 0%, #1c4ed8 140%)",
   },
   {
@@ -93,7 +93,7 @@ export default function Capabilities() {
               </div>
               <Link
                 href="/contact"
-                className="inline-flex shrink-0 items-center justify-center gap-2 rounded-md bg-brand-teal px-6 py-3 text-sm font-semibold text-brand-navy hover:bg-teal-300 transition-colors"
+                className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-brand-teal px-6 py-3 text-sm font-semibold text-brand-navy hover:bg-teal-300 transition-colors"
               >
                 Book a demo
                 <ArrowRight size={16} />

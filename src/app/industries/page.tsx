@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import { industries } from "@/lib/industries";
-import { getSolutionBySlug } from "@/lib/solutions";
+import { getVerticalBySlug } from "@/lib/verticals";
 
 export const metadata: Metadata = {
   title: "Industries | Nexara Fintech",
@@ -66,19 +66,19 @@ export default function IndustriesPage() {
                       </div>
                       <div>
                         <h3 className="text-sm font-semibold uppercase tracking-wide text-brand-teal">
-                          Relevant solutions
+                          Relevant business units
                         </h3>
                         <ul className="mt-4 flex flex-col gap-3">
-                          {industry.relevantSolutions.map((slug) => {
-                            const solution = getSolutionBySlug(slug);
-                            if (!solution) return null;
+                          {industry.relevantVerticals.map((slug) => {
+                            const vertical = getVerticalBySlug(slug);
+                            if (!vertical) return null;
                             return (
                               <li key={slug}>
                                 <Link
                                   href={`/solutions/${slug}`}
                                   className="inline-flex items-center gap-1.5 text-sm font-medium text-brand-blue hover:gap-2.5 transition-all"
                                 >
-                                  {solution.name}
+                                  {vertical.name}
                                   <ArrowRight size={14} />
                                 </Link>
                               </li>

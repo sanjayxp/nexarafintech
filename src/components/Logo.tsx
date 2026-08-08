@@ -32,7 +32,7 @@ export default function Logo({ dark = false }: { dark?: boolean }) {
             dark ? "text-slate-400" : "text-brand-slate-light"
           }`}
         >
-          Banking, connected.
+          Technology. Payments. Inclusion.
         </span>
       </span>
     </span>

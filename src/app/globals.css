@@ -100,3 +100,21 @@ html {
 .bg-hero-gradient {
   background: linear-gradient(115deg, #071224 0%, #0f2444 42%, #0ea5a3 130%);
 }
+
+.bg-glow-teal {
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(14, 165, 163, 0.45) 0%,
+    rgba(14, 165, 163, 0) 60%
+  );
+  filter: blur(40px);
+}
+
+.bg-glow-blue {
+  background: radial-gradient(
+    circle at 70% 40%,
+    rgba(28, 78, 216, 0.35) 0%,
+    rgba(28, 78, 216, 0) 60%
+  );
+  filter: blur(40px);
+}

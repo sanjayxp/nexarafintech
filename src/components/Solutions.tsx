@@ -1,13 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "@phosphor-icons/react/ssr";
+import { ArrowRight, CheckCircle } from "@phosphor-icons/react/ssr";
 import Reveal from "./Reveal";
-import { categories, getSolutionsByCategory } from "@/lib/solutions";
+import { verticals } from "@/lib/verticals";
 
 export default function Solutions() {
-  const [featured, ...rest] = categories;
-  const featuredItems = getSolutionsByCategory(featured.slug);
-
   return (
     <section id="solutions" className="py-24 bg-white">
       <div className="container-page">
@@ -15,109 +12,98 @@ export default function Solutions() {
           <div className="flex flex-wrap items-end justify-between gap-6">
             <div className="max-w-2xl">
               <h2 className="text-sm font-semibold uppercase tracking-wide text-brand-teal">
-                Solutions
+                What we do
               </h2>
               <p className="mt-3 text-3xl font-semibold tracking-tight text-brand-navy sm:text-4xl">
-                28 products across 7 categories
+                Three business units, one platform
               </p>
               <p className="mt-4 text-lg text-brand-slate">
-                Every product is built to integrate with existing core banking
-                systems and to meet the compliance bar banks and regulators
-                expect from day one.
+                From enterprise banking APIs to last-mile agency banking and
+                market-entry advisory — built to move fast without breaking
+                compliance.
               </p>
             </div>
             <Link
               href="/solutions"
               className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-blue hover:gap-2.5 transition-all shrink-0"
             >
-              View all solutions
+              See all business units
               <ArrowRight size={14} />
             </Link>
           </div>
         </Reveal>
 
-        <div className="mt-14 grid grid-cols-1 gap-5 lg:grid-cols-3">
-          <Reveal className="h-full lg:col-span-1">
-            <Link
-              href={`/solutions#${featured.slug}`}
-              className="group relative flex h-full min-h-[420px] flex-col justify-end overflow-hidden rounded-2xl p-7 text-white lg:min-h-full"
-            >
-              <Image
-                src={featured.photo}
-                alt=""
-                fill
-                sizes="(min-width: 1024px) 33vw, 100vw"
-                className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/70 to-brand-navy/20" />
-              <div className="relative">
-                <span className="inline-flex rounded-full bg-brand-teal/20 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-brand-teal-light">
-                  Featured
-                </span>
-                <h3 className="mt-4 text-xl font-semibold">
-                  {featured.name}
-                </h3>
-                <p className="mt-2 text-sm leading-6 text-slate-300">
-                  {featured.description}
-                </p>
-                <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-teal-light group-hover:gap-2.5 transition-all">
-                  {featuredItems.length} solutions
-                  <ArrowRight size={14} />
-                </span>
-              </div>
-            </Link>
-          </Reveal>
+        <div className="mt-14 grid grid-cols-1 gap-6 lg:grid-cols-3">
+          {verticals.map((vertical, i) => {
+            const Icon = vertical.icon;
+            const highlights = vertical.groups[0]?.items.slice(0, 4) ?? [];
+            return (
+              <Reveal key={vertical.slug} delay={i * 80} className="h-full">
+                <Link
+                  href={`/solutions/${vertical.slug}`}
+                  className="group flex h-full flex-col overflow-hidden rounded-2xl border border-brand-border transition-colors hover:border-brand-teal/50"
+                >
+                  <div className="relative h-40 w-full overflow-hidden">
+                    <Image
+                      src={vertical.photo}
+                      alt=""
+                      fill
+                      sizes="(min-width: 1024px) 33vw, 100vw"
+                      className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div
+                      className="absolute inset-0 opacity-60"
+                      style={{
+                        background: `linear-gradient(160deg, ${vertical.color} 0%, transparent 75%)`,
+                      }}
+                    />
+                    <div
+                      className="absolute bottom-3 left-3 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/95 shadow-sm"
+                      style={{ color: vertical.color }}
+                    >
+                      <Icon size={20} weight="duotone" />
+                    </div>
+                  </div>
 
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:col-span-2">
-            {rest.map((category, i) => {
-              const items = getSolutionsByCategory(category.slug);
-              const FeaturedIcon = items[0]?.icon;
-              return (
-                <Reveal key={category.slug} delay={i * 60}>
-                  <Link
-                    href={`/solutions#${category.slug}`}
-                    className="group flex h-full flex-col overflow-hidden rounded-2xl border border-brand-border transition-colors hover:border-brand-teal/50"
-                  >
-                    <div className="relative h-28 w-full overflow-hidden">
-                      <Image
-                        src={category.photo}
-                        alt=""
-                        fill
-                        sizes="(min-width: 1024px) 25vw, 50vw"
-                        className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
-                      />
-                      <div
-                        className="absolute inset-0 opacity-55"
-                        style={{
-                          background: `linear-gradient(160deg, ${category.color} 0%, transparent 75%)`,
-                        }}
-                      />
-                      {FeaturedIcon && (
-                        <div
-                          className="absolute bottom-3 left-3 inline-flex h-9 w-9 items-center justify-center rounded-lg bg-white/95 shadow-sm"
-                          style={{ color: category.color }}
+                  <div className="flex flex-1 flex-col p-6">
+                    <span
+                      className="text-xs font-semibold uppercase tracking-wide"
+                      style={{ color: vertical.color }}
+                    >
+                      Business Unit {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <h3 className="mt-2 text-lg font-semibold text-brand-navy">
+                      {vertical.name}
+                    </h3>
+                    <p className="mt-2 text-sm leading-6 text-brand-slate">
+                      {vertical.tagline}
+                    </p>
+
+                    <ul className="mt-4 flex flex-col gap-2">
+                      {highlights.map((item) => (
+                        <li
+                          key={item}
+                          className="flex items-center gap-2 text-sm text-brand-slate"
                         >
-                          <FeaturedIcon size={18} weight="duotone" />
-                        </div>
-                      )}
-                    </div>
-                    <div className="flex flex-1 flex-col p-5 group-hover:bg-brand-surface transition-colors">
-                      <h3 className="text-base font-semibold text-brand-navy">
-                        {category.name}
-                      </h3>
-                      <p className="mt-2 flex-1 text-sm leading-6 text-brand-slate">
-                        {category.description}
-                      </p>
-                      <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-blue group-hover:gap-2.5 transition-all">
-                        {items.length} solutions
-                        <ArrowRight size={14} />
-                      </span>
-                    </div>
-                  </Link>
-                </Reveal>
-              );
-            })}
-          </div>
+                          <CheckCircle
+                            size={14}
+                            weight="duotone"
+                            className="shrink-0 text-brand-teal"
+                          />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+
+                    <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-blue group-hover:gap-2.5 transition-all">
+                      Explore {vertical.shortName}
+                      <ArrowRight size={14} />
+                    </span>
+                  </div>
+                </Link>
+              </Reveal>
+            );
+          })}
         </div>
       </div>
     </section>

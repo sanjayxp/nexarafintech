@@ -14,7 +14,7 @@ export type Industry = {
   icon: Icon;
   summary: string;
   challenges: string[];
-  relevantSolutions: string[];
+  relevantVerticals: string[];
 };
 
 export const industries: Industry[] = [
@@ -29,12 +29,7 @@ export const industries: Industry[] = [
       "Modernising payment switching without disrupting existing settlement processes",
       "Meeting RBI reporting and audit requirements across every new channel",
     ],
-    relevantSolutions: [
-      "agency-banking",
-      "payment-switch",
-      "core-banking",
-      "digital-banking",
-    ],
+    relevantVerticals: ["agency-banking-solutions", "connected-banking-platform"],
   },
   {
     slug: "nbfcs",
@@ -47,12 +42,7 @@ export const industries: Industry[] = [
       "Connecting to account aggregator data for faster, better-informed decisions",
       "Servicing and collecting across a growing, geographically spread loan book",
     ],
-    relevantSolutions: [
-      "loan-origination-system",
-      "loan-management-system",
-      "connected-open-banking",
-      "fraud-risk-management",
-    ],
+    relevantVerticals: ["connected-banking-platform", "consulting-advisory"],
   },
   {
     slug: "mfis",
@@ -65,12 +55,7 @@ export const industries: Industry[] = [
       "Keeping group-lending disbursal and collection fully auditable",
       "Managing a large, distributed field agent network",
     ],
-    relevantSolutions: [
-      "agency-banking",
-      "bc-lifecycle-management",
-      "financial-inclusion-wallets",
-      "loan-management-system",
-    ],
+    relevantVerticals: ["agency-banking-solutions"],
   },
   {
     slug: "fintech-startups",
@@ -83,12 +68,7 @@ export const industries: Industry[] = [
       "Getting a card or BNPL program to market quickly against well-funded competitors",
       "Scaling fraud and risk operations without a large in-house team",
     ],
-    relevantSolutions: [
-      "neobanking",
-      "prepaid-card-issuance",
-      "bnpl-platform",
-      "fraud-risk-management",
-    ],
+    relevantVerticals: ["connected-banking-platform"],
   },
   {
     slug: "cooperative-rural-banks",
@@ -101,12 +81,7 @@ export const industries: Industry[] = [
       "Modernising member services without a full core banking replacement",
       "Meeting compliance expectations with limited in-house technology teams",
     ],
-    relevantSolutions: [
-      "aeps-micro-atm",
-      "domestic-remittance",
-      "onboarding-kyc",
-      "reconciliation",
-    ],
+    relevantVerticals: ["agency-banking-solutions"],
   },
   {
     slug: "government-psu",
@@ -119,12 +94,7 @@ export const industries: Industry[] = [
       "Operating in low-bandwidth rural and semi-urban deployment areas",
       "Producing transparent utilisation reports for program audits",
     ],
-    relevantSolutions: [
-      "financial-inclusion-wallets",
-      "payout-platform",
-      "onboarding-kyc",
-      "reconciliation",
-    ],
+    relevantVerticals: ["agency-banking-solutions", "connected-banking-platform"],
   },
 ];
 

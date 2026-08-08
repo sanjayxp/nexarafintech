@@ -102,7 +102,7 @@ export default async function InsightDetail({
                   </p>
                   <Link
                     href="/contact"
-                    className="mt-5 inline-flex items-center justify-center gap-2 rounded-md bg-brand-navy px-6 py-3 text-sm font-semibold text-white hover:bg-brand-navy-2 transition-colors"
+                    className="mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-brand-navy px-6 py-3 text-sm font-semibold text-white hover:bg-brand-navy-2 transition-colors"
                   >
                     Talk to our team
                     <ArrowRight size={16} />

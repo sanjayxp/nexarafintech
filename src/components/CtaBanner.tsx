@@ -15,7 +15,7 @@ export default function CtaBanner() {
           </p>
           <Link
             href="/contact"
-            className="mt-8 inline-flex items-center justify-center gap-2 rounded-md bg-brand-teal px-6 py-3.5 text-sm font-semibold text-brand-navy hover:bg-teal-300 transition-colors"
+            className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-brand-teal px-6 py-3.5 text-sm font-semibold text-brand-navy hover:bg-teal-300 transition-colors"
           >
             Talk to our experts
             <ArrowRight size={16} />

@@ -1,25 +1,14 @@
-import { ShieldCheck, Lightning, PuzzlePiece } from "@phosphor-icons/react/ssr";
+import { CheckCircle } from "@phosphor-icons/react/ssr";
 import Reveal from "./Reveal";
 
-const pillars = [
-  {
-    icon: PuzzlePiece,
-    title: "One integration, full stack",
-    description:
-      "Agency banking, payments, cards and compliance run on a single API layer instead of a patchwork of vendors.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Compliance-native",
-    description:
-      "Built around RBI and NPCI frameworks from day one, with audit trails and reporting your compliance team can rely on.",
-  },
-  {
-    icon: Lightning,
-    title: "Fast to deploy",
-    description:
-      "Modular architecture and pre-built connectors get most institutions live in weeks, not the industry-standard quarters.",
-  },
+const mission = [
+  "Enable seamless digital payment ecosystems.",
+  "Accelerate financial inclusion using technology.",
+  "Build AI-driven financial service platforms.",
+  "Simplify banking operations through automation.",
+  "Strengthen governance and compliance for banks and fintechs.",
+  "Empower businesses with secure API-based financial infrastructure.",
+  "Create scalable digital ecosystems connecting banks, fintechs, enterprises, and customers.",
 ];
 
 export default function About({ compact = false }: { compact?: boolean }) {
@@ -30,44 +19,55 @@ export default function About({ compact = false }: { compact?: boolean }) {
           {!compact && (
             <>
               <h2 className="text-sm font-semibold uppercase tracking-wide text-brand-teal">
-                About Nexara
+                Our Objective
               </h2>
               <p className="mt-3 text-3xl font-semibold tracking-tight text-brand-navy sm:text-4xl">
-                Infrastructure for the next billion banking relationships
+                India&apos;s trusted digital financial infrastructure
               </p>
             </>
           )}
           <p className="mt-6 text-lg leading-8 text-brand-slate first:mt-0">
-            Nexara Fintech builds the connective tissue between core
-            banking systems and the last mile — agents, merchants,
-            wallets, and payment rails. We work exclusively with regulated
-            financial institutions, which means every product on our
-            platform is designed around compliance, auditability, and
-            uptime first, features second.
+            To build India&apos;s trusted digital financial infrastructure by
+            enabling banks, financial institutions, fintech companies, and
+            enterprises with secure, compliant, and technology-driven
+            solutions that accelerate digital payments, financial inclusion,
+            operational excellence, and customer acquisition.
           </p>
           <p className="mt-4 text-lg leading-8 text-brand-slate">
-            Our teams sit alongside client technology and compliance
-            functions from scoping through go-live, and stay on for ongoing
-            operations, monitoring, and regulatory updates.
+            Our objective is to bridge the gap between financial institutions
+            and the last-mile customer through intelligent technology
+            platforms, AI-powered solutions, digital banking infrastructure,
+            payment orchestration, and strategic consulting services that
+            simplify the delivery of financial services across India.
           </p>
         </Reveal>
 
         <Reveal delay={100} className="flex flex-col gap-8">
-          {pillars.map(({ icon: Icon, title, description }) => (
-            <div key={title} className="flex gap-5">
-              <div className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-brand-navy/5 text-brand-navy">
-                <Icon size={22} weight="duotone" />
-              </div>
-              <div>
-                <h3 className="text-base font-semibold text-brand-navy">
-                  {title}
-                </h3>
-                <p className="mt-1.5 text-sm leading-6 text-brand-slate">
-                  {description}
-                </p>
-              </div>
-            </div>
-          ))}
+          <div className="rounded-2xl border-l-4 border-brand-teal bg-brand-surface p-6">
+            <h3 className="text-sm font-semibold uppercase tracking-wide text-brand-teal">
+              Vision
+            </h3>
+            <p className="mt-2 text-brand-navy leading-7">
+              To become India&apos;s most trusted FinTech infrastructure and
+              advisory company, empowering financial institutions through
+              innovation, technology, governance, and nationwide digital
+              distribution.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-wide text-brand-teal">
+              Mission
+            </h3>
+            <ul className="mt-4 flex flex-col gap-3">
+              {mission.map((item) => (
+                <li key={item} className="flex gap-2.5 text-sm text-brand-slate leading-6">
+                  <CheckCircle size={16} weight="duotone" className="mt-0.5 shrink-0 text-brand-teal" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
         </Reveal>
       </div>
     </section>
