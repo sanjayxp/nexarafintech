@@ -1,6 +1,6 @@
 export default function Logo({ dark = false }: { dark?: boolean }) {
-  const lineColor = dark ? "rgba(7,18,36,0.35)" : "rgba(255,255,255,0.55)";
-  const nodeColor = dark ? "#0d9488" : "#5eead4";
+  const mainColor = dark ? "#071224" : "#ffffff";
+  const accentColor = dark ? "#0ea5a3" : "#5eead4";
 
   return (
     <span className="inline-flex items-center gap-2.5">
@@ -9,14 +9,9 @@ export default function Logo({ dark = false }: { dark?: boolean }) {
           dark ? "bg-white" : "bg-brand-navy"
         }`}
       >
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden>
-          <line x1="6" y1="5" x2="6" y2="19" stroke={lineColor} strokeWidth="2" strokeLinecap="round" />
-          <line x1="6" y1="5" x2="18" y2="19" stroke={lineColor} strokeWidth="2" strokeLinecap="round" />
-          <line x1="18" y1="5" x2="18" y2="19" stroke={lineColor} strokeWidth="2" strokeLinecap="round" />
-          <circle cx="6" cy="5" r="2.4" fill={nodeColor} />
-          <circle cx="6" cy="19" r="2.4" fill={nodeColor} />
-          <circle cx="18" cy="5" r="2.4" fill={nodeColor} />
-          <circle cx="18" cy="19" r="2.4" fill={nodeColor} />
+        <svg viewBox="0 0 40 40" width="22" height="22" aria-hidden>
+          <polyline points="8,8 19,20 8,32" stroke={mainColor} strokeWidth="5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+          <polyline points="20,8 31,20 20,32" stroke={accentColor} strokeWidth="5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </span>
       <span className="flex flex-col leading-none">
