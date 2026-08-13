@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { Fragment } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CheckCircle, Handshake } from "@phosphor-icons/react/ssr";
 import Nav from "@/components/Nav";
@@ -33,62 +35,98 @@ export default function IndustriesPage() {
             {industries.map((industry, i) => {
               const Icon = industry.icon;
               return (
-                <Reveal key={industry.slug} delay={i * 60}>
-                  <div
-                    id={industry.slug}
-                    className="grid scroll-mt-24 grid-cols-1 gap-10 rounded-2xl border border-brand-border p-8 lg:grid-cols-3 lg:p-10"
-                  >
-                    <div className="lg:col-span-1">
-                      <div className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-brand-navy/5 text-brand-navy">
-                        <Icon size={24} weight="duotone" />
+                <Fragment key={industry.slug}>
+                  <Reveal delay={i * 60}>
+                    <div
+                      id={industry.slug}
+                      className="grid scroll-mt-24 grid-cols-1 gap-10 rounded-2xl border border-brand-border p-8 lg:grid-cols-3 lg:p-10"
+                    >
+                      <div className="lg:col-span-1">
+                        <div
+                          className="inline-flex h-12 w-12 items-center justify-center rounded-lg"
+                          style={{ backgroundColor: `${industry.color}1A`, color: industry.color }}
+                        >
+                          <Icon size={24} weight="duotone" />
+                        </div>
+                        <h2 className="mt-5 text-2xl font-semibold tracking-tight text-brand-navy">
+                          {industry.name}
+                        </h2>
+                        <p className="mt-3 text-brand-slate leading-7">
+                          {industry.summary}
+                        </p>
                       </div>
-                      <h2 className="mt-5 text-2xl font-semibold tracking-tight text-brand-navy">
-                        {industry.name}
-                      </h2>
-                      <p className="mt-3 text-brand-slate leading-7">
-                        {industry.summary}
-                      </p>
-                    </div>
 
-                    <div className="lg:col-span-2 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:mt-[4.25rem]">
-                      <div>
-                        <h3 className="text-sm font-semibold uppercase tracking-wide text-brand-teal">
-                          What they&apos;re solving for
-                        </h3>
-                        <ul className="mt-4 flex flex-col gap-3">
-                          {industry.challenges.map((c) => (
-                            <li key={c} className="flex gap-2.5 text-sm text-brand-slate leading-6">
-                              <CheckCircle size={16} weight="duotone" className="mt-0.5 shrink-0 text-brand-teal" />
-                              {c}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      <div>
-                        <h3 className="text-sm font-semibold uppercase tracking-wide text-brand-teal">
-                          Relevant business units
-                        </h3>
-                        <ul className="mt-4 flex flex-col gap-3">
-                          {industry.relevantVerticals.map((slug) => {
-                            const vertical = getVerticalBySlug(slug);
-                            if (!vertical) return null;
-                            return (
-                              <li key={slug}>
-                                <Link
-                                  href={`/solutions/${slug}`}
-                                  className="inline-flex items-center gap-1.5 text-sm font-medium text-brand-blue hover:gap-2.5 transition-all"
-                                >
-                                  {vertical.name}
-                                  <ArrowRight size={14} />
-                                </Link>
+                      <div className="lg:col-span-2 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:mt-[4.25rem]">
+                        <div>
+                          <h3 className="text-sm font-semibold uppercase tracking-wide text-brand-teal">
+                            What they&apos;re solving for
+                          </h3>
+                          <ul className="mt-4 flex flex-col gap-3">
+                            {industry.challenges.map((c) => (
+                              <li key={c} className="flex gap-2.5 text-sm text-brand-slate leading-6">
+                                <CheckCircle size={16} weight="duotone" className="mt-0.5 shrink-0 text-brand-teal" />
+                                {c}
                               </li>
-                            );
-                          })}
-                        </ul>
+                            ))}
+                          </ul>
+                        </div>
+                        <div>
+                          <h3 className="text-sm font-semibold uppercase tracking-wide text-brand-teal">
+                            Relevant business units
+                          </h3>
+                          <ul className="mt-4 flex flex-col gap-3">
+                            {industry.relevantVerticals.map((slug) => {
+                              const vertical = getVerticalBySlug(slug);
+                              if (!vertical) return null;
+                              return (
+                                <li key={slug}>
+                                  <Link
+                                    href={`/solutions/${slug}`}
+                                    className="inline-flex items-center gap-1.5 text-sm font-medium text-brand-blue hover:gap-2.5 transition-all"
+                                  >
+                                    {vertical.name}
+                                    <ArrowRight size={14} />
+                                  </Link>
+                                </li>
+                              );
+                            })}
+                          </ul>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </Reveal>
+                  </Reveal>
+
+                  {i === 2 && (
+                    <Reveal>
+                      <div className="relative overflow-hidden rounded-2xl">
+                        <div className="relative h-64 w-full sm:h-80">
+                          <Image
+                            src="/images/industries-team-meeting.jpg"
+                            alt=""
+                            fill
+                            sizes="100vw"
+                            className="object-cover object-center"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/90 via-brand-navy/50 to-transparent" />
+                        </div>
+                        <div className="absolute inset-0 flex items-center">
+                          <div className="max-w-md px-8 sm:px-12">
+                            <p className="text-2xl font-semibold leading-snug tracking-tight text-white sm:text-3xl">
+                              Six institution types. One platform built to
+                              meet each of them where they are.
+                            </p>
+                            <p className="mt-4 text-sm leading-6 text-slate-300">
+                              Whether it&apos;s a district cooperative bank or
+                              a national payments program, our teams work
+                              directly with yours on rollout, compliance, and
+                              scale.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </Reveal>
+                  )}
+                </Fragment>
               );
             })}
           </div>

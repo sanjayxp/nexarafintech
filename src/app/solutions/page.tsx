@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, SquaresFour } from "@phosphor-icons/react/ssr";
 import Nav from "@/components/Nav";
@@ -36,19 +37,39 @@ export default function SolutionsIndex() {
                 <Reveal key={vertical.slug} delay={i * 60}>
                   <div
                     id={vertical.slug}
-                    className="grid scroll-mt-24 grid-cols-1 gap-10 rounded-2xl border border-brand-border p-8 lg:grid-cols-5 lg:p-10"
+                    className="grid scroll-mt-24 grid-cols-1 overflow-hidden rounded-2xl border border-brand-border lg:grid-cols-12"
                   >
-                    <div className="lg:col-span-2">
+                    <div
+                      className={`relative h-56 lg:h-auto lg:col-span-4 ${
+                        i % 2 === 1 ? "lg:order-2" : ""
+                      }`}
+                    >
+                      <Image
+                        src={vertical.photo}
+                        alt=""
+                        fill
+                        sizes="(min-width: 1024px) 33vw, 100vw"
+                        className="object-cover object-center"
+                      />
+                      <div
+                        className="absolute inset-0 opacity-70"
+                        style={{
+                          background: `linear-gradient(160deg, ${vertical.color} 0%, transparent 65%)`,
+                        }}
+                      />
+                      <div
+                        className="absolute bottom-4 left-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/95 shadow-sm"
+                        style={{ color: vertical.color }}
+                      >
+                        <Icon size={20} weight="duotone" />
+                      </div>
+                    </div>
+
+                    <div className="p-8 lg:col-span-4 lg:p-10">
                       <span className="text-xs font-semibold text-brand-slate-light">
                         BUSINESS UNIT {String(i + 1).padStart(2, "0")} / {String(verticals.length).padStart(2, "0")}
                       </span>
-                      <div
-                        className="mt-4 inline-flex h-12 w-12 items-center justify-center rounded-lg"
-                        style={{ backgroundColor: `${vertical.color}1A`, color: vertical.color }}
-                      >
-                        <Icon size={24} weight="duotone" />
-                      </div>
-                      <h2 className="mt-5 text-2xl font-semibold tracking-tight text-brand-navy">
+                      <h2 className="mt-3 text-2xl font-semibold tracking-tight text-brand-navy">
                         {vertical.name}
                       </h2>
                       <p className="mt-3 text-brand-slate leading-7">
@@ -64,12 +85,12 @@ export default function SolutionsIndex() {
                       </Link>
                     </div>
 
-                    <div className="lg:col-span-3">
+                    <div className="border-t border-brand-border p-8 lg:col-span-4 lg:border-l lg:border-t-0 lg:p-10">
                       <h3 className="text-sm font-semibold uppercase tracking-wide text-brand-teal">
                         {allItems.length} services &amp; capabilities
                       </h3>
                       <div className="mt-4 flex flex-wrap gap-2">
-                        {allItems.slice(0, 14).map((item) => (
+                        {allItems.slice(0, 10).map((item) => (
                           <span
                             key={item}
                             className="rounded-full border border-brand-border px-3 py-1.5 text-xs font-medium text-brand-slate"
@@ -77,9 +98,9 @@ export default function SolutionsIndex() {
                             {item}
                           </span>
                         ))}
-                        {allItems.length > 14 && (
+                        {allItems.length > 10 && (
                           <span className="rounded-full px-3 py-1.5 text-xs font-semibold text-brand-blue">
-                            +{allItems.length - 14} more
+                            +{allItems.length - 10} more
                           </span>
                         )}
                       </div>

@@ -53,6 +53,7 @@ export default async function InsightDetail({
           eyebrow={`${article.tag} · ${formatArticleDate(article.published_at)}`}
           title={article.title}
           icon={Newspaper}
+          photo={article.cover_image_url ?? undefined}
           breadcrumb={[
             { label: "Insights", href: "/insights" },
             { label: article.title },

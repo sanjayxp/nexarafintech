@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight, CheckCircle } from "@phosphor-icons/react/ssr";
@@ -63,6 +64,24 @@ export default async function VerticalDetail({
                 <p className="mt-4 text-lg leading-8 text-brand-slate">
                   {vertical.summary}
                 </p>
+              </Reveal>
+
+              <Reveal delay={40}>
+                <div className="relative mt-8 h-56 w-full overflow-hidden rounded-2xl sm:h-72">
+                  <Image
+                    src={vertical.photo}
+                    alt=""
+                    fill
+                    sizes="(min-width: 1024px) 66vw, 100vw"
+                    className="object-cover object-center"
+                  />
+                  <div
+                    className="absolute inset-0 opacity-70"
+                    style={{
+                      background: `linear-gradient(160deg, ${vertical.color} 0%, transparent 65%)`,
+                    }}
+                  />
+                </div>
               </Reveal>
 
               {vertical.vision && (
@@ -251,20 +270,37 @@ export default async function VerticalDetail({
                       <Link
                         key={item.slug}
                         href={`/solutions/${item.slug}`}
-                        className="group rounded-2xl border border-brand-border p-6 transition-colors hover:border-brand-teal/50 hover:bg-brand-surface"
+                        className="group flex overflow-hidden rounded-2xl border border-brand-border transition-colors hover:border-brand-teal/50 hover:bg-brand-surface"
                       >
-                        <div
-                          className="inline-flex h-11 w-11 items-center justify-center rounded-lg"
-                          style={{ backgroundColor: `${item.color}1A`, color: item.color }}
-                        >
-                          <RelIcon size={22} weight="duotone" />
+                        <div className="relative h-auto w-28 shrink-0 overflow-hidden sm:w-36">
+                          <Image
+                            src={item.photo}
+                            alt=""
+                            fill
+                            sizes="144px"
+                            className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                          />
+                          <div
+                            className="absolute inset-0 opacity-70"
+                            style={{
+                              background: `linear-gradient(160deg, ${item.color} 0%, transparent 75%)`,
+                            }}
+                          />
                         </div>
-                        <h3 className="mt-5 text-base font-semibold text-brand-navy">
-                          {item.name}
-                        </h3>
-                        <p className="mt-2 text-sm leading-6 text-brand-slate">
-                          {item.tagline}
-                        </p>
+                        <div className="flex-1 p-6">
+                          <div
+                            className="inline-flex h-9 w-9 items-center justify-center rounded-lg"
+                            style={{ backgroundColor: `${item.color}1A`, color: item.color }}
+                          >
+                            <RelIcon size={18} weight="duotone" />
+                          </div>
+                          <h3 className="mt-4 text-base font-semibold text-brand-navy">
+                            {item.name}
+                          </h3>
+                          <p className="mt-2 text-sm leading-6 text-brand-slate">
+                            {item.tagline}
+                          </p>
+                        </div>
                       </Link>
                     );
                   })}
