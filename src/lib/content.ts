@@ -1,7 +1,6 @@
 export const nav = [
   { label: "Solutions", href: "/solutions" },
   { label: "Industries", href: "/industries" },
-  { label: "Insights", href: "/insights" },
   { label: "Partners", href: "/partners" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
