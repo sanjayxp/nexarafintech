@@ -5,7 +5,7 @@ import Reveal from "./Reveal";
 
 export default function Industries() {
   return (
-    <section id="industries" className="py-24 bg-brand-navy text-white">
+    <section id="industries" className="py-24 bg-brand-surface text-brand-navy">
       <div className="container-page">
         <Reveal>
           <div className="flex flex-wrap items-end justify-between gap-6">
@@ -16,7 +16,7 @@ export default function Industries() {
               <p className="font-heading mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
                 Built for regulated financial institutions
               </p>
-              <p className="mt-4 text-lg text-slate-300">
+              <p className="mt-4 text-lg text-brand-slate">
                 From national banks to district-level cooperative networks, our
                 platform is deployed across every tier of India&apos;s financial
                 system.
@@ -38,12 +38,12 @@ export default function Industries() {
               <Link
                 key={slug}
                 href={`/industries#${slug}`}
-                className="flex items-center gap-4 rounded-xl border border-white/10 bg-white/5 p-5 hover:bg-white/10 transition-colors"
+                className="flex items-center gap-4 rounded-xl border border-brand-border bg-white p-5 hover:border-brand-teal/40 hover:bg-brand-teal-light/40 transition-colors"
               >
-                <div className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/10 text-brand-teal">
+                <div className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-teal-light text-brand-teal">
                   <Icon size={20} weight="duotone" />
                 </div>
-                <p className="text-sm font-medium">{name}</p>
+                <p className="text-sm font-medium text-brand-navy">{name}</p>
               </Link>
             ))}
           </div>

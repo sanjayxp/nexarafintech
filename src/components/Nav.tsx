@@ -26,9 +26,9 @@ export default function Nav() {
   return (
     <header className="sticky top-0 z-50 pt-4 pb-2">
       <div className="container-page">
-        <div className="flex h-16 items-center justify-between rounded-full border border-white/10 bg-brand-navy/95 px-4 shadow-lg shadow-brand-navy/10 backdrop-blur lg:px-6">
+        <div className="flex h-16 items-center justify-between rounded-full border border-brand-border bg-white/95 px-4 shadow-lg shadow-brand-navy/5 backdrop-blur lg:px-6">
           <Link href="/" className="shrink-0">
-            <Logo dark />
+            <Logo />
           </Link>
 
           <nav className="hidden lg:flex items-center gap-8">
@@ -39,7 +39,7 @@ export default function Nav() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="text-sm font-medium text-slate-200 hover:text-brand-teal-light transition-colors"
+                    className="text-sm font-medium text-brand-slate hover:text-brand-teal transition-colors"
                   >
                     {item.label}
                   </Link>
@@ -49,7 +49,7 @@ export default function Nav() {
                 <div key={item.href} className="group relative">
                   <Link
                     href={item.href}
-                    className="flex items-center gap-1 text-sm font-medium text-slate-200 hover:text-brand-teal-light transition-colors"
+                    className="flex items-center gap-1 text-sm font-medium text-brand-slate hover:text-brand-teal transition-colors"
                   >
                     {item.label}
                     <CaretDown
@@ -78,7 +78,7 @@ export default function Nav() {
           <div className="hidden lg:block">
             <Link
               href="/contact"
-              className="inline-flex items-center rounded-full bg-brand-teal px-5 py-2.5 text-sm font-semibold text-brand-navy hover:bg-teal-300 transition-colors"
+              className="inline-flex items-center rounded-full bg-brand-teal px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#b23d19] transition-colors"
             >
               Request a Demo
             </Link>
@@ -87,7 +87,7 @@ export default function Nav() {
           <button
             type="button"
             aria-label="Toggle menu"
-            className="lg:hidden inline-flex items-center justify-center rounded-full p-2 text-white"
+            className="lg:hidden inline-flex items-center justify-center rounded-full p-2 text-brand-navy"
             onClick={() => setOpen((v) => !v)}
           >
             {open ? <X size={24} /> : <List size={24} />}
@@ -149,7 +149,7 @@ export default function Nav() {
               <Link
                 href="/contact"
                 onClick={() => setOpen(false)}
-                className="mt-2 inline-flex items-center justify-center rounded-full bg-brand-navy px-4 py-2.5 text-sm font-semibold text-white"
+                className="mt-2 inline-flex items-center justify-center rounded-full bg-brand-teal px-4 py-2.5 text-sm font-semibold text-white"
               >
                 Request a Demo
               </Link>

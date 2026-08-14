@@ -23,7 +23,7 @@ export const industries: Industry[] = [
     slug: "banks",
     name: "Public & Private Sector Banks",
     icon: Bank,
-    color: "#1c4ed8",
+    color: "#9a3412",
     summary:
       "Banks use our platform to extend reach through agency networks, modernise payment switching, and launch digital-first products without replacing their core banking system.",
     challenges: [
@@ -51,7 +51,7 @@ export const industries: Industry[] = [
     slug: "mfis",
     name: "Microfinance Institutions",
     icon: UsersThree,
-    color: "#0ea5a3",
+    color: "#d2491f",
     summary:
       "MFIs use our agency banking and financial inclusion wallet infrastructure to reach borrower groups in low-connectivity areas while keeping disbursal and collection auditable.",
     challenges: [
@@ -65,7 +65,7 @@ export const industries: Industry[] = [
     slug: "fintech-startups",
     name: "Fintech Startups & Neobanks",
     icon: Rocket,
-    color: "#1c4ed8",
+    color: "#9a3412",
     summary:
       "Fintech startups build on our neobanking, card issuance, and BNPL modules to launch consumer or embedded-finance products without acquiring their own banking or card licences.",
     challenges: [
@@ -93,7 +93,7 @@ export const industries: Industry[] = [
     slug: "government-psu",
     name: "Government & PSU Payment Programs",
     icon: Globe,
-    color: "#0ea5a3",
+    color: "#d2491f",
     summary:
       "Government and PSU programs use our financial inclusion wallets and bulk payout platform to run direct benefit transfer and welfare disbursal at state or national scale.",
     challenges: [

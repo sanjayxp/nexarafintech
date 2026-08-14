@@ -10,7 +10,7 @@ const capabilities = [
       "Launch a new agency banking territory, payment rail, or card program in weeks. Modular services mean you configure and ship instead of waiting on a core release cycle.",
     href: "/solutions",
     linkLabel: "Explore our solutions",
-    gradient: "linear-gradient(120deg, #0f2444 0%, #0ea5a3 140%)",
+    gradient: "linear-gradient(120deg, #40261a 0%, #d2491f 140%)",
   },
   {
     icon: ShieldCheck,
@@ -19,7 +19,7 @@ const capabilities = [
       "Every module is built against RBI and NPCI frameworks from day one — audit trails, reporting, and KYC/AML checks are native to the platform, not bolted on after a regulator asks.",
     href: "/solutions/agency-banking-solutions",
     linkLabel: "See risk management tooling",
-    gradient: "linear-gradient(120deg, #0f2444 0%, #1c4ed8 140%)",
+    gradient: "linear-gradient(120deg, #40261a 0%, #9a3412 140%)",
   },
   {
     icon: TrendUp,
@@ -28,20 +28,20 @@ const capabilities = [
       "From a single-district agent network to a national payment switch, the same architecture carries the volume. No forced migration when your institution outgrows the pilot.",
     href: "/insights/payment-switch-design-for-upi-scale",
     linkLabel: "Read how we design for scale",
-    gradient: "linear-gradient(120deg, #0f2444 0%, #334155 140%)",
+    gradient: "linear-gradient(120deg, #40261a 0%, #57534e 140%)",
   },
 ];
 
 export default function Capabilities() {
   return (
-    <section className="bg-brand-navy py-24">
+    <section className="bg-brand-surface py-24">
       <div className="container-page">
         <Reveal>
           <div className="max-w-2xl">
             <h2 className="text-sm font-semibold uppercase tracking-wide text-brand-teal">
               Why Nexara
             </h2>
-            <p className="font-heading mt-3 text-4xl font-bold tracking-tight text-white sm:text-5xl">
+            <p className="font-heading mt-3 text-4xl font-bold tracking-tight text-brand-navy sm:text-5xl">
               Built to move fast without breaking compliance
             </p>
           </div>
@@ -63,7 +63,7 @@ export default function Capabilities() {
                     <h3 className="mt-5 text-xl font-semibold text-white">
                       {cap.title}
                     </h3>
-                    <p className="mt-3 max-w-2xl text-slate-300 leading-7">
+                    <p className="mt-3 max-w-2xl text-stone-300 leading-7">
                       {cap.description}
                     </p>
                   </div>
@@ -82,18 +82,18 @@ export default function Capabilities() {
           })}
 
           <Reveal delay={capabilities.length * 100}>
-            <div className="flex flex-col items-center justify-between gap-6 rounded-2xl bg-white/5 p-8 text-center sm:flex-row sm:text-left lg:p-10">
+            <div className="flex flex-col items-center justify-between gap-6 rounded-2xl border border-brand-border bg-white p-8 text-center sm:flex-row sm:text-left lg:p-10">
               <div>
-                <p className="text-xl font-semibold text-white">
+                <p className="text-xl font-semibold text-brand-navy">
                   Ready to take the next step?
                 </p>
-                <p className="mt-1 text-slate-300">
+                <p className="mt-1 text-brand-slate">
                   Talk to us about the network, product, or migration you&apos;re planning.
                 </p>
               </div>
               <Link
                 href="/contact"
-                className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-brand-teal px-6 py-3 text-sm font-semibold text-brand-navy hover:bg-teal-300 transition-colors"
+                className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-brand-teal px-6 py-3 text-sm font-semibold text-white hover:bg-[#b23d19] transition-colors"
               >
                 Book a demo
                 <ArrowRight size={16} />

@@ -50,12 +50,12 @@ const columns = [
 
 export default function Footer() {
   return (
-    <footer className="bg-brand-navy text-slate-300">
+    <footer className="bg-brand-navy text-stone-300">
       <div className="container-page py-16">
         <div className="grid grid-cols-2 gap-10 lg:grid-cols-5">
           <div className="col-span-2">
             <Logo dark />
-            <p className="mt-4 max-w-xs text-sm leading-6 text-slate-400">
+            <p className="mt-4 max-w-xs text-sm leading-6 text-stone-400">
               Agency banking, payments, and connected banking infrastructure
               for regulated financial institutions across India.
             </p>
@@ -85,7 +85,7 @@ export default function Footer() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-sm text-slate-400 hover:text-white transition-colors"
+                      className="text-sm text-stone-400 hover:text-white transition-colors"
                     >
                       {link.label}
                     </Link>
@@ -97,15 +97,15 @@ export default function Footer() {
         </div>
 
         <div className="mt-14 flex flex-col gap-4 border-t border-white/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-sm text-slate-400">
+          <p className="text-sm text-stone-400">
             &copy; {new Date().getFullYear()} Nexara Fintech. All rights
             reserved.
           </p>
           <div className="flex gap-6">
-            <a href="#" className="text-sm text-slate-400 hover:text-white">
+            <a href="#" className="text-sm text-stone-400 hover:text-white">
               Privacy Policy
             </a>
-            <a href="#" className="text-sm text-slate-400 hover:text-white">
+            <a href="#" className="text-sm text-stone-400 hover:text-white">
               Disclaimer
             </a>
           </div>

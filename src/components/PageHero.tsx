@@ -19,9 +19,9 @@ export default function PageHero({
   photo?: string;
 }) {
   return (
-    <section className="relative overflow-hidden bg-brand-navy text-white">
+    <section className="relative overflow-hidden bg-white text-brand-navy">
       <div className="bg-hero-gradient pointer-events-none absolute inset-0" />
-      <div className="bg-dot-grid pointer-events-none absolute inset-0 opacity-30" />
+      <div className="bg-dot-grid pointer-events-none absolute inset-0 opacity-40" />
 
       {photo && (
         <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[42%] lg:block">
@@ -37,14 +37,14 @@ export default function PageHero({
               className="absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(115deg, #071224 0%, rgba(15,36,68,0.55) 18%, rgba(14,165,163,0.35) 60%, rgba(14,165,163,0.15) 100%)",
+                  "linear-gradient(115deg, rgba(42,23,16,0.18) 0%, rgba(210,73,31,0.12) 55%, transparent 100%)",
                 mixBlendMode: "multiply",
               }}
             />
             <div
               className="absolute inset-0"
               style={{
-                background: "linear-gradient(90deg, #071224 0%, transparent 18%)",
+                background: "linear-gradient(90deg, #fff8f3 0%, transparent 18%)",
               }}
             />
           </div>
@@ -54,9 +54,9 @@ export default function PageHero({
       {Icon && !photo && (
         <div className="pointer-events-none absolute inset-0 hidden lg:block">
           <div
-            className="animate-float-card absolute right-[8%] top-1/2 flex h-16 w-16 -translate-y-1/2 items-center justify-center rounded-2xl bg-white/10 backdrop-blur-md ring-1 ring-white/20"
+            className="animate-float-card absolute right-[8%] top-1/2 flex h-16 w-16 -translate-y-1/2 items-center justify-center rounded-2xl bg-brand-teal-light ring-1 ring-brand-teal/20"
           >
-            <Icon size={28} weight="duotone" className="text-brand-teal-light" />
+            <Icon size={28} weight="duotone" className="text-brand-teal" />
           </div>
         </div>
       )}
@@ -64,8 +64,8 @@ export default function PageHero({
       <div className="container-page relative py-20 lg:py-24">
         <div className={photo ? "max-w-2xl lg:max-w-xl" : ""}>
           {breadcrumb && (
-            <nav className="mb-6 flex flex-wrap items-center gap-1.5 text-sm text-slate-400">
-              <Link href="/" className="hover:text-white transition-colors">
+            <nav className="mb-6 flex flex-wrap items-center gap-1.5 text-sm text-brand-slate-light">
+              <Link href="/" className="hover:text-brand-navy transition-colors">
                 Home
               </Link>
               {breadcrumb.map((item) => (
@@ -74,12 +74,12 @@ export default function PageHero({
                   {item.href ? (
                     <Link
                       href={item.href}
-                      className="hover:text-white transition-colors"
+                      className="hover:text-brand-navy transition-colors"
                     >
                       {item.label}
                     </Link>
                   ) : (
-                    <span className="text-slate-200">{item.label}</span>
+                    <span className="text-brand-navy">{item.label}</span>
                   )}
                 </span>
               ))}
@@ -97,7 +97,7 @@ export default function PageHero({
           </h1>
           {description && (
             <p
-              className={`mt-5 text-lg leading-8 text-slate-300 ${
+              className={`mt-5 text-lg leading-8 text-brand-slate ${
                 photo ? "" : "max-w-2xl"
               }`}
             >

@@ -31,7 +31,7 @@ export const verticals: Vertical[] = [
     summary:
       "Enterprise APIs enabling businesses to connect with banking infrastructure — payouts, collections, virtual accounts and reconciliation, unified under one integration.",
     icon: Plugs,
-    color: "#0ea5a3",
+    color: "#d2491f",
     photo: "/images/connected-banking-platform.jpg",
     groups: [
       {
@@ -80,7 +80,7 @@ export const verticals: Vertical[] = [
     summary:
       "Helping banks digitally extend their branch network through merchants, business correspondents, retailers, MFIs, and agents.",
     icon: Bank,
-    color: "#1c4ed8",
+    color: "#9a3412",
     photo: "/images/agent-mobile-banking.jpg",
     vision:
       "To help banks digitally extend their branch network through merchants, business correspondents, retailers, MFIs, and agents.",

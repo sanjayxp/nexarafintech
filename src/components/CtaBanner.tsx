@@ -9,13 +9,13 @@ export default function CtaBanner() {
           <p className="font-heading text-3xl font-bold tracking-tight text-white sm:text-4xl">
             Ready to talk about your banking infrastructure?
           </p>
-          <p className="mx-auto mt-3 max-w-xl text-brand-slate-light text-slate-300">
+          <p className="mx-auto mt-3 max-w-xl text-stone-300">
             Tell us what you&apos;re building and we&apos;ll connect you with
             a solutions engineer within one business day.
           </p>
           <Link
             href="/contact"
-            className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-brand-teal px-6 py-3.5 text-sm font-semibold text-brand-navy hover:bg-teal-300 transition-colors"
+            className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-brand-teal px-6 py-3.5 text-sm font-semibold text-white hover:bg-[#b23d19] transition-colors"
           >
             Talk to our experts
             <ArrowRight size={16} />
