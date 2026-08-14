@@ -89,7 +89,7 @@ export default function PageHero({
             {eyebrow}
           </p>
           <h1
-            className={`mt-3 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl ${
+            className={`mt-3 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl ${
               photo ? "" : "max-w-3xl"
             }`}
           >

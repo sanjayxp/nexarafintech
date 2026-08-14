@@ -20,18 +20,3 @@ export const testimonial = {
   name: "Head of Digital Banking",
   title: "Regional Cooperative Bank",
 };
-
-export const deployments = [
-  { title: "Agency banking rollout", org: "Regional rural bank, Eastern India" },
-  { title: "UPI switch upgrade", org: "Mid-size private sector bank" },
-  { title: "Account aggregator integration", org: "NBFC lending platform" },
-  { title: "AePS micro-ATM network", org: "Business correspondent network operator" },
-  { title: "Merchant QR acceptance suite", org: "Payments-focused fintech startup" },
-  { title: "Prepaid card program", org: "Employee benefits & payroll platform" },
-  { title: "BBPS biller integration", org: "State electricity distribution utility" },
-  { title: "Domestic remittance rails", org: "Cooperative bank network" },
-  { title: "Video KYC & AML screening", org: "Digital-first NBFC" },
-  { title: "Financial inclusion wallet", org: "State government DBT program" },
-  { title: "Core-to-API banking layer", org: "Public sector bank" },
-  { title: "Micro-credit disbursal system", org: "Microfinance institution" },
-];

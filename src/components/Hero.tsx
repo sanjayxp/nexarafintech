@@ -88,7 +88,7 @@ export default function Hero() {
           <p className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-medium tracking-wide text-brand-teal-light uppercase">
             Fintech Infrastructure &amp; Advisory
           </p>
-          <h1 className="mt-5 text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl">
+          <h1 className="mt-5 text-5xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
             Digital financial infrastructure for banks and enterprises.
           </h1>
           <p className="mt-5 text-lg leading-8 text-slate-300">

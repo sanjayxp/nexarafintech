@@ -41,7 +41,7 @@ export default function Capabilities() {
             <h2 className="text-sm font-semibold uppercase tracking-wide text-brand-teal">
               Why Nexara
             </h2>
-            <p className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+            <p className="font-heading mt-3 text-4xl font-bold tracking-tight text-white sm:text-5xl">
               Built to move fast without breaking compliance
             </p>
           </div>

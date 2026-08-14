@@ -13,7 +13,7 @@ export default function Stats() {
                 className="text-center lg:text-left"
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
-                <p className="text-4xl font-semibold tracking-tight text-brand-navy sm:text-5xl">
+                <p className="font-heading text-5xl font-extrabold tracking-tight text-brand-navy sm:text-6xl">
                   {stat.value}
                 </p>
                 <p className="mt-2 text-sm text-brand-slate">{stat.label}</p>

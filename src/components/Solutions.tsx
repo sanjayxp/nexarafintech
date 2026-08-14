@@ -14,7 +14,7 @@ export default function Solutions() {
               <h2 className="text-sm font-semibold uppercase tracking-wide text-brand-teal">
                 What we do
               </h2>
-              <p className="mt-3 text-3xl font-semibold tracking-tight text-brand-navy sm:text-4xl">
+              <p className="font-heading mt-3 text-4xl font-bold tracking-tight text-brand-navy sm:text-5xl">
                 Three business units, one platform
               </p>
               <p className="mt-4 text-lg text-brand-slate">

@@ -6,7 +6,6 @@ import About from "@/components/About";
 import Team from "@/components/Team";
 import Stats from "@/components/Stats";
 import Testimonial from "@/components/Testimonial";
-import TrackRecord from "@/components/TrackRecord";
 import { Buildings } from "@phosphor-icons/react/ssr";
 
 export const metadata: Metadata = {
@@ -31,7 +30,6 @@ export default function AboutPage() {
 
         <About compact />
         <Team />
-        <TrackRecord />
         <Stats />
         <Testimonial />
       </main>

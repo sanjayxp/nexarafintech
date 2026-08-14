@@ -13,7 +13,7 @@ export default function Industries() {
               <h2 className="text-sm font-semibold uppercase tracking-wide text-brand-teal">
                 Industries
               </h2>
-              <p className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
+              <p className="font-heading mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
                 Built for regulated financial institutions
               </p>
               <p className="mt-4 text-lg text-slate-300">

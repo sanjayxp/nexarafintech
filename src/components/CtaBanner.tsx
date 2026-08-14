@@ -6,7 +6,7 @@ export default function CtaBanner() {
     <section className="bg-white">
       <div className="container-page">
         <div className="rounded-2xl bg-gradient-to-br from-brand-navy to-brand-navy-2 px-8 py-14 text-center sm:px-16">
-          <p className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+          <p className="font-heading text-3xl font-bold tracking-tight text-white sm:text-4xl">
             Ready to talk about your banking infrastructure?
           </p>
           <p className="mx-auto mt-3 max-w-xl text-brand-slate-light text-slate-300">
