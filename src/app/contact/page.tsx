@@ -3,12 +3,13 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import Contact from "@/components/Contact";
+import Faq from "@/components/Faq";
 import { EnvelopeSimple } from "@phosphor-icons/react/ssr";
 
 export const metadata: Metadata = {
-  title: "Contact | Nexara Fintech",
+  title: "Contact",
   description:
-    "Talk to the Nexara Fintech solutions team about agency banking, payments, cards, compliance, or lending infrastructure.",
+    "Talk to the Nexara Fintech solutions team about agency banking, connected banking APIs, or market-entry advisory across India, Africa, the Middle East, and Asia Pacific.",
 };
 
 export default function ContactPage() {
@@ -19,12 +20,13 @@ export default function ContactPage() {
         <PageHero
           eyebrow="Contact"
           title="Let's build your banking rail"
-          description="Whether you're scoping a new agency banking network or upgrading a payment switch, our solutions team can walk you through architecture, compliance, and timelines."
+          description="Whether you're scoping a new agency banking network, upgrading a payment switch, or entering a new market, our solutions team can walk you through architecture, compliance, and timelines."
           breadcrumb={[{ label: "Contact" }]}
           icon={EnvelopeSimple}
           photo="/images/hero-contact.jpg"
         />
         <Contact compact />
+        <Faq />
       </main>
       <Footer />
     </>

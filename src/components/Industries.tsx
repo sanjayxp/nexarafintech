@@ -5,7 +5,7 @@ import Reveal from "./Reveal";
 
 export default function Industries() {
   return (
-    <section id="industries" className="py-24 bg-brand-surface text-brand-navy">
+    <section id="industries" className="py-24 bg-white text-brand-navy">
       <div className="container-page">
         <Reveal>
           <div className="flex flex-wrap items-end justify-between gap-6">
@@ -17,9 +17,9 @@ export default function Industries() {
                 Built for regulated financial institutions
               </p>
               <p className="mt-4 text-lg text-brand-slate">
-                From national banks to district-level cooperative networks, our
-                platform is deployed across every tier of India&apos;s financial
-                system.
+                From national banks to district-level cooperative networks,
+                our platform serves every tier of the financial system — with
+                equivalent segments across each region we operate in.
               </p>
             </div>
             <Link

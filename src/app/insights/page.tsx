@@ -10,7 +10,7 @@ import { getPublishedArticles } from "@/lib/articles";
 import { formatArticleDate } from "@/lib/format-date";
 
 export const metadata: Metadata = {
-  title: "Insights | Nexara Fintech",
+  title: "Insights",
   description:
     "Perspectives on agency banking, payments, connected banking, compliance and lending infrastructure from the Nexara Fintech team.",
 };

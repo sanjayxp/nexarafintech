@@ -22,7 +22,7 @@ export async function generateMetadata({
   const vertical = getVerticalBySlug(slug);
   if (!vertical) return {};
   return {
-    title: `${vertical.name} | Nexara Fintech`,
+    title: vertical.name,
     description: vertical.summary,
   };
 }

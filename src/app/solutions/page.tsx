@@ -9,7 +9,7 @@ import Reveal from "@/components/Reveal";
 import { verticals } from "@/lib/verticals";
 
 export const metadata: Metadata = {
-  title: "What We Do | Nexara Fintech",
+  title: "What We Do",
   description:
     "Nexara Fintech operates through three business units: Connected Banking Platform, Agency Banking Solutions, and Consulting & Advisory.",
 };

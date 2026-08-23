@@ -8,7 +8,7 @@ import PartnerForm from "../../PartnerForm";
 import { updatePartnerAction } from "../../actions";
 
 export const metadata: Metadata = {
-  title: "Edit partner | Nexara Fintech Admin",
+  title: "Edit partner · Admin",
   robots: { index: false, follow: false },
 };
 

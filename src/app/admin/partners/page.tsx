@@ -7,7 +7,7 @@ import { getPartners } from "@/lib/partners";
 import DeletePartnerButton from "./DeletePartnerButton";
 
 export const metadata: Metadata = {
-  title: "Manage partners | Nexara Fintech Admin",
+  title: "Manage partners · Admin",
   robots: { index: false, follow: false },
 };
 

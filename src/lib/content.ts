@@ -8,8 +8,8 @@ export const nav = [
 
 export const stats = [
   { value: "120M+", label: "Transactions processed annually" },
-  { value: "18,000+", label: "Banking correspondent touchpoints" },
-  { value: "24", label: "States & union territories covered" },
+  { value: "18,000+", label: "Agent & correspondent touchpoints" },
+  { value: "4", label: "Regions served across Asia, Africa & the Middle East" },
   { value: "99.95%", label: "Platform uptime SLA" },
 ];
 

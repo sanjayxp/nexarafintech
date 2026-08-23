@@ -6,7 +6,7 @@ import PartnerForm from "../PartnerForm";
 import { createPartnerAction } from "../actions";
 
 export const metadata: Metadata = {
-  title: "Add partner | Nexara Fintech Admin",
+  title: "Add partner · Admin",
   robots: { index: false, follow: false },
 };
 

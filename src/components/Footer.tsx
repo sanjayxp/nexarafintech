@@ -56,7 +56,8 @@ export default function Footer() {
             <Logo dark />
             <p className="mt-4 max-w-xs text-sm leading-6 text-stone-400">
               Agency banking, payments, and connected banking infrastructure
-              for regulated financial institutions across India.
+              for regulated financial institutions across India, Africa, the
+              Middle East, and Asia Pacific.
             </p>
             <div className="mt-6 flex gap-4">
               <a

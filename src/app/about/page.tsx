@@ -3,15 +3,16 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import About from "@/components/About";
+import GlobalPresence from "@/components/GlobalPresence";
 import Team from "@/components/Team";
 import Stats from "@/components/Stats";
 import Testimonial from "@/components/Testimonial";
 import { Buildings } from "@phosphor-icons/react/ssr";
 
 export const metadata: Metadata = {
-  title: "About | Nexara Fintech",
+  title: "About",
   description:
-    "Nexara Fintech builds agency banking, payments, and connected banking infrastructure for regulated financial institutions across India.",
+    "Nexara Fintech builds agency banking, payments, and connected banking infrastructure for regulated financial institutions across India, Africa, the Middle East, and Asia Pacific.",
 };
 
 export default function AboutPage() {
@@ -29,6 +30,7 @@ export default function AboutPage() {
         />
 
         <About compact />
+        <GlobalPresence />
         <Team />
         <Stats />
         <Testimonial />

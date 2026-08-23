@@ -7,7 +7,7 @@ import { getAllArticles } from "@/lib/articles";
 import DeleteArticleButton from "./DeleteArticleButton";
 
 export const metadata: Metadata = {
-  title: "Manage insights | Nexara Fintech Admin",
+  title: "Manage insights · Admin",
   robots: { index: false, follow: false },
 };
 

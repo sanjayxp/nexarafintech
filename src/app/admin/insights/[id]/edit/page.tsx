@@ -8,7 +8,7 @@ import ArticleForm from "../../ArticleForm";
 import { updateArticleAction } from "../../actions";
 
 export const metadata: Metadata = {
-  title: "Edit article | Nexara Fintech Admin",
+  title: "Edit article · Admin",
   robots: { index: false, follow: false },
 };
 

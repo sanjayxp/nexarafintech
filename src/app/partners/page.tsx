@@ -8,7 +8,7 @@ import Reveal from "@/components/Reveal";
 import { getPartners } from "@/lib/partners";
 
 export const metadata: Metadata = {
-  title: "Partners | Nexara Fintech",
+  title: "Partners",
   description:
     "The banks, NBFCs, technology providers and networks Nexara Fintech partners with to deliver agency banking, payments and connected banking infrastructure.",
 };

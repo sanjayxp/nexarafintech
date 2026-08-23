@@ -11,7 +11,7 @@ import { industries } from "@/lib/industries";
 import { getVerticalBySlug } from "@/lib/verticals";
 
 export const metadata: Metadata = {
-  title: "Industries | Nexara Fintech",
+  title: "Industries",
   description:
     "How banks, NBFCs, MFIs, fintech startups, cooperative banks, and government programs use Nexara Fintech's infrastructure.",
 };
@@ -23,8 +23,8 @@ export default function IndustriesPage() {
       <main className="flex-1">
         <PageHero
           eyebrow="Industries"
-          title="Built for every tier of India's financial system"
-          description="From national banks to district-level cooperative networks, each institution type works with a different slice of our platform. Here's how."
+          title="Built for every tier of the financial system"
+          description="From national banks to district-level cooperative networks, each institution type works with a different slice of our platform. The segments below reflect our India practice; equivalent institutions across Africa, the Middle East, and Asia Pacific map to the same modules."
           breadcrumb={[{ label: "Industries" }]}
           icon={Handshake}
           photo="/images/hero-industries.jpg"
@@ -111,7 +111,7 @@ export default function IndustriesPage() {
                         </div>
                         <div className="absolute inset-0 flex items-center">
                           <div className="max-w-md px-8 sm:px-12">
-                            <p className="text-2xl font-semibold leading-snug tracking-tight text-white sm:text-3xl">
+                            <p className="font-heading text-2xl font-bold leading-snug tracking-tight text-white sm:text-3xl">
                               Six institution types. One platform built to
                               meet each of them where they are.
                             </p>

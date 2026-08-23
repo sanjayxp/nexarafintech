@@ -6,7 +6,7 @@ import ArticleForm from "../ArticleForm";
 import { createArticleAction } from "../actions";
 
 export const metadata: Metadata = {
-  title: "Write article | Nexara Fintech Admin",
+  title: "Write article · Admin",
   robots: { index: false, follow: false },
 };
 

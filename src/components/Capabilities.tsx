@@ -10,25 +10,25 @@ const capabilities = [
       "Launch a new agency banking territory, payment rail, or card program in weeks. Modular services mean you configure and ship instead of waiting on a core release cycle.",
     href: "/solutions",
     linkLabel: "Explore our solutions",
-    gradient: "linear-gradient(120deg, #40261a 0%, #d2491f 140%)",
+    color: "#d2491f",
   },
   {
     icon: ShieldCheck,
     title: "Operate inside the compliance line",
     description:
-      "Every module is built against RBI and NPCI frameworks from day one — audit trails, reporting, and KYC/AML checks are native to the platform, not bolted on after a regulator asks.",
+      "Audit trails, reporting, and KYC/AML checks are native to the platform, not bolted on after a regulator asks — configured to your market's central bank and scheme rules, from RBI and NPCI in India to their equivalents elsewhere.",
     href: "/solutions/agency-banking-solutions",
     linkLabel: "See risk management tooling",
-    gradient: "linear-gradient(120deg, #40261a 0%, #9a3412 140%)",
+    color: "#9a3412",
   },
   {
     icon: TrendUp,
     title: "Scale without re-platforming",
     description:
       "From a single-district agent network to a national payment switch, the same architecture carries the volume. No forced migration when your institution outgrows the pilot.",
-    href: "/insights/payment-switch-design-for-upi-scale",
-    linkLabel: "Read how we design for scale",
-    gradient: "linear-gradient(120deg, #40261a 0%, #57534e 140%)",
+    href: "/solutions/connected-banking-platform",
+    linkLabel: "See the platform",
+    color: "#d97706",
   },
 ];
 
@@ -47,30 +47,37 @@ export default function Capabilities() {
           </div>
         </Reveal>
 
-        <div className="mt-14 flex flex-col gap-6">
+        <div className="mt-14 flex flex-col gap-5">
           {capabilities.map((cap, i) => {
             const Icon = cap.icon;
             return (
               <Reveal key={cap.title} delay={i * 100}>
                 <div
-                  className="grid grid-cols-1 gap-8 rounded-2xl p-8 lg:grid-cols-3 lg:items-center lg:p-10"
-                  style={{ background: cap.gradient }}
+                  className="group grid grid-cols-1 gap-8 rounded-2xl border border-brand-border border-l-4 bg-white p-8 transition-shadow hover:shadow-lg lg:grid-cols-3 lg:items-center lg:p-10"
+                  style={{ borderLeftColor: cap.color }}
                 >
                   <div className="lg:col-span-2">
-                    <div className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-white/10 text-white">
+                    <div
+                      className="inline-flex h-11 w-11 items-center justify-center rounded-lg"
+                      style={{
+                        backgroundColor: `${cap.color}1A`,
+                        color: cap.color,
+                      }}
+                    >
                       <Icon size={22} weight="duotone" />
                     </div>
-                    <h3 className="mt-5 text-xl font-semibold text-white">
+                    <h3 className="mt-5 text-xl font-semibold text-brand-navy">
                       {cap.title}
                     </h3>
-                    <p className="mt-3 max-w-2xl text-stone-300 leading-7">
+                    <p className="mt-3 max-w-2xl leading-7 text-brand-slate">
                       {cap.description}
                     </p>
                   </div>
                   <div className="lg:text-right">
                     <Link
                       href={cap.href}
-                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-white hover:gap-2.5 transition-all"
+                      className="inline-flex items-center gap-1.5 text-sm font-semibold transition-all hover:gap-2.5"
+                      style={{ color: cap.color }}
                     >
                       {cap.linkLabel}
                       <ArrowRight size={14} />
@@ -82,18 +89,18 @@ export default function Capabilities() {
           })}
 
           <Reveal delay={capabilities.length * 100}>
-            <div className="flex flex-col items-center justify-between gap-6 rounded-2xl border border-brand-border bg-white p-8 text-center sm:flex-row sm:text-left lg:p-10">
+            <div className="mt-5 flex flex-col items-center justify-between gap-6 rounded-2xl bg-brand-navy p-8 text-center sm:flex-row sm:text-left lg:p-10">
               <div>
-                <p className="text-xl font-semibold text-brand-navy">
+                <p className="text-xl font-semibold text-white">
                   Ready to take the next step?
                 </p>
-                <p className="mt-1 text-brand-slate">
+                <p className="mt-1 text-stone-300">
                   Talk to us about the network, product, or migration you&apos;re planning.
                 </p>
               </div>
               <Link
                 href="/contact"
-                className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-brand-teal px-6 py-3 text-sm font-semibold text-white hover:bg-[#b23d19] transition-colors"
+                className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-brand-teal px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#b23d19]"
               >
                 Book a demo
                 <ArrowRight size={16} />

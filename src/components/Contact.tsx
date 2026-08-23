@@ -3,6 +3,7 @@
 import { useState, FormEvent } from "react";
 import { EnvelopeSimple, Phone, MapPin } from "@phosphor-icons/react/ssr";
 import { verticals } from "@/lib/verticals";
+import { markets } from "@/lib/markets";
 import Reveal from "./Reveal";
 
 export default function Contact({ compact = false }: { compact?: boolean }) {
@@ -44,10 +45,26 @@ export default function Contact({ compact = false }: { compact?: boolean }) {
               <Phone size={18} weight="duotone" className="text-brand-teal" />
               +91 9971886999
             </div>
-            <div className="flex items-center gap-3 text-sm text-brand-navy">
-              <MapPin size={18} weight="duotone" className="text-brand-teal" />
-              BKC, Mumbai, Maharashtra, India
+            <div className="flex items-start gap-3 text-sm text-brand-navy">
+              <MapPin size={18} weight="duotone" className="mt-0.5 shrink-0 text-brand-teal" />
+              <span>
+                BKC, Mumbai, Maharashtra, India
+                <span className="mt-1 block text-brand-slate-light">
+                  Serving clients across India, Africa, the Middle East, and
+                  Asia Pacific
+                </span>
+              </span>
             </div>
+          </div>
+
+          <div className="mt-8 rounded-2xl border border-brand-border bg-white p-5">
+            <p className="text-sm font-semibold text-brand-navy">
+              Response time
+            </p>
+            <p className="mt-1.5 text-sm leading-6 text-brand-slate">
+              We reply to every qualified enquiry within one business day, IST.
+              For urgent RFP or tender deadlines, call the number above.
+            </p>
           </div>
         </Reveal>
 
@@ -118,6 +135,23 @@ export default function Contact({ compact = false }: { compact?: boolean }) {
                 </div>
                 <div className="sm:col-span-2">
                   <label className="block text-sm font-medium text-brand-navy">
+                    Market
+                  </label>
+                  <select
+                    className="mt-2 w-full rounded-md border border-brand-border px-3 py-2.5 text-sm text-brand-navy focus:border-brand-teal focus:outline-none focus:ring-2 focus:ring-brand-teal/30"
+                    defaultValue=""
+                  >
+                    <option value="" disabled>
+                      Where are you operating?
+                    </option>
+                    {markets.map((market) => (
+                      <option key={market.region}>{market.region}</option>
+                    ))}
+                    <option>Other / multiple markets</option>
+                  </select>
+                </div>
+                <div className="sm:col-span-2">
+                  <label className="block text-sm font-medium text-brand-navy">
                     Tell us about your project
                   </label>
                   <textarea
@@ -129,7 +163,7 @@ export default function Contact({ compact = false }: { compact?: boolean }) {
               </div>
               <button
                 type="submit"
-                className="mt-6 inline-flex items-center justify-center rounded-full bg-brand-navy px-6 py-3 text-sm font-semibold text-white hover:bg-brand-navy-2 transition-colors"
+                className="mt-6 inline-flex items-center justify-center rounded-full bg-brand-teal px-6 py-3 text-sm font-semibold text-white hover:bg-[#b23d19] transition-colors"
               >
                 Send message
               </button>

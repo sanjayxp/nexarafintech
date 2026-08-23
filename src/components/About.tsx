@@ -22,23 +22,25 @@ export default function About({ compact = false }: { compact?: boolean }) {
                 Our Objective
               </h2>
               <p className="font-heading mt-3 text-4xl font-bold tracking-tight text-brand-navy sm:text-5xl">
-                India&apos;s trusted digital financial infrastructure
+                Trusted digital financial infrastructure
               </p>
             </>
           )}
           <p className="mt-6 text-lg leading-8 text-brand-slate first:mt-0">
-            To build India&apos;s trusted digital financial infrastructure by
-            enabling banks, financial institutions, fintech companies, and
-            enterprises with secure, compliant, and technology-driven
-            solutions that accelerate digital payments, financial inclusion,
-            operational excellence, and customer acquisition.
+            To build trusted digital financial infrastructure by enabling
+            banks, financial institutions, fintech companies, and enterprises
+            with secure, compliant, and technology-driven solutions that
+            accelerate digital payments, financial inclusion, operational
+            excellence, and customer acquisition.
           </p>
           <p className="mt-4 text-lg leading-8 text-brand-slate">
             Our objective is to bridge the gap between financial institutions
             and the last-mile customer through intelligent technology
             platforms, AI-powered solutions, digital banking infrastructure,
-            payment orchestration, and strategic consulting services that
-            simplify the delivery of financial services across India.
+            payment orchestration, and strategic consulting services. We build
+            from India and deploy across Africa, the Middle East, and Asia
+            Pacific — adapting to each market&apos;s regulators and rails
+            rather than exporting a single template.
           </p>
         </Reveal>
 
@@ -48,10 +50,10 @@ export default function About({ compact = false }: { compact?: boolean }) {
               Vision
             </h3>
             <p className="mt-2 text-brand-navy leading-7">
-              To become India&apos;s most trusted FinTech infrastructure and
-              advisory company, empowering financial institutions through
-              innovation, technology, governance, and nationwide digital
-              distribution.
+              To become the most trusted FinTech infrastructure and advisory
+              partner across emerging markets, empowering financial
+              institutions through innovation, technology, governance, and
+              last-mile digital distribution.
             </p>
           </div>
 

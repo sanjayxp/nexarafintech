@@ -5,7 +5,7 @@ import { ArrowRight, CheckCircle } from "@phosphor-icons/react/ssr";
 import { verticals } from "@/lib/verticals";
 
 const points = [
-  "RBI & NPCI aligned compliance",
+  "Compliance built per market",
   "API-first core integration",
   "Live in weeks, not quarters",
 ];

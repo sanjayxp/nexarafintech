@@ -26,7 +26,7 @@ export async function generateMetadata({
   const article = await getPublishedArticleBySlug(slug);
   if (!article) return {};
   return {
-    title: `${article.title} | Nexara Fintech`,
+    title: article.title,
     description: article.excerpt,
   };
 }

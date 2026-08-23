@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { login } from "./actions";
 
 export const metadata: Metadata = {
-  title: "Admin sign in | Nexara Fintech",
+  title: "Admin sign in",
   robots: { index: false, follow: false },
 };
 

@@ -7,7 +7,7 @@ export default function TrustStrip() {
     <section className="border-b border-brand-border bg-white py-8">
       <div className="container-page">
         <p className="mb-6 text-center text-xs font-semibold uppercase tracking-wide text-brand-slate-light">
-          Built for every tier of India&apos;s financial system
+          Built for every tier of the financial system
         </p>
       </div>
       <div className="relative overflow-hidden">
