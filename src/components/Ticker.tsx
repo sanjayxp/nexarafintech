@@ -9,28 +9,33 @@ const events: { tone: string; text: string }[] = [
 
 export default function Ticker() {
   return (
-    <div
-      className="overflow-hidden border-y border-rule py-3.5"
-      aria-label="Illustrative sample of transaction types the platform handles"
-    >
-      <div className="animate-ticker flex w-max gap-11 whitespace-nowrap">
-        {[0, 1].map((pass) => (
-          <div key={pass} className="flex gap-11" aria-hidden={pass === 1}>
-            {events.map((e) => (
-              <span
-                key={e.text}
-                className="mono flex items-center gap-3 text-[0.84rem] text-bone-dim"
-              >
-                <i
-                  className="inline-block h-[7px] w-[7px] rounded-full"
-                  style={{ background: e.tone }}
-                />
-                {e.text}
-              </span>
-            ))}
-          </div>
-        ))}
+    <figure className="m-0">
+      <div className="container-page">
+        <figcaption className="label pb-3">
+          Illustrative — example transaction types, not live data
+        </figcaption>
       </div>
-    </div>
+
+      <div className="overflow-hidden border-y border-rule py-3.5">
+        <div className="animate-ticker flex w-max gap-11 whitespace-nowrap">
+          {[0, 1].map((pass) => (
+            <div key={pass} className="flex gap-11" aria-hidden={pass === 1}>
+              {events.map((e) => (
+                <span
+                  key={e.text}
+                  className="mono flex items-center gap-3 text-[0.84rem] text-bone-dim"
+                >
+                  <i
+                    className="inline-block h-[7px] w-[7px] rounded-full"
+                    style={{ background: e.tone }}
+                  />
+                  {e.text}
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+    </figure>
   );
 }
