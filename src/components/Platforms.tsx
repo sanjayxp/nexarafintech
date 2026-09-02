@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { verticals } from "@/lib/verticals";
 import { railFor } from "@/lib/services";
@@ -8,13 +7,11 @@ const rail = {
     bar: "bg-mint",
     text: "text-mint",
     chip: "bg-mint text-mint-deep",
-    duo: "duo-mint",
   },
   saffron: {
     bar: "bg-saffron",
     text: "text-saffron",
     chip: "bg-saffron text-saffron-deep",
-    duo: "duo-saffron",
   },
 } as const;
 
@@ -57,18 +54,6 @@ export default function Platforms() {
                   <p className={`mt-3 text-[1rem] ${tone.text}`}>
                     {vertical.tagline}
                   </p>
-
-                  <div
-                    className={`duo duo-lift ${tone.duo} relative mt-7 aspect-[4/3] w-full`}
-                  >
-                    <Image
-                      src={vertical.photo}
-                      alt=""
-                      fill
-                      sizes="(min-width: 1024px) 30vw, 100vw"
-                      className="object-cover"
-                    />
-                  </div>
                 </div>
 
                 <div className="lg:col-span-8">
