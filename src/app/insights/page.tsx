@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Newspaper } from "@phosphor-icons/react/ssr";
+import { ArrowRight } from "@phosphor-icons/react/ssr";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
@@ -29,13 +29,11 @@ export default async function InsightsIndex() {
           title="Perspectives from the field"
           description="Notes from building and operating banking infrastructure — regulatory shifts, design lessons, and what actually breaks at scale."
           breadcrumb={[{ label: "Insights" }]}
-          icon={Newspaper}
-          photo="/images/hero-insights-analytics.jpg"
         />
 
         <div className="container-page py-24">
           {articles.length === 0 ? (
-            <div className="rounded-2xl border border-dashed border-brand-border p-16 text-center text-sm text-brand-slate">
+            <div className="rounded-2xl border border-dashed border-rule p-16 text-center text-sm text-ink-soft">
               No articles published yet. Check back soon.
             </div>
           ) : (
@@ -44,9 +42,9 @@ export default async function InsightsIndex() {
                 <Reveal key={post.slug} delay={i * 60}>
                   <Link
                     href={`/insights/${post.slug}`}
-                    className="group flex h-full flex-col overflow-hidden rounded-2xl border border-brand-border transition-colors hover:border-brand-teal/50 hover:bg-brand-surface"
+                    className="group flex h-full flex-col overflow-hidden rounded-2xl border border-rule transition-colors hover:border-accent/50 hover:bg-paper-2"
                   >
-                    <div className="relative h-36 w-full bg-gradient-to-br from-brand-navy to-brand-navy-2">
+                    <div className="relative h-36 w-full bg-gradient-to-br from-ink to-ink-2">
                       {post.cover_image_url && (
                         <Image
                           src={post.cover_image_url}
@@ -59,20 +57,20 @@ export default async function InsightsIndex() {
                     </div>
                     <div className="flex flex-1 flex-col p-6">
                       <div className="flex items-center gap-3 text-xs">
-                        <span className="rounded-full bg-brand-teal-light px-2.5 py-1 font-semibold text-brand-teal">
+                        <span className="rounded-full bg-accent-soft px-2.5 py-1 font-semibold text-accent">
                           {post.tag}
                         </span>
-                        <span className="text-brand-slate-light">
+                        <span className="text-ink-faint">
                           {formatArticleDate(post.published_at)}
                         </span>
                       </div>
-                      <h2 className="mt-4 text-base font-semibold leading-6 text-brand-navy">
+                      <h2 className="mt-4 text-base font-semibold leading-6 text-ink">
                         {post.title}
                       </h2>
-                      <p className="mt-2 flex-1 text-sm leading-6 text-brand-slate">
+                      <p className="mt-2 flex-1 text-sm leading-6 text-ink-soft">
                         {post.excerpt}
                       </p>
-                      <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-blue group-hover:gap-2.5 transition-all">
+                      <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-accent group-hover:gap-2.5 transition-all">
                         Read more
                         <ArrowRight size={14} />
                       </span>

@@ -11,8 +11,6 @@ export type Vertical = {
   tagline: string;
   summary: string;
   icon: Icon;
-  color: string;
-  photo: string;
   vision?: string;
   valueProposition?: string;
   groups: ContentGroup[];
@@ -31,8 +29,6 @@ export const verticals: Vertical[] = [
     summary:
       "Enterprise APIs enabling businesses to connect with banking infrastructure — payouts, collections, virtual accounts and reconciliation, unified under one integration.",
     icon: Plugs,
-    color: "#4f46e5",
-    photo: "/images/connected-banking-platform.jpg",
     groups: [
       {
         title: "Services",
@@ -80,8 +76,6 @@ export const verticals: Vertical[] = [
     summary:
       "Helping banks digitally extend their branch network through merchants, business correspondents, retailers, MFIs, and agents.",
     icon: Bank,
-    color: "#2563eb",
-    photo: "/images/agent-mobile-banking.jpg",
     vision:
       "To help banks digitally extend their branch network through merchants, business correspondents, retailers, MFIs, and agents.",
     valueProposition:

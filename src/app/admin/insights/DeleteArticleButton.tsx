@@ -27,7 +27,7 @@ export default function DeleteArticleButton({
 
   return (
     <span className="inline-flex items-center gap-3">
-      <span className="text-sm text-brand-slate">Delete {title}?</span>
+      <span className="text-sm text-ink-soft">Delete {title}?</span>
       <button
         type="button"
         disabled={pending}
@@ -39,7 +39,7 @@ export default function DeleteArticleButton({
       <button
         type="button"
         onClick={() => setConfirming(false)}
-        className="text-sm text-brand-slate hover:text-brand-navy"
+        className="text-sm text-ink-soft hover:text-ink"
       >
         Cancel
       </button>

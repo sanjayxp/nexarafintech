@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight, Newspaper } from "@phosphor-icons/react/ssr";
+import { ArrowRight } from "@phosphor-icons/react/ssr";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
@@ -52,8 +52,6 @@ export default async function InsightDetail({
         <PageHero
           eyebrow={`${article.tag} · ${formatArticleDate(article.published_at)}`}
           title={article.title}
-          icon={Newspaper}
-          photo={article.cover_image_url ?? undefined}
           breadcrumb={[
             { label: "Insights", href: "/insights" },
             { label: article.title },
@@ -64,7 +62,7 @@ export default async function InsightDetail({
           <div className="mx-auto max-w-3xl">
             <Reveal>
               <div className="flex flex-wrap items-center justify-between gap-4">
-                <p className="text-xl leading-9 text-brand-navy">
+                <p className="text-xl leading-9 text-ink">
                   {article.excerpt}
                 </p>
               </div>
@@ -78,13 +76,13 @@ export default async function InsightDetail({
                 <Reveal key={i} delay={i * 80}>
                   <div>
                     {block.heading && (
-                      <h2 className="text-xl font-semibold tracking-tight text-brand-navy">
+                      <h2 className="text-xl font-semibold tracking-tight text-ink">
                         {block.heading}
                       </h2>
                     )}
                     <div className="mt-3 flex flex-col gap-4">
                       {block.paragraphs.map((p, j) => (
-                        <p key={j} className="text-brand-slate leading-8">
+                        <p key={j} className="text-ink-soft leading-8">
                           {p}
                         </p>
                       ))}
@@ -95,15 +93,15 @@ export default async function InsightDetail({
             </div>
 
             <Reveal>
-              <div className="mt-14 flex flex-col items-center gap-6 rounded-2xl border border-brand-border bg-brand-surface p-8 text-center">
+              <div className="mt-14 flex flex-col items-center gap-6 rounded-2xl border border-rule bg-paper-2 p-8 text-center">
                 <ShareLinks url={shareUrl} title={article.title} />
                 <div>
-                  <p className="text-lg font-semibold text-brand-navy">
+                  <p className="text-lg font-semibold text-ink">
                     Want to talk through how this applies to your network?
                   </p>
                   <Link
                     href="/contact"
-                    className="mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-brand-navy px-6 py-3 text-sm font-semibold text-white hover:bg-brand-navy-2 transition-colors"
+                    className="mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white hover:bg-ink-2 transition-colors"
                   >
                     Talk to our team
                     <ArrowRight size={16} />
@@ -114,9 +112,9 @@ export default async function InsightDetail({
           </div>
 
           {more.length > 0 && (
-            <div className="mx-auto mt-20 max-w-5xl border-t border-brand-border pt-14">
+            <div className="mx-auto mt-20 max-w-5xl border-t border-rule pt-14">
               <Reveal>
-                <h2 className="text-2xl font-semibold tracking-tight text-brand-navy">
+                <h2 className="text-2xl font-semibold tracking-tight text-ink">
                   More insights
                 </h2>
                 <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-3">
@@ -124,15 +122,15 @@ export default async function InsightDetail({
                     <Link
                       key={post.slug}
                       href={`/insights/${post.slug}`}
-                      className="group flex flex-col rounded-2xl border border-brand-border p-6 transition-colors hover:border-brand-teal/50 hover:bg-brand-surface"
+                      className="group flex flex-col rounded-2xl border border-rule p-6 transition-colors hover:border-accent/50 hover:bg-paper-2"
                     >
-                      <span className="text-xs font-semibold text-brand-teal">
+                      <span className="text-xs font-semibold text-accent">
                         {post.tag}
                       </span>
-                      <h3 className="mt-3 text-sm font-semibold leading-6 text-brand-navy">
+                      <h3 className="mt-3 text-sm font-semibold leading-6 text-ink">
                         {post.title}
                       </h3>
-                      <span className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-brand-blue group-hover:gap-2.5 transition-all">
+                      <span className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-accent group-hover:gap-2.5 transition-all">
                         Read more
                         <ArrowRight size={12} />
                       </span>

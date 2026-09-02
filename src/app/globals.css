@@ -1,48 +1,72 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #0b1b3a;
+  /* Surfaces — warm paper, not clinical white */
+  --paper: #faf8f4;
+  --paper-2: #f2efe8;
+  --ink: #16171b;
+  --ink-2: #2c2e34;
+  --ink-soft: #55575e;
+  --ink-faint: #8b8d94;
+  --rule: #e2ded4;
+  --rule-strong: #cec9bc;
 
-  --brand-navy: #0b1b3a;
-  --brand-navy-2: #16295c;
-  --brand-blue: #2563eb;
-  --brand-teal: #4f46e5;
-  --brand-teal-light: #e8e7fd;
-  --brand-slate: #475569;
-  --brand-slate-light: #64748b;
-  --brand-border: #e2e8f0;
-  --brand-surface: #f5f7fd;
+  /* A single accent with a point of view */
+  --accent: #14563c;
+  --accent-hover: #0e412d;
+  --accent-soft: #e6ede8;
+
+  --background: var(--paper);
+  --foreground: var(--ink);
 }
 
 @theme inline {
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-faint: var(--ink-faint);
+  --color-rule: var(--rule);
+  --color-rule-strong: var(--rule-strong);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-soft: var(--accent-soft);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-brand-navy: var(--brand-navy);
-  --color-brand-navy-2: var(--brand-navy-2);
-  --color-brand-blue: var(--brand-blue);
-  --color-brand-teal: var(--brand-teal);
-  --color-brand-teal-light: var(--brand-teal-light);
-  --color-brand-slate: var(--brand-slate);
-  --color-brand-slate-light: var(--brand-slate-light);
-  --color-brand-border: var(--brand-border);
-  --color-brand-surface: var(--brand-surface);
+
   --font-sans: var(--font-inter);
-  --font-heading: var(--font-jakarta);
+  --font-display: var(--font-instrument-serif);
+  --font-mono: var(--font-jetbrains);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans), Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
-h1,
-h2,
-h3,
-h4 {
-  font-family: var(--font-heading), Arial, Helvetica, sans-serif;
-  letter-spacing: -0.015em;
+/* Display type carries the design — serif, tight, optically sized */
+.display {
+  font-family: var(--font-display), Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.02;
+}
+
+/* Small technical labels — the counterweight to the serif */
+.label {
+  font-family: var(--font-mono), ui-monospace, SFMono-Regular, monospace;
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.mono {
+  font-family: var(--font-mono), ui-monospace, SFMono-Regular, monospace;
+  font-variant-numeric: tabular-nums;
 }
 
 html {
@@ -50,7 +74,7 @@ html {
 }
 
 .container-page {
-  max-width: 80rem;
+  max-width: 78rem;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1.5rem;
@@ -59,19 +83,25 @@ html {
 
 @media (min-width: 1024px) {
   .container-page {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
   }
 }
 
-@keyframes float-card {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+/* Hairline rules do the work that borders and cards used to */
+.rule-t {
+  border-top: 1px solid var(--rule);
+}
+.rule-b {
+  border-bottom: 1px solid var(--rule);
+}
+
+/* Editorial index rows */
+.index-row {
+  transition: background-color 180ms ease, padding-left 180ms ease;
+}
+.index-row:hover {
+  background-color: var(--paper-2);
 }
 
 @keyframes marquee {
@@ -83,47 +113,15 @@ html {
   }
 }
 
-.animate-float-card {
-  animation: float-card 4.5s ease-in-out infinite;
-}
-
 .animate-marquee {
-  animation: marquee 28s linear infinite;
+  animation: marquee 40s linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .animate-float-card,
   .animate-marquee {
     animation: none;
   }
-}
-
-.bg-dot-grid {
-  background-image: radial-gradient(
-    rgba(11, 27, 58, 0.1) 1px,
-    transparent 1px
-  );
-  background-size: 22px 22px;
-}
-
-.bg-hero-gradient {
-  background: linear-gradient(115deg, #ffffff 0%, #f2f5ff 45%, #e7edff 100%);
-}
-
-.bg-glow-teal {
-  background: radial-gradient(
-    circle at 30% 30%,
-    rgba(79, 70, 229, 0.25) 0%,
-    rgba(79, 70, 229, 0) 60%
-  );
-  filter: blur(40px);
-}
-
-.bg-glow-blue {
-  background: radial-gradient(
-    circle at 70% 40%,
-    rgba(37, 99, 235, 0.2) 0%,
-    rgba(37, 99, 235, 0) 60%
-  );
-  filter: blur(40px);
+  .index-row {
+    transition: none;
+  }
 }

@@ -52,7 +52,7 @@ export default function ShareLinks({
 
   return (
     <div className="flex items-center gap-3">
-      <span className="text-sm font-medium text-brand-slate">Share</span>
+      <span className="text-sm font-medium text-ink-soft">Share</span>
       {links.map(({ label, href, icon: Icon }) => (
         <a
           key={label}
@@ -60,7 +60,7 @@ export default function ShareLinks({
           target="_blank"
           rel="noopener noreferrer"
           aria-label={label}
-          className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-brand-border text-brand-navy hover:border-brand-teal hover:text-brand-teal transition-colors"
+          className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-rule text-ink hover:border-accent hover:text-accent transition-colors"
         >
           <Icon />
         </a>

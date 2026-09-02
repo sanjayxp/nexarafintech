@@ -1,45 +1,33 @@
 import { team } from "@/lib/team";
-import Reveal from "./Reveal";
 
 export default function Team() {
   return (
-    <section className="py-24 bg-brand-surface">
+    <section className="border-b border-rule py-24 lg:py-32">
       <div className="container-page">
-        <Reveal>
-          <div className="max-w-2xl">
-            <h2 className="text-sm font-semibold uppercase tracking-wide text-brand-teal">
-              Leadership
-            </h2>
-            <p className="font-heading mt-3 text-4xl font-bold tracking-tight text-brand-navy sm:text-5xl">
-              The team behind Nexara
-            </p>
-            <p className="mt-4 text-lg text-brand-slate">
-              Placeholder profiles — real founder photos and bios go here
-              shortly.
-            </p>
-          </div>
-        </Reveal>
+        <p className="label">Leadership</p>
 
-        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 border-t border-rule-strong">
           {team.map((member, i) => (
-            <Reveal key={member.name} delay={i * 60}>
-              <div className="rounded-2xl border border-brand-border bg-white p-6 text-center">
-                <div
-                  className="mx-auto flex h-20 w-20 items-center justify-center rounded-full text-xl font-semibold text-white"
-                  style={{ backgroundColor: member.color }}
-                >
-                  {member.initials}
-                </div>
-                <h3 className="mt-5 text-base font-semibold text-brand-navy">
-                  {member.name}
-                </h3>
-                <p className="mt-1 text-sm text-brand-slate">
-                  {member.title}
-                </p>
-              </div>
-            </Reveal>
+            <div
+              key={member.name}
+              className="grid grid-cols-12 items-baseline gap-4 border-b border-rule py-6"
+            >
+              <span className="mono col-span-2 text-[0.78rem] text-ink-faint sm:col-span-1">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <h3 className="display col-span-10 text-[1.6rem] leading-none sm:col-span-5">
+                {member.name}
+              </h3>
+              <p className="col-span-12 text-[0.92rem] text-ink-soft sm:col-span-6">
+                {member.title}
+              </p>
+            </div>
           ))}
         </div>
+
+        <p className="mono mt-6 text-[0.75rem] text-ink-faint">
+          Founder bios and photography to follow.
+        </p>
       </div>
     </section>
   );

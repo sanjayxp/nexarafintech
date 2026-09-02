@@ -1,28 +1,18 @@
 import Link from "next/link";
 import Logo from "./Logo";
 
-function LinkedinIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.1 1 2.5 1s2.48 1.12 2.48 2.5zM.24 8.25h4.5V23H.24V8.25zM8.16 8.25h4.31v2.01h.06c.6-1.13 2.08-2.33 4.28-2.33 4.58 0 5.42 3.02 5.42 6.94V23h-4.5v-6.83c0-1.63-.03-3.72-2.27-3.72-2.27 0-2.62 1.78-2.62 3.6V23h-4.5V8.25z" />
-    </svg>
-  );
-}
-
-function TwitterIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M18.9 1.75h3.68l-8.04 9.19L24 22.25h-7.4l-5.8-7.58-6.64 7.58H.47l8.6-9.83L0 1.75h7.59l5.24 6.93 6.07-6.93Zm-1.29 18.38h2.04L6.5 3.75H4.3l13.31 16.38Z" />
-    </svg>
-  );
-}
-
 const columns = [
   {
     title: "Products",
     links: [
-      { label: "Connected Banking Platform", href: "/solutions/connected-banking-platform" },
-      { label: "Agency Banking Solutions", href: "/solutions/agency-banking-solutions" },
+      {
+        label: "Connected Banking Platform",
+        href: "/solutions/connected-banking-platform",
+      },
+      {
+        label: "Agency Banking Solutions",
+        href: "/solutions/agency-banking-solutions",
+      },
       { label: "All products", href: "/solutions" },
     ],
   },
@@ -31,8 +21,8 @@ const columns = [
     links: [
       { label: "Banks", href: "/industries#banks" },
       { label: "NBFCs", href: "/industries#nbfcs" },
-      { label: "Microfinance Institutions", href: "/industries#mfis" },
-      { label: "Fintech Startups", href: "/industries#fintech-startups" },
+      { label: "Microfinance", href: "/industries#mfis" },
+      { label: "Fintechs", href: "/industries#fintech-startups" },
       { label: "Government & PSU", href: "/industries#government-psu" },
     ],
   },
@@ -48,43 +38,34 @@ const columns = [
 
 export default function Footer() {
   return (
-    <footer className="bg-brand-navy text-slate-300">
+    <footer className="border-t border-rule-strong bg-paper-2">
       <div className="container-page py-16">
-        <div className="grid grid-cols-2 gap-10 lg:grid-cols-5">
-          <div className="col-span-2">
-            <Logo dark />
-            <p className="mt-4 max-w-xs text-sm leading-6 text-slate-400">
-              Agency banking, payments, and connected banking infrastructure
-              for regulated financial institutions across India, Africa, the
-              Middle East, and Asia Pacific.
+        <div className="grid grid-cols-2 gap-x-8 gap-y-12 lg:grid-cols-12">
+          <div className="col-span-2 lg:col-span-5">
+            <Logo />
+            <p className="mt-6 max-w-xs text-[0.9rem] leading-7 text-ink-soft">
+              Agency banking and connected banking infrastructure for regulated
+              financial institutions across India, Africa, the Middle East and
+              Asia Pacific.
             </p>
-            <div className="mt-6 flex gap-4">
-              <a
-                href="#"
-                aria-label="LinkedIn"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-white/5 hover:bg-white/10 transition-colors"
-              >
-                <LinkedinIcon />
-              </a>
-              <a
-                href="#"
-                aria-label="Twitter"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-white/5 hover:bg-white/10 transition-colors"
-              >
-                <TwitterIcon />
-              </a>
-            </div>
+            <p className="mono mt-6 text-[0.78rem] leading-6 text-ink-faint">
+              hello@nexarafintech.com
+              <br />
+              +91 9971886999
+              <br />
+              BKC, Mumbai, India
+            </p>
           </div>
 
           {columns.map((col) => (
-            <div key={col.title}>
-              <p className="text-sm font-semibold text-white">{col.title}</p>
-              <ul className="mt-4 flex flex-col gap-3">
+            <div key={col.title} className="lg:col-span-2">
+              <p className="label">{col.title}</p>
+              <ul className="mt-5 flex flex-col gap-3">
                 {col.links.map((link) => (
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-sm text-slate-400 hover:text-white transition-colors"
+                      className="text-[0.9rem] text-ink-soft transition-colors hover:text-ink"
                     >
                       {link.label}
                     </Link>
@@ -93,18 +74,39 @@ export default function Footer() {
               </ul>
             </div>
           ))}
+
+          <div className="col-span-2 lg:col-span-1">
+            <p className="label">Social</p>
+            <ul className="mt-5 flex flex-col gap-3">
+              <li>
+                <a
+                  href="#"
+                  className="text-[0.9rem] text-ink-soft transition-colors hover:text-ink"
+                >
+                  LinkedIn
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-[0.9rem] text-ink-soft transition-colors hover:text-ink"
+                >
+                  X
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <div className="mt-14 flex flex-col gap-4 border-t border-white/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-sm text-slate-400">
-            &copy; {new Date().getFullYear()} Nexara Fintech. All rights
-            reserved.
+        <div className="mt-16 flex flex-col gap-3 border-t border-rule pt-7 sm:flex-row sm:items-center sm:justify-between">
+          <p className="mono text-[0.72rem] text-ink-faint">
+            © {new Date().getFullYear()} Nexara Fintech
           </p>
           <div className="flex gap-6">
-            <a href="#" className="text-sm text-slate-400 hover:text-white">
-              Privacy Policy
+            <a href="#" className="mono text-[0.72rem] text-ink-faint hover:text-ink">
+              Privacy
             </a>
-            <a href="#" className="text-sm text-slate-400 hover:text-white">
+            <a href="#" className="mono text-[0.72rem] text-ink-faint hover:text-ink">
               Disclaimer
             </a>
           </div>

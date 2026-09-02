@@ -1,14 +1,13 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
-import TrustStrip from "@/components/TrustStrip";
-import Solutions from "@/components/Solutions";
-import ServicesGrid from "@/components/ServicesGrid";
+import Platforms from "@/components/Platforms";
+import ServicesIndex from "@/components/ServicesIndex";
 import Stats from "@/components/Stats";
-import WhoWeServe from "@/components/WhoWeServe";
-import GlobalPresence from "@/components/GlobalPresence";
-import Capabilities from "@/components/Capabilities";
-import Testimonial from "@/components/Testimonial";
-import CtaBanner from "@/components/CtaBanner";
+import Audiences from "@/components/Audiences";
+import Markets from "@/components/Markets";
+import Approach from "@/components/Approach";
+import Quote from "@/components/Quote";
+import ClosingCta from "@/components/ClosingCta";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -17,15 +16,14 @@ export default function Home() {
       <Nav />
       <main className="flex-1">
         <Hero />
-        <TrustStrip />
-        <Solutions />
-        <ServicesGrid />
+        <Platforms />
+        <ServicesIndex />
         <Stats />
-        <WhoWeServe />
-        <GlobalPresence />
-        <Capabilities />
-        <Testimonial />
-        <CtaBanner />
+        <Audiences />
+        <Markets />
+        <Approach />
+        <Quote />
+        <ClosingCta />
       </main>
       <Footer />
     </>

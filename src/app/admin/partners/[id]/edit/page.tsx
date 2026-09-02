@@ -32,12 +32,12 @@ export default async function EditPartnerPage({
       <main className="container-page py-12">
         <Link
           href="/admin/partners"
-          className="inline-flex items-center gap-1.5 text-sm font-medium text-brand-slate hover:text-brand-navy"
+          className="inline-flex items-center gap-1.5 text-sm font-medium text-ink-soft hover:text-ink"
         >
           <ArrowLeft size={14} />
           Back to partners
         </Link>
-        <h1 className="mt-4 text-2xl font-semibold tracking-tight text-brand-navy">
+        <h1 className="mt-4 text-2xl font-semibold tracking-tight text-ink">
           Edit {partner.name}
         </h1>
         <PartnerForm

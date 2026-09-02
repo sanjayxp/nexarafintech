@@ -1,110 +1,85 @@
-import Image from "next/image";
 import Link from "next/link";
-import type { Icon as PhosphorIcon } from "@phosphor-icons/react";
-import { CaretRight } from "@phosphor-icons/react/ssr";
 
 export default function PageHero({
   eyebrow,
   title,
   description,
   breadcrumb,
-  icon: Icon,
-  photo,
+  meta,
 }: {
   eyebrow: string;
   title: string;
   description?: string;
   breadcrumb?: { label: string; href?: string }[];
-  icon?: PhosphorIcon;
-  photo?: string;
+  meta?: { term: string; value: string }[];
 }) {
   return (
-    <section className="relative overflow-hidden bg-white text-brand-navy">
-      <div className="bg-hero-gradient pointer-events-none absolute inset-0" />
-      <div className="bg-dot-grid pointer-events-none absolute inset-0 opacity-40" />
-
-      {photo && (
-        <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[42%] lg:block">
-          <div className="relative h-full w-full">
-            <Image
-              src={photo}
-              alt=""
-              fill
-              sizes="42vw"
-              className="object-cover object-center"
-            />
-            <div
-              className="absolute inset-0"
-              style={{
-                background:
-                  "linear-gradient(115deg, rgba(11,27,58,0.70) 0%, rgba(30,64,175,0.55) 50%, rgba(79,70,229,0.48) 100%)",
-              }}
-            />
-            <div
-              className="absolute inset-0"
-              style={{
-                background: "linear-gradient(90deg, rgba(247,249,255,1) 0%, rgba(247,249,255,0) 20%, rgba(247,249,255,0) 100%)",
-              }}
-            />
-          </div>
-        </div>
-      )}
-
-      {Icon && !photo && (
-        <div className="pointer-events-none absolute inset-0 hidden lg:block">
-          <div
-            className="animate-float-card absolute right-[8%] top-1/2 flex h-16 w-16 -translate-y-1/2 items-center justify-center rounded-2xl bg-brand-teal-light ring-1 ring-brand-teal/20"
-          >
-            <Icon size={28} weight="duotone" className="text-brand-teal" />
-          </div>
-        </div>
-      )}
-
-      <div className="container-page relative py-20 lg:py-24">
-        <div className={photo ? "max-w-2xl lg:max-w-xl" : ""}>
-          {breadcrumb && (
-            <nav className="mb-6 flex flex-wrap items-center gap-1.5 text-sm text-brand-slate-light">
-              <Link href="/" className="hover:text-brand-navy transition-colors">
-                Home
-              </Link>
-              {breadcrumb.map((item) => (
-                <span key={item.label} className="flex items-center gap-1.5">
-                  <CaretRight size={14} />
-                  {item.href ? (
-                    <Link
-                      href={item.href}
-                      className="hover:text-brand-navy transition-colors"
-                    >
-                      {item.label}
-                    </Link>
-                  ) : (
-                    <span className="text-brand-navy">{item.label}</span>
-                  )}
-                </span>
-              ))}
-            </nav>
-          )}
-          <p className="text-sm font-semibold uppercase tracking-wide text-brand-teal">
-            {eyebrow}
-          </p>
-          <h1
-            className={`mt-3 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl ${
-              photo ? "" : "max-w-3xl"
-            }`}
-          >
-            {title}
-          </h1>
-          {description && (
-            <p
-              className={`mt-5 text-lg leading-8 text-brand-slate ${
-                photo ? "" : "max-w-2xl"
-              }`}
+    <section className="border-b border-rule">
+      <div className="container-page">
+        {breadcrumb && (
+          <nav className="flex flex-wrap items-center gap-2 pt-8">
+            <Link
+              href="/"
+              className="mono text-[0.72rem] text-ink-faint transition-colors hover:text-ink"
             >
-              {description}
-            </p>
+              Home
+            </Link>
+            {breadcrumb.map((item) => (
+              <span key={item.label} className="flex items-center gap-2">
+                <span aria-hidden className="text-ink-faint">
+                  /
+                </span>
+                {item.href ? (
+                  <Link
+                    href={item.href}
+                    className="mono text-[0.72rem] text-ink-faint transition-colors hover:text-ink"
+                  >
+                    {item.label}
+                  </Link>
+                ) : (
+                  <span className="mono text-[0.72rem] text-ink">
+                    {item.label}
+                  </span>
+                )}
+              </span>
+            ))}
+          </nav>
+        )}
+
+        <div className="grid grid-cols-1 gap-10 pb-16 pt-12 lg:grid-cols-12 lg:pb-20 lg:pt-16">
+          <div className="lg:col-span-8">
+            <p className="label">{eyebrow}</p>
+            <h1 className="display mt-6 text-[clamp(2.4rem,5.5vw,4.4rem)]">
+              {title}
+            </h1>
+          </div>
+          {description && (
+            <div className="lg:col-span-4 lg:pt-16">
+              <p className="text-[1rem] leading-8 text-ink-soft">
+                {description}
+              </p>
+            </div>
           )}
         </div>
       </div>
+
+      {meta && meta.length > 0 && (
+        <div className="border-t border-rule">
+          <div className="container-page">
+            <dl className="grid grid-cols-1 divide-y divide-rule sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+              {meta.map((m) => (
+                <div
+                  key={m.term}
+                  className="py-6 sm:px-8 sm:first:pl-0 sm:last:pr-0"
+                >
+                  <dt className="label">{m.term}</dt>
+                  <dd className="mt-2 text-[0.95rem] text-ink">{m.value}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

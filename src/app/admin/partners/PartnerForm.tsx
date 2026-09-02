@@ -21,7 +21,7 @@ export default function PartnerForm({
       )}
 
       <div>
-        <label htmlFor="name" className="text-sm font-medium text-brand-navy">
+        <label htmlFor="name" className="text-sm font-medium text-ink">
           Partner name
         </label>
         <input
@@ -31,14 +31,14 @@ export default function PartnerForm({
           required
           defaultValue={partner?.name}
           placeholder="e.g. Yes Bank"
-          className="mt-1.5 w-full rounded-md border border-brand-border px-3 py-2 text-sm text-brand-navy focus:border-brand-teal focus:outline-none"
+          className="mt-1.5 w-full rounded-md border border-rule px-3 py-2 text-sm text-ink focus:border-accent focus:outline-none"
         />
       </div>
 
       <div>
         <label
           htmlFor="website_url"
-          className="text-sm font-medium text-brand-navy"
+          className="text-sm font-medium text-ink"
         >
           Website
         </label>
@@ -49,16 +49,16 @@ export default function PartnerForm({
           required
           defaultValue={partner?.website_url}
           placeholder="https://partner-website.com"
-          className="mt-1.5 w-full rounded-md border border-brand-border px-3 py-2 text-sm text-brand-navy focus:border-brand-teal focus:outline-none"
+          className="mt-1.5 w-full rounded-md border border-rule px-3 py-2 text-sm text-ink focus:border-accent focus:outline-none"
         />
       </div>
 
       <div>
-        <label htmlFor="logo" className="text-sm font-medium text-brand-navy">
+        <label htmlFor="logo" className="text-sm font-medium text-ink">
           Logo
         </label>
         {partner?.logo_url && (
-          <div className="relative mt-2 h-12 w-12 overflow-hidden rounded-lg border border-brand-border bg-white">
+          <div className="relative mt-2 h-12 w-12 overflow-hidden rounded-lg border border-rule bg-white">
             <Image
               src={partner.logo_url}
               alt=""
@@ -72,9 +72,9 @@ export default function PartnerForm({
           name="logo"
           type="file"
           accept="image/*"
-          className="mt-1.5 block w-full text-sm text-brand-slate file:mr-4 file:rounded-md file:border-0 file:bg-brand-navy file:px-3 file:py-1.5 file:text-sm file:font-semibold file:text-white hover:file:bg-brand-navy-2"
+          className="mt-1.5 block w-full text-sm text-ink-soft file:mr-4 file:rounded-md file:border-0 file:bg-ink file:px-3 file:py-1.5 file:text-sm file:font-semibold file:text-white hover:file:bg-ink-2"
         />
-        <p className="mt-1 text-xs text-brand-slate-light">
+        <p className="mt-1 text-xs text-ink-faint">
           Square logo, transparent background works best.
           {partner ? " Leave blank to keep the current logo." : ""}
         </p>
@@ -83,12 +83,12 @@ export default function PartnerForm({
       <div>
         <label
           htmlFor="picture"
-          className="text-sm font-medium text-brand-navy"
+          className="text-sm font-medium text-ink"
         >
           Picture
         </label>
         {partner?.picture_url && (
-          <div className="relative mt-2 h-24 w-40 overflow-hidden rounded-lg border border-brand-border bg-white">
+          <div className="relative mt-2 h-24 w-40 overflow-hidden rounded-lg border border-rule bg-white">
             <Image
               src={partner.picture_url}
               alt=""
@@ -102,9 +102,9 @@ export default function PartnerForm({
           name="picture"
           type="file"
           accept="image/*"
-          className="mt-1.5 block w-full text-sm text-brand-slate file:mr-4 file:rounded-md file:border-0 file:bg-brand-navy file:px-3 file:py-1.5 file:text-sm file:font-semibold file:text-white hover:file:bg-brand-navy-2"
+          className="mt-1.5 block w-full text-sm text-ink-soft file:mr-4 file:rounded-md file:border-0 file:bg-ink file:px-3 file:py-1.5 file:text-sm file:font-semibold file:text-white hover:file:bg-ink-2"
         />
-        <p className="mt-1 text-xs text-brand-slate-light">
+        <p className="mt-1 text-xs text-ink-faint">
           Optional. A wider photo shown on the partner&apos;s card.
           {partner ? " Leave blank to keep the current picture." : ""}
         </p>
@@ -112,7 +112,7 @@ export default function PartnerForm({
 
       <button
         type="submit"
-        className="inline-flex w-fit items-center justify-center rounded-md bg-brand-navy px-6 py-2.5 text-sm font-semibold text-white hover:bg-brand-navy-2 transition-colors"
+        className="inline-flex w-fit items-center justify-center rounded-md bg-ink px-6 py-2.5 text-sm font-semibold text-white hover:bg-ink-2 transition-colors"
       >
         {submitLabel}
       </button>

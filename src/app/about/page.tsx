@@ -3,16 +3,16 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import About from "@/components/About";
-import GlobalPresence from "@/components/GlobalPresence";
+import Markets from "@/components/Markets";
 import Team from "@/components/Team";
 import Stats from "@/components/Stats";
-import Testimonial from "@/components/Testimonial";
-import { Buildings } from "@phosphor-icons/react/ssr";
+import Quote from "@/components/Quote";
+import ClosingCta from "@/components/ClosingCta";
 
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Nexara Fintech builds agency banking, payments, and connected banking infrastructure for regulated financial institutions across India, Africa, the Middle East, and Asia Pacific.",
+    "Nexara Fintech builds agency banking and connected banking infrastructure for regulated financial institutions across India, Africa, the Middle East, and Asia Pacific.",
 };
 
 export default function AboutPage() {
@@ -21,19 +21,18 @@ export default function AboutPage() {
       <Nav />
       <main className="flex-1">
         <PageHero
-          eyebrow="About Nexara"
-          title="Infrastructure for the next billion banking relationships"
-          description="The team, the approach, and the standards behind every module on the Nexara platform."
+          eyebrow="About"
+          title="Infrastructure for the next billion banking relationships."
+          description="The objective, the standards, and the people behind every module we ship."
           breadcrumb={[{ label: "About" }]}
-          icon={Buildings}
-          photo="/images/about-team-modern.jpg"
         />
 
-        <About compact />
-        <GlobalPresence />
-        <Team />
+        <About />
         <Stats />
-        <Testimonial />
+        <Markets />
+        <Team />
+        <Quote />
+        <ClosingCta />
       </main>
       <Footer />
     </>

@@ -1,43 +1,24 @@
 import { stats } from "@/lib/content";
-import Reveal from "./Reveal";
 
 export default function Stats() {
   return (
-    <section className="relative overflow-hidden bg-brand-navy py-20">
-      <div className="bg-glow-teal pointer-events-none absolute -right-20 -top-20 h-[26rem] w-[26rem]" />
-
-      <div className="container-page relative">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-5 lg:items-center">
-          <Reveal className="lg:col-span-2">
-            <div>
-              <h2 className="text-sm font-semibold uppercase tracking-wide text-brand-teal">
-                Nexara in numbers
-              </h2>
-              <p className="font-heading mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                One platform for every financial need
-              </p>
-              <p className="mt-4 leading-7 text-slate-300">
-                Built for institutions serving urban, semi-urban, and rural
-                customers — where reliability matters more than novelty.
-              </p>
+    <section className="border-b border-rule">
+      <div className="container-page">
+        <dl className="grid grid-cols-1 divide-y divide-rule sm:grid-cols-2 sm:divide-x lg:grid-cols-4 lg:divide-y-0">
+          {stats.map((stat) => (
+            <div
+              key={stat.label}
+              className="py-12 sm:px-10 sm:first:pl-0 lg:last:pr-0"
+            >
+              <dt className="display text-[clamp(2.6rem,4.5vw,3.6rem)] leading-none text-ink">
+                {stat.value}
+              </dt>
+              <dd className="mt-4 max-w-[15rem] text-[0.88rem] leading-6 text-ink-soft">
+                {stat.label}
+              </dd>
             </div>
-          </Reveal>
-
-          <Reveal delay={120} className="lg:col-span-3">
-            <div className="grid grid-cols-2 gap-x-8 gap-y-10">
-              {stats.map((stat) => (
-                <div key={stat.label}>
-                  <p className="font-heading text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
-                    {stat.value}
-                  </p>
-                  <p className="mt-2 text-sm leading-6 text-slate-400">
-                    {stat.label}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </Reveal>
-        </div>
+          ))}
+        </dl>
       </div>
     </section>
   );

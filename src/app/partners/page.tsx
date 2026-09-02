@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { ArrowSquareOut, Handshake } from "@phosphor-icons/react/ssr";
+import { ArrowSquareOut } from "@phosphor-icons/react/ssr";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
@@ -27,19 +27,17 @@ export default async function PartnersPage() {
           title="Built together with the institutions we serve"
           description="From regulated banks to technology providers, our partner network extends what our platform can do for the last mile."
           breadcrumb={[{ label: "Partners" }]}
-          icon={Handshake}
-          photo="/images/hero-partners.jpg"
         />
 
         <div className="container-page py-24">
           {partners.length === 0 ? (
-            <div className="rounded-2xl border border-dashed border-brand-border p-16 text-center">
-              <p className="text-lg font-semibold text-brand-navy">
+            <div className="rounded-2xl border border-dashed border-rule p-16 text-center">
+              <p className="text-lg font-semibold text-ink">
                 Our partner network is growing
               </p>
-              <p className="mt-2 text-brand-slate">
+              <p className="mt-2 text-ink-soft">
                 Check back soon, or{" "}
-                <a href="/contact" className="text-brand-blue hover:underline">
+                <a href="/contact" className="text-accent hover:underline">
                   get in touch
                 </a>{" "}
                 if you&apos;re interested in partnering with us.
@@ -53,10 +51,10 @@ export default async function PartnersPage() {
                     href={partner.website_url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex h-full flex-col overflow-hidden rounded-2xl border border-brand-border bg-white transition-colors hover:border-brand-teal/50"
+                    className="group flex h-full flex-col overflow-hidden rounded-2xl border border-rule bg-white transition-colors hover:border-accent/50"
                   >
                     {partner.picture_url ? (
-                      <div className="relative h-36 w-full bg-brand-surface">
+                      <div className="relative h-36 w-full bg-paper-2">
                         <Image
                           src={partner.picture_url}
                           alt=""
@@ -66,7 +64,7 @@ export default async function PartnersPage() {
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                         {partner.logo_url && (
-                          <div className="absolute -bottom-6 left-5 flex h-14 w-14 items-center justify-center rounded-xl border border-brand-border bg-white p-2 shadow-md">
+                          <div className="absolute -bottom-6 left-5 flex h-14 w-14 items-center justify-center rounded-xl border border-rule bg-white p-2 shadow-md">
                             <Image
                               src={partner.logo_url}
                               alt={partner.name}
@@ -78,7 +76,7 @@ export default async function PartnersPage() {
                         )}
                       </div>
                     ) : (
-                      <div className="flex h-36 w-full items-center justify-center bg-brand-surface">
+                      <div className="flex h-36 w-full items-center justify-center bg-paper-2">
                         {partner.logo_url ? (
                           <div className="relative h-16 w-32">
                             <Image
@@ -89,7 +87,7 @@ export default async function PartnersPage() {
                             />
                           </div>
                         ) : (
-                          <span className="flex h-14 w-14 items-center justify-center rounded-full bg-brand-navy text-lg font-semibold text-white">
+                          <span className="flex h-14 w-14 items-center justify-center rounded-full bg-ink text-lg font-semibold text-white">
                             {partner.name.charAt(0)}
                           </span>
                         )}
@@ -101,10 +99,10 @@ export default async function PartnersPage() {
                         partner.picture_url && partner.logo_url ? "pt-9" : ""
                       }`}
                     >
-                      <h3 className="text-base font-semibold text-brand-navy">
+                      <h3 className="text-base font-semibold text-ink">
                         {partner.name}
                       </h3>
-                      <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-blue group-hover:gap-2.5 transition-all">
+                      <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-accent group-hover:gap-2.5 transition-all">
                         Visit website
                         <ArrowSquareOut size={14} />
                       </span>

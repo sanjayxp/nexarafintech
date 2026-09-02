@@ -1,124 +1,137 @@
-import Image from "next/image";
 import Link from "next/link";
-import type { CSSProperties } from "react";
-import { ArrowRight, CheckCircle } from "@phosphor-icons/react/ssr";
-import { verticals } from "@/lib/verticals";
 
-const points = [
-  "Compliance built per market",
-  "API-first core integration",
-  "Live in weeks, not quarters",
+const facts = [
+  ["Coverage", "India · Africa · Middle East · APAC"],
+  ["Integration", "REST APIs on your existing core"],
+  ["Time to pilot", "3–6 months"],
 ];
 
-const modules = verticals.map((v) => ({
-  icon: v.icon,
-  label: v.shortName,
-  href: `/solutions/${v.slug}`,
-}));
+function Row({ k, children }: { k: string; children?: React.ReactNode }) {
+  return (
+    <div className="whitespace-pre">
+      <span className="text-white/45">{k}</span>
+      {children}
+    </div>
+  );
+}
 
 export default function Hero() {
   return (
-    <section
-      id="top"
-      className="relative overflow-hidden bg-white text-brand-navy"
-    >
-      <div className="bg-hero-gradient pointer-events-none absolute inset-0" />
-      <div className="bg-dot-grid pointer-events-none absolute inset-0 opacity-50" />
-      <div className="bg-glow-teal pointer-events-none absolute -left-24 -top-24 h-[28rem] w-[28rem]" />
+    <section className="border-b border-rule">
+      <div className="container-page">
+        <div className="grid grid-cols-1 gap-16 pb-20 pt-16 lg:grid-cols-12 lg:gap-12 lg:pb-28 lg:pt-24">
+          <div className="lg:col-span-7">
+            <p className="label">Banking &amp; payments infrastructure</p>
 
-      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 hidden w-[46%] lg:block">
-        <div className="relative h-full w-full">
-          <Image
-            src="/images/hero-corporate-glass.jpg"
-            alt=""
-            fill
-            priority
-            sizes="46vw"
-            className="object-cover object-center"
-          />
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(115deg, rgba(11,27,58,0.30) 0%, rgba(79,70,229,0.18) 55%, rgba(79,70,229,0.04) 100%)",
-            }}
-          />
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(90deg, rgba(247,249,255,1) 0%, rgba(247,249,255,0) 20%, rgba(247,249,255,0) 100%)",
-            }}
-          />
-        </div>
+            <h1 className="display mt-7 text-[clamp(2.9rem,7vw,5.6rem)]">
+              Banking that reaches
+              <br />
+              the <em className="text-accent">last mile</em>.
+            </h1>
 
-        {modules.map((mod, i) => {
-          const Icon = mod.icon;
-          return (
-            <Link
-              key={mod.label}
-              href={mod.href}
-              className="animate-float-card pointer-events-auto absolute flex items-center gap-2.5 rounded-full bg-white px-4 py-3 shadow-xl transition-transform hover:scale-105"
-              style={
-                {
-                  top: `${18 + i * 24}%`,
-                  right: i % 2 === 0 ? "6%" : "16%",
-                  animationDelay: `${i * 0.6}s`,
-                } as CSSProperties
-              }
-            >
-              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-brand-teal-light text-brand-teal">
-                <Icon size={16} weight="duotone" />
-              </span>
-              <span className="text-xs font-semibold text-brand-navy whitespace-nowrap">
-                {mod.label}
-              </span>
-            </Link>
-          );
-        })}
-      </div>
+            <p className="mt-8 max-w-xl text-lg leading-8 text-ink-soft">
+              We build the payout rails, collection accounts and agent networks
+              that banks, NBFCs and fintechs use to serve customers far past the
+              branch — across India, Africa, the Middle East and Asia Pacific.
+            </p>
 
-      <div className="container-page relative py-16 lg:py-24">
-        <div className="max-w-2xl lg:max-w-xl">
-          <p className="inline-flex items-center rounded-full border border-brand-teal/20 bg-brand-teal-light px-3 py-1 text-xs font-medium tracking-wide text-brand-teal uppercase">
-            Banking &amp; Payments Infrastructure
-          </p>
-          <h1 className="mt-5 text-5xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
-            Digital financial infrastructure for banks and enterprises.
-          </h1>
-          <p className="mt-5 text-lg leading-8 text-brand-slate">
-            Nexara Fintech builds the banking APIs and agent networks that
-            help financial institutions reach the last mile — across India,
-            Africa, the Middle East, and Asia Pacific.
-          </p>
-
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-teal px-6 py-3.5 text-sm font-semibold text-white hover:bg-[#4338ca] transition-colors"
-            >
-              Talk to our team
-              <ArrowRight size={16} />
-            </Link>
-            <Link
-              href="/solutions"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-brand-navy/20 px-6 py-3.5 text-sm font-semibold text-brand-navy hover:bg-brand-navy/5 transition-colors"
-            >
-              Explore our products
-            </Link>
+            <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
+              <Link
+                href="/contact"
+                className="group inline-flex items-center gap-2 text-base font-medium text-ink"
+              >
+                <span className="border-b border-ink pb-1 transition-colors group-hover:border-accent group-hover:text-accent">
+                  Talk to our team
+                </span>
+                <span
+                  aria-hidden
+                  className="transition-transform group-hover:translate-x-1"
+                >
+                  →
+                </span>
+              </Link>
+              <Link
+                href="/solutions"
+                className="text-base text-ink-soft underline decoration-rule-strong underline-offset-4 transition-colors hover:text-ink hover:decoration-ink"
+              >
+                See what we build
+              </Link>
+            </div>
           </div>
 
-          <ul className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-8">
-            {points.map((point) => (
-              <li
-                key={point}
-                className="flex items-center gap-2 text-sm text-brand-slate"
+          <div className="lg:col-span-5">
+            <div className="overflow-hidden rounded-sm bg-ink">
+              <div className="flex items-center justify-between border-b border-white/10 px-5 py-3">
+                <span className="mono text-[0.7rem] uppercase tracking-[0.12em] text-white/40">
+                  Payouts API
+                </span>
+                <span className="mono text-[0.7rem] text-[#7fbfa1]">
+                  201 Created
+                </span>
+              </div>
+
+              <pre className="mono overflow-x-auto px-5 py-5 text-[0.76rem] leading-[1.85] text-white/85">
+                <Row k="POST ">
+                  <span className="text-white">/v1/payouts</span>
+                </Row>
+                <Row k="{" />
+                <Row k={'  "amount"'}>
+                  <span className="text-white/45">: </span>
+                  <span className="text-[#e3cb8a]">25000</span>
+                  <span className="text-white/45">,</span>
+                </Row>
+                <Row k={'  "currency"'}>
+                  <span className="text-white/45">: </span>
+                  <span className="text-[#7fbfa1]">&quot;INR&quot;</span>
+                  <span className="text-white/45">,</span>
+                </Row>
+                <Row k={'  "mode"'}>
+                  <span className="text-white/45">: </span>
+                  <span className="text-[#7fbfa1]">&quot;IMPS&quot;</span>
+                  <span className="text-white/45">,</span>
+                </Row>
+                <Row k={'  "beneficiary"'}>
+                  <span className="text-white/45">: {"{"}</span>
+                </Row>
+                <Row k={'    "account"'}>
+                  <span className="text-white/45">: </span>
+                  <span className="text-[#7fbfa1]">
+                    &quot;5010•••••4471&quot;
+                  </span>
+                  <span className="text-white/45">,</span>
+                </Row>
+                <Row k={'    "ifsc"'}>
+                  <span className="text-white/45">: </span>
+                  <span className="text-[#7fbfa1]">&quot;HDFC0000123&quot;</span>
+                </Row>
+                <Row k="  }" />
+                <Row k="}" />
+              </pre>
+
+              <div className="border-t border-white/10 px-5 py-4">
+                <p className="mono text-[0.76rem] text-white/55">
+                  <span className="text-[#7fbfa1]">→</span> settled in 8s ·
+                  reconciled automatically
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="border-t border-rule">
+        <div className="container-page">
+          <dl className="grid grid-cols-1 divide-y divide-rule sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+            {facts.map(([term, value]) => (
+              <div
+                key={term}
+                className="py-6 sm:px-8 sm:first:pl-0 sm:last:pr-0"
               >
-                <CheckCircle size={16} weight="duotone" className="text-brand-teal shrink-0" />
-                {point}
-              </li>
+                <dt className="label">{term}</dt>
+                <dd className="mt-2 text-[0.95rem] text-ink">{value}</dd>
+              </div>
             ))}
-          </ul>
+          </dl>
         </div>
       </div>
     </section>

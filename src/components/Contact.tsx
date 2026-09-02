@@ -1,12 +1,13 @@
 "use client";
 
 import { useState, FormEvent } from "react";
-import { EnvelopeSimple, Phone, MapPin } from "@phosphor-icons/react/ssr";
 import { verticals } from "@/lib/verticals";
 import { markets } from "@/lib/markets";
-import Reveal from "./Reveal";
 
-export default function Contact({ compact = false }: { compact?: boolean }) {
+const field =
+  "mt-2 w-full border-0 border-b border-rule-strong bg-transparent px-0 py-2.5 text-[0.95rem] text-ink placeholder:text-ink-faint focus:border-accent focus:outline-none focus:ring-0";
+
+export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -15,161 +16,153 @@ export default function Contact({ compact = false }: { compact?: boolean }) {
   }
 
   return (
-    <section id="contact" className="py-24 bg-brand-surface">
-      <div className="container-page grid grid-cols-1 gap-12 lg:grid-cols-5">
-        <Reveal className="lg:col-span-2">
-          {!compact && (
-            <>
-              <h2 className="text-sm font-semibold uppercase tracking-wide text-brand-teal">
-                Contact
-              </h2>
-              <p className="font-heading mt-3 text-4xl font-bold tracking-tight text-brand-navy">
-                Let&apos;s build your banking rail
-              </p>
-            </>
-          )}
-          {!compact && (
-            <p className="mt-4 text-brand-slate leading-7">
-              Whether you&apos;re scoping a new agency banking network or
-              upgrading a payment switch, our solutions team can walk you
-              through architecture, compliance, and timelines.
-            </p>
-          )}
+    <section id="contact" className="border-b border-rule py-24 lg:py-32">
+      <div className="container-page">
+        <div className="grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-12">
+          <div className="lg:col-span-4">
+            <p className="label">Get in touch</p>
+            <h2 className="display mt-6 text-[clamp(1.9rem,3.4vw,2.8rem)]">
+              Tell us what
+              <br />
+              you&apos;re building.
+            </h2>
 
-          <div className="mt-8 flex flex-col gap-4 first:mt-0">
-            <div className="flex items-center gap-3 text-sm text-brand-navy">
-              <EnvelopeSimple size={18} weight="duotone" className="text-brand-teal" />
-              hello@nexarafintech.com
-            </div>
-            <div className="flex items-center gap-3 text-sm text-brand-navy">
-              <Phone size={18} weight="duotone" className="text-brand-teal" />
-              +91 9971886999
-            </div>
-            <div className="flex items-start gap-3 text-sm text-brand-navy">
-              <MapPin size={18} weight="duotone" className="mt-0.5 shrink-0 text-brand-teal" />
-              <span>
-                BKC, Mumbai, Maharashtra, India
-                <span className="mt-1 block text-brand-slate-light">
-                  Serving clients across India, Africa, the Middle East, and
-                  Asia Pacific
-                </span>
-              </span>
-            </div>
-          </div>
-
-          <div className="mt-8 rounded-2xl border border-brand-border bg-white p-5">
-            <p className="text-sm font-semibold text-brand-navy">
-              Response time
-            </p>
-            <p className="mt-1.5 text-sm leading-6 text-brand-slate">
-              We reply to every qualified enquiry within one business day, IST.
-              For urgent RFP or tender deadlines, call the number above.
-            </p>
-          </div>
-        </Reveal>
-
-        <Reveal delay={100} className="lg:col-span-3">
-          {submitted ? (
-            <div className="flex h-full min-h-[320px] flex-col items-center justify-center rounded-2xl border border-brand-border bg-white p-10 text-center">
-              <p className="text-xl font-semibold text-brand-navy">
-                Thanks — we&apos;ve got it.
-              </p>
-              <p className="mt-2 text-brand-slate">
-                A solutions engineer will reach out within one business day.
-              </p>
-            </div>
-          ) : (
-            <form
-              onSubmit={handleSubmit}
-              className="rounded-2xl border border-brand-border bg-white p-8"
-            >
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-                <div>
-                  <label className="block text-sm font-medium text-brand-navy">
-                    Full name
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    className="mt-2 w-full rounded-md border border-brand-border px-3 py-2.5 text-sm text-brand-navy placeholder:text-brand-slate-light focus:border-brand-teal focus:outline-none focus:ring-2 focus:ring-brand-teal/30"
-                    placeholder="Jane Doe"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-brand-navy">
-                    Work email
-                  </label>
-                  <input
-                    type="email"
-                    required
-                    className="mt-2 w-full rounded-md border border-brand-border px-3 py-2.5 text-sm text-brand-navy placeholder:text-brand-slate-light focus:border-brand-teal focus:outline-none focus:ring-2 focus:ring-brand-teal/30"
-                    placeholder="jane@bank.com"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-brand-navy">
-                    Organization
-                  </label>
-                  <input
-                    type="text"
-                    className="mt-2 w-full rounded-md border border-brand-border px-3 py-2.5 text-sm text-brand-navy placeholder:text-brand-slate-light focus:border-brand-teal focus:outline-none focus:ring-2 focus:ring-brand-teal/30"
-                    placeholder="Organization name"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-brand-navy">
-                    Area of interest
-                  </label>
-                  <select
-                    className="mt-2 w-full rounded-md border border-brand-border px-3 py-2.5 text-sm text-brand-navy focus:border-brand-teal focus:outline-none focus:ring-2 focus:ring-brand-teal/30"
-                    defaultValue=""
-                  >
-                    <option value="" disabled>
-                      Select a solution area
-                    </option>
-                    {verticals.map((vertical) => (
-                      <option key={vertical.slug}>{vertical.shortName}</option>
-                    ))}
-                    <option>Other</option>
-                  </select>
-                </div>
-                <div className="sm:col-span-2">
-                  <label className="block text-sm font-medium text-brand-navy">
-                    Market
-                  </label>
-                  <select
-                    className="mt-2 w-full rounded-md border border-brand-border px-3 py-2.5 text-sm text-brand-navy focus:border-brand-teal focus:outline-none focus:ring-2 focus:ring-brand-teal/30"
-                    defaultValue=""
-                  >
-                    <option value="" disabled>
-                      Where are you operating?
-                    </option>
-                    {markets.map((market) => (
-                      <option key={market.region}>{market.region}</option>
-                    ))}
-                    <option>Other / multiple markets</option>
-                  </select>
-                </div>
-                <div className="sm:col-span-2">
-                  <label className="block text-sm font-medium text-brand-navy">
-                    Tell us about your project
-                  </label>
-                  <textarea
-                    rows={4}
-                    className="mt-2 w-full rounded-md border border-brand-border px-3 py-2.5 text-sm text-brand-navy placeholder:text-brand-slate-light focus:border-brand-teal focus:outline-none focus:ring-2 focus:ring-brand-teal/30"
-                    placeholder="What are you looking to build?"
-                  />
-                </div>
+            <dl className="mt-12 border-t border-rule-strong">
+              <div className="border-b border-rule py-4">
+                <dt className="label">Email</dt>
+                <dd className="mono mt-1.5 text-[0.9rem] text-ink">
+                  hello@nexarafintech.com
+                </dd>
               </div>
-              <button
-                type="submit"
-                className="mt-6 inline-flex items-center justify-center rounded-full bg-brand-teal px-6 py-3 text-sm font-semibold text-white hover:bg-[#4338ca] transition-colors"
-              >
-                Send message
-              </button>
-            </form>
-          )}
-        </Reveal>
+              <div className="border-b border-rule py-4">
+                <dt className="label">Phone</dt>
+                <dd className="mono mt-1.5 text-[0.9rem] text-ink">
+                  +91 9971886999
+                </dd>
+              </div>
+              <div className="border-b border-rule py-4">
+                <dt className="label">Office</dt>
+                <dd className="mt-1.5 text-[0.9rem] leading-6 text-ink">
+                  BKC, Mumbai, India
+                  <span className="mt-1 block text-ink-faint">
+                    Clients across India, Africa, the Middle East and APAC
+                  </span>
+                </dd>
+              </div>
+              <div className="border-b border-rule py-4">
+                <dt className="label">Response</dt>
+                <dd className="mt-1.5 text-[0.9rem] leading-6 text-ink-soft">
+                  Within one business day, IST.
+                </dd>
+              </div>
+            </dl>
+          </div>
+
+          <div className="lg:col-span-8">
+            {submitted ? (
+              <div className="flex h-full min-h-[320px] flex-col justify-center border-t border-rule-strong">
+                <p className="display mt-10 text-[2rem]">Thank you.</p>
+                <p className="mt-3 text-[0.98rem] text-ink-soft">
+                  A solutions engineer will be in touch within one business day.
+                </p>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="border-t border-rule-strong pt-10">
+                <div className="grid grid-cols-1 gap-x-10 gap-y-8 sm:grid-cols-2">
+                  <div>
+                    <label className="label" htmlFor="name">
+                      Full name
+                    </label>
+                    <input
+                      id="name"
+                      type="text"
+                      required
+                      className={field}
+                      placeholder="Jane Doe"
+                    />
+                  </div>
+                  <div>
+                    <label className="label" htmlFor="email">
+                      Work email
+                    </label>
+                    <input
+                      id="email"
+                      type="email"
+                      required
+                      className={field}
+                      placeholder="jane@bank.com"
+                    />
+                  </div>
+                  <div>
+                    <label className="label" htmlFor="org">
+                      Organisation
+                    </label>
+                    <input
+                      id="org"
+                      type="text"
+                      className={field}
+                      placeholder="Institution name"
+                    />
+                  </div>
+                  <div>
+                    <label className="label" htmlFor="interest">
+                      Area of interest
+                    </label>
+                    <select id="interest" className={field} defaultValue="">
+                      <option value="" disabled>
+                        Select
+                      </option>
+                      {verticals.map((v) => (
+                        <option key={v.slug}>{v.shortName}</option>
+                      ))}
+                      <option>Other</option>
+                    </select>
+                  </div>
+                  <div className="sm:col-span-2">
+                    <label className="label" htmlFor="market">
+                      Market
+                    </label>
+                    <select id="market" className={field} defaultValue="">
+                      <option value="" disabled>
+                        Where are you operating?
+                      </option>
+                      {markets.map((m) => (
+                        <option key={m.region}>{m.region}</option>
+                      ))}
+                      <option>Other / multiple markets</option>
+                    </select>
+                  </div>
+                  <div className="sm:col-span-2">
+                    <label className="label" htmlFor="message">
+                      What are you building?
+                    </label>
+                    <textarea
+                      id="message"
+                      rows={4}
+                      className={field}
+                      placeholder="A short description helps us route this properly."
+                    />
+                  </div>
+                </div>
+
+                <button
+                  type="submit"
+                  className="group mt-10 inline-flex items-center gap-2 text-base font-medium text-ink"
+                >
+                  <span className="border-b border-ink pb-1 transition-colors group-hover:border-accent group-hover:text-accent">
+                    Send message
+                  </span>
+                  <span
+                    aria-hidden
+                    className="transition-transform group-hover:translate-x-1"
+                  >
+                    →
+                  </span>
+                </button>
+              </form>
+            )}
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import { Inter, Instrument_Serif, JetBrains_Mono } from "next/font/google";
 import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
@@ -9,10 +9,17 @@ const inter = Inter({
   display: "swap",
 });
 
-const jakarta = Plus_Jakarta_Sans({
-  variable: "--font-jakarta",
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-instrument-serif",
   subsets: ["latin"],
-  weight: ["600", "700", "800"],
+  weight: "400",
+  display: "swap",
+});
+
+const jetbrains = JetBrains_Mono({
+  variable: "--font-jetbrains",
+  subsets: ["latin"],
+  weight: ["400", "500"],
   display: "swap",
 });
 
@@ -23,8 +30,8 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default:
-      "Nexara Fintech | Agency Banking, Payments & Connected Banking Solutions",
-    template: "%s | Nexara Fintech",
+      "Nexara Fintech — Banking infrastructure for the last mile",
+    template: "%s · Nexara Fintech",
   },
   description,
   keywords: [
@@ -40,8 +47,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "Nexara Fintech",
-    title:
-      "Nexara Fintech | Agency Banking, Payments & Connected Banking Solutions",
+    title: "Nexara Fintech — Banking infrastructure for the last mile",
     description,
     url: SITE_URL,
     locale: "en",
@@ -51,13 +57,8 @@ export const metadata: Metadata = {
     title: "Nexara Fintech",
     description,
   },
-  alternates: {
-    canonical: SITE_URL,
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  alternates: { canonical: SITE_URL },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({
@@ -66,8 +67,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${jakarta.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col bg-white text-[var(--foreground)]">
+    <html
+      lang="en"
+      className={`${inter.variable} ${instrumentSerif.variable} ${jetbrains.variable} h-full`}
+    >
+      <body className="min-h-full flex flex-col bg-paper text-ink">
         {children}
       </body>
     </html>

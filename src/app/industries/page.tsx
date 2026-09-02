@@ -1,19 +1,16 @@
 import type { Metadata } from "next";
-import { Fragment } from "react";
-import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, CheckCircle, Handshake } from "@phosphor-icons/react/ssr";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
-import Reveal from "@/components/Reveal";
+import ClosingCta from "@/components/ClosingCta";
 import { industries } from "@/lib/industries";
 import { getVerticalBySlug } from "@/lib/verticals";
 
 export const metadata: Metadata = {
   title: "Industries",
   description:
-    "How banks, NBFCs, MFIs, fintech startups, cooperative banks, and government programs use Nexara Fintech's infrastructure.",
+    "How banks, NBFCs, MFIs, fintech startups, cooperative banks, and government programmes use Nexara Fintech's infrastructure.",
 };
 
 export default function IndustriesPage() {
@@ -23,114 +20,84 @@ export default function IndustriesPage() {
       <main className="flex-1">
         <PageHero
           eyebrow="Industries"
-          title="Built for every tier of the financial system"
-          description="From national banks to district-level cooperative networks, each institution type works with a different slice of our platform. The segments below reflect our India practice; equivalent institutions across Africa, the Middle East, and Asia Pacific map to the same modules."
+          title="Every tier of the financial system."
+          description="Each institution type works with a different slice of the platform. The segments below reflect our India practice; equivalent institutions elsewhere map to the same modules."
           breadcrumb={[{ label: "Industries" }]}
-          icon={Handshake}
-          photo="/images/hero-industries.jpg"
+          meta={[
+            { term: "Segments", value: String(industries.length) },
+            { term: "Regions", value: "India · Africa · Middle East · APAC" },
+            { term: "Deployment", value: "On your existing core" },
+          ]}
         />
 
-        <div className="container-page py-24">
-          <div className="flex flex-col gap-8">
-            {industries.map((industry, i) => {
-              const Icon = industry.icon;
-              return (
-                <Fragment key={industry.slug}>
-                  <Reveal delay={i * 60}>
-                    <div
-                      id={industry.slug}
-                      className="grid scroll-mt-24 grid-cols-1 gap-10 rounded-2xl border border-brand-border p-8 lg:grid-cols-3 lg:p-10"
-                    >
-                      <div className="lg:col-span-1">
-                        <div
-                          className="inline-flex h-12 w-12 items-center justify-center rounded-lg"
-                          style={{ backgroundColor: `${industry.color}1A`, color: industry.color }}
+        <section className="border-b border-rule py-20 lg:py-28">
+          <div className="container-page">
+            <div className="border-t border-rule-strong">
+              {industries.map((industry, i) => (
+                <div
+                  key={industry.slug}
+                  id={industry.slug}
+                  className="grid scroll-mt-24 grid-cols-1 gap-8 border-b border-rule py-12 lg:grid-cols-12 lg:gap-10"
+                >
+                  <div className="lg:col-span-4">
+                    <p className="mono text-[0.78rem] text-ink-faint">
+                      {String(i + 1).padStart(2, "0")}
+                    </p>
+                    <h2 className="display mt-3 text-[clamp(1.7rem,2.8vw,2.3rem)] leading-tight">
+                      {industry.name}
+                    </h2>
+                  </div>
+
+                  <div className="lg:col-span-5">
+                    <p className="text-[1rem] leading-8 text-ink-soft">
+                      {industry.summary}
+                    </p>
+                    <ul className="mt-6">
+                      {industry.challenges.map((c) => (
+                        <li
+                          key={c}
+                          className="border-t border-rule py-3 text-[0.9rem] leading-6 text-ink"
                         >
-                          <Icon size={24} weight="duotone" />
-                        </div>
-                        <h2 className="mt-5 text-2xl font-semibold tracking-tight text-brand-navy">
-                          {industry.name}
-                        </h2>
-                        <p className="mt-3 text-brand-slate leading-7">
-                          {industry.summary}
-                        </p>
-                      </div>
+                          {c}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
 
-                      <div className="lg:col-span-2 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:mt-[4.25rem]">
-                        <div>
-                          <h3 className="text-sm font-semibold uppercase tracking-wide text-brand-teal">
-                            What they&apos;re solving for
-                          </h3>
-                          <ul className="mt-4 flex flex-col gap-3">
-                            {industry.challenges.map((c) => (
-                              <li key={c} className="flex gap-2.5 text-sm text-brand-slate leading-6">
-                                <CheckCircle size={16} weight="duotone" className="mt-0.5 shrink-0 text-brand-teal" />
-                                {c}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                        <div>
-                          <h3 className="text-sm font-semibold uppercase tracking-wide text-brand-teal">
-                            Relevant platforms
-                          </h3>
-                          <ul className="mt-4 flex flex-col gap-3">
-                            {industry.relevantVerticals.map((slug) => {
-                              const vertical = getVerticalBySlug(slug);
-                              if (!vertical) return null;
-                              return (
-                                <li key={slug}>
-                                  <Link
-                                    href={`/solutions/${slug}`}
-                                    className="inline-flex items-center gap-1.5 text-sm font-medium text-brand-blue hover:gap-2.5 transition-all"
-                                  >
-                                    {vertical.name}
-                                    <ArrowRight size={14} />
-                                  </Link>
-                                </li>
-                              );
-                            })}
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </Reveal>
-
-                  {i === 2 && (
-                    <Reveal>
-                      <div className="relative overflow-hidden rounded-2xl">
-                        <div className="relative h-64 w-full sm:h-80">
-                          <Image
-                            src="/images/industries-team-meeting.jpg"
-                            alt=""
-                            fill
-                            sizes="100vw"
-                            className="object-cover object-center"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/90 via-brand-navy/50 to-transparent" />
-                        </div>
-                        <div className="absolute inset-0 flex items-center">
-                          <div className="max-w-md px-8 sm:px-12">
-                            <p className="font-heading text-2xl font-bold leading-snug tracking-tight text-white sm:text-3xl">
-                              Six institution types. One platform built to
-                              meet each of them where they are.
-                            </p>
-                            <p className="mt-4 text-sm leading-6 text-slate-300">
-                              Whether it&apos;s a district cooperative bank or
-                              a national payments program, our teams work
-                              directly with yours on rollout, compliance, and
-                              scale.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </Reveal>
-                  )}
-                </Fragment>
-              );
-            })}
+                  <div className="lg:col-span-3">
+                    <p className="label">Runs on</p>
+                    <ul className="mt-4 flex flex-col gap-3">
+                      {industry.relevantVerticals.map((slug) => {
+                        const vertical = getVerticalBySlug(slug);
+                        if (!vertical) return null;
+                        return (
+                          <li key={slug}>
+                            <Link
+                              href={`/solutions/${slug}`}
+                              className="group inline-flex items-center gap-2 text-[0.9rem] text-ink"
+                            >
+                              <span className="border-b border-rule-strong pb-0.5 transition-colors group-hover:border-accent group-hover:text-accent">
+                                {vertical.name}
+                              </span>
+                              <span
+                                aria-hidden
+                                className="text-ink-faint transition-transform group-hover:translate-x-1"
+                              >
+                                →
+                              </span>
+                            </Link>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        </section>
+
+        <ClosingCta />
       </main>
       <Footer />
     </>

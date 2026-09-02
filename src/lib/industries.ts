@@ -12,7 +12,6 @@ export type Industry = {
   slug: string;
   name: string;
   icon: Icon;
-  color: string;
   summary: string;
   challenges: string[];
   relevantVerticals: string[];
@@ -23,7 +22,6 @@ export const industries: Industry[] = [
     slug: "banks",
     name: "Public & Private Sector Banks",
     icon: Bank,
-    color: "#2563eb",
     summary:
       "Banks use our platform to extend reach through agency networks, modernise payment switching, and launch digital-first products without replacing their core banking system.",
     challenges: [
@@ -37,7 +35,6 @@ export const industries: Industry[] = [
     slug: "nbfcs",
     name: "NBFCs & Housing Finance Companies",
     icon: HandCoins,
-    color: "#7c3aed",
     summary:
       "NBFCs rely on our origination, servicing, and account aggregator integrations to underwrite faster and service larger loan books without linear growth in operations headcount.",
     challenges: [
@@ -51,7 +48,6 @@ export const industries: Industry[] = [
     slug: "mfis",
     name: "Microfinance Institutions",
     icon: UsersThree,
-    color: "#4f46e5",
     summary:
       "MFIs use our agency banking and financial inclusion wallet infrastructure to reach borrower groups in low-connectivity areas while keeping disbursal and collection auditable.",
     challenges: [
@@ -65,7 +61,6 @@ export const industries: Industry[] = [
     slug: "fintech-startups",
     name: "Fintech Startups & Neobanks",
     icon: Rocket,
-    color: "#2563eb",
     summary:
       "Fintech startups build on our neobanking, card issuance, and BNPL modules to launch consumer or embedded-finance products without acquiring their own banking or card licences.",
     challenges: [
@@ -79,7 +74,6 @@ export const industries: Industry[] = [
     slug: "cooperative-rural-banks",
     name: "Cooperative & Regional Rural Banks",
     icon: Buildings,
-    color: "#7c3aed",
     summary:
       "Cooperative and regional rural banks deploy our AePS, micro-ATM, and remittance rails to serve members and customers across district-level networks with minimal infrastructure investment.",
     challenges: [
@@ -93,7 +87,6 @@ export const industries: Industry[] = [
     slug: "government-psu",
     name: "Government & PSU Payment Programs",
     icon: Globe,
-    color: "#4f46e5",
     summary:
       "Government and PSU programs use our financial inclusion wallets and bulk payout platform to run direct benefit transfer and welfare disbursal at state or national scale.",
     challenges: [
