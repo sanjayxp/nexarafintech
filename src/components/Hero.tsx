@@ -62,15 +62,15 @@ export default function Hero() {
           <div className="lg:col-span-5">
             <div className="overflow-hidden rounded-sm bg-ink">
               <div className="flex items-center justify-between border-b border-white/10 px-5 py-3">
-                <span className="mono text-[0.7rem] uppercase tracking-[0.12em] text-white/40">
+                <span className="mono text-[0.78rem] uppercase tracking-[0.12em] text-white/40">
                   Payouts API
                 </span>
-                <span className="mono text-[0.7rem] text-[#7fbfa1]">
+                <span className="mono text-[0.78rem] text-[#7fbfa1]">
                   201 Created
                 </span>
               </div>
 
-              <pre className="mono overflow-x-auto px-5 py-5 text-[0.76rem] leading-[1.85] text-white/85">
+              <pre className="mono overflow-x-auto px-5 py-5 text-[0.83rem] leading-[1.85] text-white/85">
                 <Row k="POST ">
                   <span className="text-white">/v1/payouts</span>
                 </Row>
@@ -109,7 +109,7 @@ export default function Hero() {
               </pre>
 
               <div className="border-t border-white/10 px-5 py-4">
-                <p className="mono text-[0.76rem] text-white/55">
+                <p className="mono text-[0.83rem] text-white/55">
                   <span className="text-[#7fbfa1]">→</span> settled in 8s ·
                   reconciled automatically
                 </p>
@@ -128,7 +128,7 @@ export default function Hero() {
                 className="py-6 sm:px-8 sm:first:pl-0 sm:last:pr-0"
               >
                 <dt className="label">{term}</dt>
-                <dd className="mt-2 text-[0.95rem] text-ink">{value}</dd>
+                <dd className="mt-2 text-[1rem] text-ink">{value}</dd>
               </div>
             ))}
           </dl>

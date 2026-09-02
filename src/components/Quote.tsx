@@ -9,11 +9,11 @@ export default function Quote() {
             &ldquo;{testimonial.quote}&rdquo;
           </blockquote>
           <figcaption className="mt-10 flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-rule pt-6">
-            <span className="text-[0.95rem] text-ink">{testimonial.name}</span>
+            <span className="text-[1rem] text-ink">{testimonial.name}</span>
             <span aria-hidden className="text-ink-faint">
               /
             </span>
-            <span className="mono text-[0.78rem] text-ink-faint">
+            <span className="mono text-[0.85rem] text-ink-faint">
               {testimonial.title}
             </span>
           </figcaption>

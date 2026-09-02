@@ -33,14 +33,14 @@ export default function Approach() {
           {principles.map((p, i) => (
             <div key={p.title} className="border-t border-rule-strong pt-6">
               <div className="flex items-baseline gap-4">
-                <span className="mono text-[0.78rem] text-ink-faint">
+                <span className="mono text-[0.85rem] text-ink-faint">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <h3 className="display text-[1.5rem] leading-tight">
                   {p.title}
                 </h3>
               </div>
-              <p className="mt-3 max-w-md pl-9 text-[0.95rem] leading-7 text-ink-soft">
+              <p className="mt-3 max-w-md pl-9 text-[1rem] leading-7 text-ink-soft">
                 {p.body}
               </p>
             </div>

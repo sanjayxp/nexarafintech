@@ -37,7 +37,7 @@ export default function Audiences() {
           </div>
           <Link
             href="/industries"
-            className="text-[0.95rem] text-ink-soft underline decoration-rule-strong underline-offset-4 transition-colors hover:text-ink hover:decoration-ink"
+            className="text-[1rem] text-ink-soft underline decoration-rule-strong underline-offset-4 transition-colors hover:text-ink hover:decoration-ink"
           >
             By institution type
           </Link>
@@ -50,14 +50,14 @@ export default function Audiences() {
               <h3 className="display mt-5 text-[1.85rem] leading-tight">
                 {a.headline}
               </h3>
-              <p className="mt-4 text-[0.95rem] leading-7 text-ink-soft">
+              <p className="mt-4 text-[1rem] leading-7 text-ink-soft">
                 {a.body}
               </p>
               <ul className="mt-7">
                 {a.points.map((p) => (
                   <li
                     key={p}
-                    className="border-t border-rule py-2.5 text-[0.88rem] text-ink"
+                    className="border-t border-rule py-2.5 text-[0.94rem] text-ink"
                   >
                     {p}
                   </li>
@@ -65,7 +65,7 @@ export default function Audiences() {
               </ul>
               <Link
                 href={a.href}
-                className="group mt-7 inline-flex items-center gap-2 text-[0.9rem] font-medium text-ink"
+                className="group mt-7 inline-flex items-center gap-2 text-[0.96rem] font-medium text-ink"
               >
                 <span className="border-b border-ink pb-0.5 transition-colors group-hover:border-accent group-hover:text-accent">
                   What applies

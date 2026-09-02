@@ -27,7 +27,7 @@ export default function Nav() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="relative py-1 text-[0.9rem] text-ink-soft transition-colors after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-accent after:transition-all after:duration-200 hover:text-ink hover:after:w-full"
+                className="relative py-1 text-[0.96rem] text-ink-soft transition-colors after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-accent after:transition-all after:duration-200 hover:text-ink hover:after:w-full"
               >
                 {item.label}
               </Link>
@@ -37,7 +37,7 @@ export default function Nav() {
           <div className="hidden lg:block">
             <Link
               href="/contact"
-              className="group inline-flex items-center gap-2 text-[0.9rem] font-medium text-ink"
+              className="group inline-flex items-center gap-2 text-[0.96rem] font-medium text-ink"
             >
               <span className="border-b border-ink pb-0.5 transition-colors group-hover:border-accent group-hover:text-accent">
                 Talk to us
@@ -81,7 +81,7 @@ export default function Nav() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="block border-b border-rule py-3 pl-4 text-sm text-ink-soft"
+                className="block border-b border-rule py-3 pl-4 text-[0.95rem] text-ink-soft"
               >
                 {item.label}
               </Link>

@@ -58,7 +58,7 @@ body {
 /* Small technical labels — the counterweight to the serif */
 .label {
   font-family: var(--font-mono), ui-monospace, SFMono-Regular, monospace;
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--ink-faint);

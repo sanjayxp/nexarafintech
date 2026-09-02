@@ -20,12 +20,12 @@ export default function ServicesIndex() {
                 <br />
                 one ledger.
               </h2>
-              <p className="mt-6 max-w-sm text-[0.95rem] leading-7 text-ink-soft">
+              <p className="mt-6 max-w-sm text-[1rem] leading-7 text-ink-soft">
                 Take a single module or the whole stack. Compliance,
                 reconciliation and settlement are shared underneath, so nothing
                 has to be stitched together afterwards.
               </p>
-              <p className="mono mt-8 text-[0.8rem] text-ink-faint">
+              <p className="mono mt-8 text-[0.875rem] text-ink-faint">
                 {totalCapabilities} capabilities · 2 platforms
               </p>
             </div>
@@ -39,20 +39,20 @@ export default function ServicesIndex() {
                   href={`/solutions/${service.platformSlug}`}
                   className="index-row group grid grid-cols-12 items-baseline gap-4 border-b border-rule py-6"
                 >
-                  <span className="mono col-span-2 text-[0.78rem] text-ink-faint sm:col-span-1">
+                  <span className="mono col-span-2 text-[0.85rem] text-ink-faint sm:col-span-1">
                     {String(i + 1).padStart(2, "0")}
                   </span>
 
                   <div className="col-span-10 sm:col-span-4">
-                    <h3 className="text-[1.05rem] font-medium leading-snug text-ink">
+                    <h3 className="text-[1.1rem] font-medium leading-snug text-ink">
                       {service.name}
                     </h3>
-                    <p className="mono mt-1.5 text-[0.72rem] text-ink-faint">
+                    <p className="mono mt-1.5 text-[0.8rem] text-ink-faint">
                       {service.platform}
                     </p>
                   </div>
 
-                  <p className="col-span-12 text-[0.9rem] leading-7 text-ink-soft sm:col-span-6 sm:col-start-6">
+                  <p className="col-span-12 text-[0.96rem] leading-7 text-ink-soft sm:col-span-6 sm:col-start-6">
                     {service.description}
                   </p>
 

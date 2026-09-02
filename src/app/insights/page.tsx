@@ -33,7 +33,7 @@ export default async function InsightsIndex() {
 
         <div className="container-page py-24">
           {articles.length === 0 ? (
-            <div className="rounded-2xl border border-dashed border-rule p-16 text-center text-sm text-ink-soft">
+            <div className="rounded-2xl border border-dashed border-rule p-16 text-center text-[0.95rem] text-ink-soft">
               No articles published yet. Check back soon.
             </div>
           ) : (
@@ -56,7 +56,7 @@ export default async function InsightsIndex() {
                       )}
                     </div>
                     <div className="flex flex-1 flex-col p-6">
-                      <div className="flex items-center gap-3 text-xs">
+                      <div className="flex items-center gap-3 text-[0.8rem]">
                         <span className="rounded-full bg-accent-soft px-2.5 py-1 font-semibold text-accent">
                           {post.tag}
                         </span>
@@ -67,10 +67,10 @@ export default async function InsightsIndex() {
                       <h2 className="mt-4 text-base font-semibold leading-6 text-ink">
                         {post.title}
                       </h2>
-                      <p className="mt-2 flex-1 text-sm leading-6 text-ink-soft">
+                      <p className="mt-2 flex-1 text-[0.95rem] leading-6 text-ink-soft">
                         {post.excerpt}
                       </p>
-                      <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-accent group-hover:gap-2.5 transition-all">
+                      <span className="mt-4 inline-flex items-center gap-1.5 text-[0.95rem] font-semibold text-accent group-hover:gap-2.5 transition-all">
                         Read more
                         <ArrowRight size={14} />
                       </span>

@@ -43,12 +43,12 @@ export default function Footer() {
         <div className="grid grid-cols-2 gap-x-8 gap-y-12 lg:grid-cols-12">
           <div className="col-span-2 lg:col-span-5">
             <Logo />
-            <p className="mt-6 max-w-xs text-[0.9rem] leading-7 text-ink-soft">
+            <p className="mt-6 max-w-xs text-[0.96rem] leading-7 text-ink-soft">
               Agency banking and connected banking infrastructure for regulated
               financial institutions across India, Africa, the Middle East and
               Asia Pacific.
             </p>
-            <p className="mono mt-6 text-[0.78rem] leading-6 text-ink-faint">
+            <p className="mono mt-6 text-[0.85rem] leading-6 text-ink-faint">
               hello@nexarafintech.com
               <br />
               +91 9971886999
@@ -65,7 +65,7 @@ export default function Footer() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-[0.9rem] text-ink-soft transition-colors hover:text-ink"
+                      className="text-[0.96rem] text-ink-soft transition-colors hover:text-ink"
                     >
                       {link.label}
                     </Link>
@@ -81,7 +81,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#"
-                  className="text-[0.9rem] text-ink-soft transition-colors hover:text-ink"
+                  className="text-[0.96rem] text-ink-soft transition-colors hover:text-ink"
                 >
                   LinkedIn
                 </a>
@@ -89,7 +89,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#"
-                  className="text-[0.9rem] text-ink-soft transition-colors hover:text-ink"
+                  className="text-[0.96rem] text-ink-soft transition-colors hover:text-ink"
                 >
                   X
                 </a>
@@ -99,14 +99,14 @@ export default function Footer() {
         </div>
 
         <div className="mt-16 flex flex-col gap-3 border-t border-rule pt-7 sm:flex-row sm:items-center sm:justify-between">
-          <p className="mono text-[0.72rem] text-ink-faint">
+          <p className="mono text-[0.8rem] text-ink-faint">
             © {new Date().getFullYear()} Nexara Fintech
           </p>
           <div className="flex gap-6">
-            <a href="#" className="mono text-[0.72rem] text-ink-faint hover:text-ink">
+            <a href="#" className="mono text-[0.8rem] text-ink-faint hover:text-ink">
               Privacy
             </a>
-            <a href="#" className="mono text-[0.72rem] text-ink-faint hover:text-ink">
+            <a href="#" className="mono text-[0.8rem] text-ink-faint hover:text-ink">
               Disclaimer
             </a>
           </div>

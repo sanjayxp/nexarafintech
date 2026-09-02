@@ -78,7 +78,7 @@ export default async function VerticalDetail({
                 {vertical.valueProposition && (
                   <div className="lg:col-span-5 lg:pt-14">
                     <p className="label">Value proposition</p>
-                    <p className="mt-5 text-[1rem] leading-8 text-ink-soft">
+                    <p className="mt-5 text-[1.06rem] leading-8 text-ink-soft">
                       {vertical.valueProposition}
                     </p>
                   </div>
@@ -104,14 +104,14 @@ export default async function VerticalDetail({
               <div className="lg:col-span-8">
                 {vertical.groups.map((group) => (
                   <div key={group.title} className="mb-14 last:mb-0">
-                    <h3 className="mono border-b border-rule-strong pb-3 text-[0.78rem] uppercase tracking-[0.12em] text-ink">
+                    <h3 className="mono border-b border-rule-strong pb-3 text-[0.85rem] uppercase tracking-[0.12em] text-ink">
                       {group.title}
                     </h3>
                     <ul className="grid grid-cols-1 gap-x-10 sm:grid-cols-2">
                       {group.items.map((item) => (
                         <li
                           key={item}
-                          className="border-b border-rule py-3 text-[0.95rem] text-ink-soft"
+                          className="border-b border-rule py-3 text-[1rem] text-ink-soft"
                         >
                           {item}
                         </li>
@@ -145,7 +145,7 @@ export default async function VerticalDetail({
                             {r.items.map((item) => (
                               <li
                                 key={item}
-                                className="py-1 text-[0.88rem] text-ink-soft"
+                                className="py-1 text-[0.94rem] text-ink-soft"
                               >
                                 {item}
                               </li>
@@ -181,7 +181,7 @@ export default async function VerticalDetail({
                     {vertical.benefits.map((b) => (
                       <li
                         key={b}
-                        className="border-b border-rule py-4 text-[1rem] text-ink"
+                        className="border-b border-rule py-4 text-[1.06rem] text-ink"
                       >
                         {b}
                       </li>
@@ -196,7 +196,7 @@ export default async function VerticalDetail({
                     {vertical.revenueModel.map((r) => (
                       <li
                         key={r}
-                        className="border-b border-rule py-4 text-[1rem] text-ink-soft"
+                        className="border-b border-rule py-4 text-[1.06rem] text-ink-soft"
                       >
                         {r}
                       </li>
@@ -224,7 +224,7 @@ export default async function VerticalDetail({
                     <span className="display text-[clamp(1.6rem,3vw,2.2rem)]">
                       {item.name}
                     </span>
-                    <span className="flex items-center gap-3 text-[0.95rem] text-ink-soft">
+                    <span className="flex items-center gap-3 text-[1rem] text-ink-soft">
                       {item.tagline}
                       <span
                         aria-hidden

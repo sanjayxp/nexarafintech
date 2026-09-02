@@ -5,7 +5,7 @@ import { verticals } from "@/lib/verticals";
 import { markets } from "@/lib/markets";
 
 const field =
-  "mt-2 w-full border-0 border-b border-rule-strong bg-transparent px-0 py-2.5 text-[0.95rem] text-ink placeholder:text-ink-faint focus:border-accent focus:outline-none focus:ring-0";
+  "mt-2 w-full border-0 border-b border-rule-strong bg-transparent px-0 py-2.5 text-[1rem] text-ink placeholder:text-ink-faint focus:border-accent focus:outline-none focus:ring-0";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -30,19 +30,19 @@ export default function Contact() {
             <dl className="mt-12 border-t border-rule-strong">
               <div className="border-b border-rule py-4">
                 <dt className="label">Email</dt>
-                <dd className="mono mt-1.5 text-[0.9rem] text-ink">
+                <dd className="mono mt-1.5 text-[0.96rem] text-ink">
                   hello@nexarafintech.com
                 </dd>
               </div>
               <div className="border-b border-rule py-4">
                 <dt className="label">Phone</dt>
-                <dd className="mono mt-1.5 text-[0.9rem] text-ink">
+                <dd className="mono mt-1.5 text-[0.96rem] text-ink">
                   +91 9971886999
                 </dd>
               </div>
               <div className="border-b border-rule py-4">
                 <dt className="label">Office</dt>
-                <dd className="mt-1.5 text-[0.9rem] leading-6 text-ink">
+                <dd className="mt-1.5 text-[0.96rem] leading-6 text-ink">
                   BKC, Mumbai, India
                   <span className="mt-1 block text-ink-faint">
                     Clients across India, Africa, the Middle East and APAC
@@ -51,7 +51,7 @@ export default function Contact() {
               </div>
               <div className="border-b border-rule py-4">
                 <dt className="label">Response</dt>
-                <dd className="mt-1.5 text-[0.9rem] leading-6 text-ink-soft">
+                <dd className="mt-1.5 text-[0.96rem] leading-6 text-ink-soft">
                   Within one business day, IST.
                 </dd>
               </div>
@@ -62,7 +62,7 @@ export default function Contact() {
             {submitted ? (
               <div className="flex h-full min-h-[320px] flex-col justify-center border-t border-rule-strong">
                 <p className="display mt-10 text-[2rem]">Thank you.</p>
-                <p className="mt-3 text-[0.98rem] text-ink-soft">
+                <p className="mt-3 text-[1.04rem] text-ink-soft">
                   A solutions engineer will be in touch within one business day.
                 </p>
               </div>

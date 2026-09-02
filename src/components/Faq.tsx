@@ -49,7 +49,7 @@ export default function Faq() {
             <div className="border-t border-rule-strong">
               {faqs.map((faq) => (
                 <details key={faq.question} className="group border-b border-rule">
-                  <summary className="flex cursor-pointer list-none items-baseline gap-6 py-5 text-[1.02rem] text-ink transition-colors hover:text-accent [&::-webkit-details-marker]:hidden">
+                  <summary className="flex cursor-pointer list-none items-baseline gap-6 py-5 text-[1.08rem] text-ink transition-colors hover:text-accent [&::-webkit-details-marker]:hidden">
                     <span className="flex-1">{faq.question}</span>
                     <span
                       aria-hidden
@@ -58,7 +58,7 @@ export default function Faq() {
                       +
                     </span>
                   </summary>
-                  <p className="max-w-2xl pb-6 text-[0.95rem] leading-8 text-ink-soft">
+                  <p className="max-w-2xl pb-6 text-[1rem] leading-8 text-ink-soft">
                     {faq.answer}
                   </p>
                 </details>

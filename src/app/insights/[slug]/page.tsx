@@ -101,7 +101,7 @@ export default async function InsightDetail({
                   </p>
                   <Link
                     href="/contact"
-                    className="mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white hover:bg-ink-2 transition-colors"
+                    className="mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-ink px-6 py-3 text-[0.95rem] font-semibold text-white hover:bg-ink-2 transition-colors"
                   >
                     Talk to our team
                     <ArrowRight size={16} />
@@ -124,13 +124,13 @@ export default async function InsightDetail({
                       href={`/insights/${post.slug}`}
                       className="group flex flex-col rounded-2xl border border-rule p-6 transition-colors hover:border-accent/50 hover:bg-paper-2"
                     >
-                      <span className="text-xs font-semibold text-accent">
+                      <span className="text-[0.8rem] font-semibold text-accent">
                         {post.tag}
                       </span>
-                      <h3 className="mt-3 text-sm font-semibold leading-6 text-ink">
+                      <h3 className="mt-3 text-[0.95rem] font-semibold leading-6 text-ink">
                         {post.title}
                       </h3>
-                      <span className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-accent group-hover:gap-2.5 transition-all">
+                      <span className="mt-4 inline-flex items-center gap-1.5 text-[0.8rem] font-semibold text-accent group-hover:gap-2.5 transition-all">
                         Read more
                         <ArrowRight size={12} />
                       </span>

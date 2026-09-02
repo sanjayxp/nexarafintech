@@ -13,7 +13,7 @@ export default function Stats() {
               <dt className="display text-[clamp(2.6rem,4.5vw,3.6rem)] leading-none text-ink">
                 {stat.value}
               </dt>
-              <dd className="mt-4 max-w-[15rem] text-[0.88rem] leading-6 text-ink-soft">
+              <dd className="mt-4 max-w-[15rem] text-[0.94rem] leading-6 text-ink-soft">
                 {stat.label}
               </dd>
             </div>

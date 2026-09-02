@@ -14,7 +14,7 @@ export default function Platforms() {
           </div>
           <Link
             href="/solutions"
-            className="text-[0.95rem] text-ink-soft underline decoration-rule-strong underline-offset-4 transition-colors hover:text-ink hover:decoration-ink"
+            className="text-[1rem] text-ink-soft underline decoration-rule-strong underline-offset-4 transition-colors hover:text-ink hover:decoration-ink"
           >
             All products
           </Link>
@@ -29,19 +29,19 @@ export default function Platforms() {
                 className="grid grid-cols-1 gap-8 border-b border-rule py-12 lg:grid-cols-12 lg:gap-10 lg:py-16"
               >
                 <div className="lg:col-span-4">
-                  <p className="mono text-[0.78rem] text-ink-faint">
+                  <p className="mono text-[0.85rem] text-ink-faint">
                     Platform {String(i + 1).padStart(2, "0")}
                   </p>
                   <h3 className="display mt-4 text-[clamp(1.8rem,3vw,2.5rem)]">
                     {vertical.name}
                   </h3>
-                  <p className="mt-3 text-[0.95rem] italic text-accent">
+                  <p className="mt-3 text-[1rem] italic text-accent">
                     {vertical.tagline}
                   </p>
                 </div>
 
                 <div className="lg:col-span-8">
-                  <p className="max-w-2xl text-[1.02rem] leading-8 text-ink-soft">
+                  <p className="max-w-2xl text-[1.08rem] leading-8 text-ink-soft">
                     {vertical.summary}
                   </p>
 
@@ -49,7 +49,7 @@ export default function Platforms() {
                     {capabilities.slice(0, 10).map((item) => (
                       <li
                         key={item}
-                        className="border-b border-rule py-2.5 text-[0.9rem] text-ink"
+                        className="border-b border-rule py-2.5 text-[0.96rem] text-ink"
                       >
                         {item}
                       </li>
@@ -59,7 +59,7 @@ export default function Platforms() {
                   <div className="mt-8 flex items-center gap-6">
                     <Link
                       href={`/solutions/${vertical.slug}`}
-                      className="group inline-flex items-center gap-2 text-[0.95rem] font-medium text-ink"
+                      className="group inline-flex items-center gap-2 text-[1rem] font-medium text-ink"
                     >
                       <span className="border-b border-ink pb-0.5 transition-colors group-hover:border-accent group-hover:text-accent">
                         Explore {vertical.shortName}
@@ -71,7 +71,7 @@ export default function Platforms() {
                         →
                       </span>
                     </Link>
-                    <span className="mono text-[0.78rem] text-ink-faint">
+                    <span className="mono text-[0.85rem] text-ink-faint">
                       {capabilities.length} capabilities
                     </span>
                   </div>

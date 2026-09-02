@@ -102,7 +102,7 @@ export default async function PartnersPage() {
                       <h3 className="text-base font-semibold text-ink">
                         {partner.name}
                       </h3>
-                      <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-accent group-hover:gap-2.5 transition-all">
+                      <span className="mt-3 inline-flex items-center gap-1.5 text-[0.95rem] font-semibold text-accent group-hover:gap-2.5 transition-all">
                         Visit website
                         <ArrowSquareOut size={14} />
                       </span>

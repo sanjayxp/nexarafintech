@@ -27,7 +27,7 @@ export default function ClosingCta() {
                 →
               </span>
             </Link>
-            <p className="mono mt-4 text-[0.76rem] text-ink-faint">
+            <p className="mono mt-4 text-[0.83rem] text-ink-faint">
               hello@nexarafintech.com · +91 9971886999
             </p>
           </div>
