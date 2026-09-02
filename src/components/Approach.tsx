@@ -30,7 +30,7 @@ const tones = {
 
 export default function Approach() {
   return (
-    <section className="border-y border-rule bg-ground-2 py-24 lg:py-32">
+    <section className="border-y border-rule bg-ground-2 py-14 lg:py-20">
       <div className="container-page">
         <p className="label">Our approach</p>
 

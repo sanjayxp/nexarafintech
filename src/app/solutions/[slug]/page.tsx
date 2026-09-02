@@ -64,7 +64,7 @@ export default async function VerticalDetail({
 
         {/* Vision / value proposition set as an editorial statement */}
         {(vertical.vision || vertical.valueProposition) && (
-          <section className="border-b border-rule py-24 lg:py-32">
+          <section className="border-b border-rule py-14 lg:py-20">
             <div className="container-page">
               <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
                 {vertical.vision && (
@@ -89,7 +89,7 @@ export default async function VerticalDetail({
         )}
 
         {/* Capability groups, set as an index rather than cards */}
-        <section className="border-b border-rule py-24 lg:py-32">
+        <section className="border-b border-rule py-14 lg:py-20">
           <div className="container-page">
             <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
               <div className="lg:col-span-4">
@@ -126,7 +126,7 @@ export default async function VerticalDetail({
 
         {/* Markets & customers */}
         {(vertical.regions || vertical.targetCustomers) && (
-          <section className="border-b border-rule bg-ground-2 py-24 lg:py-32">
+          <section className="border-b border-rule bg-ground-2 py-14 lg:py-20">
             <div className="container-page">
               {vertical.regions && (
                 <>
@@ -172,7 +172,7 @@ export default async function VerticalDetail({
 
         {/* Benefits + revenue model */}
         {(vertical.benefits || vertical.revenueModel) && (
-          <section className="border-b border-rule py-24 lg:py-32">
+          <section className="border-b border-rule py-14 lg:py-20">
             <div className="container-page grid grid-cols-1 gap-14 lg:grid-cols-2">
               {vertical.benefits && (
                 <div>
@@ -209,7 +209,7 @@ export default async function VerticalDetail({
         )}
 
         {related.length > 0 && (
-          <section className="border-b border-rule py-24 lg:py-32">
+          <section className="border-b border-rule py-14 lg:py-20">
             <div className="container-page">
               <p className="label">
                 {related.length > 1 ? "Other platforms" : "The other platform"}

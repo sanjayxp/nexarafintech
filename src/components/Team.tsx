@@ -2,7 +2,7 @@ import { team } from "@/lib/team";
 
 export default function Team() {
   return (
-    <section className="border-b border-rule py-24 lg:py-32">
+    <section className="border-b border-rule py-14 lg:py-20">
       <div className="container-page">
         <p className="label">Leadership</p>
 

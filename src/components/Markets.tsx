@@ -10,7 +10,7 @@ const tones = {
 
 export default function Markets() {
   return (
-    <section id="markets" className="py-24 lg:py-32">
+    <section id="markets" className="py-14 lg:py-20">
       <div className="container-page">
         <div className="mb-14 flex flex-wrap items-end justify-between gap-6">
           <div>

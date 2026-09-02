@@ -39,7 +39,7 @@ const tones = {
 
 export default function Audiences() {
   return (
-    <section className="py-24 lg:py-32">
+    <section className="py-14 lg:py-20">
       <div className="container-page">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div>

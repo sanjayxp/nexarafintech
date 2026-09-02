@@ -3,7 +3,7 @@ import { testimonial } from "@/lib/content";
 
 export default function Quote() {
   return (
-    <section className="relative my-24 flex min-h-[520px] items-end overflow-hidden lg:my-32">
+    <section className="relative my-14 flex min-h-[520px] items-end overflow-hidden lg:my-20">
       <div className="absolute inset-0">
         <div className="duo duo-cool duo-deep h-full w-full">
           <Image

@@ -31,7 +31,7 @@ export default async function InsightsIndex() {
           breadcrumb={[{ label: "Insights" }]}
         />
 
-        <div className="container-page py-24">
+        <div className="container-page py-14 lg:py-20">
           {articles.length === 0 ? (
             <div className="rounded-2xl border border-dashed border-rule p-16 text-center text-[0.95rem] text-bone-dim">
               No articles published yet. Check back soon.

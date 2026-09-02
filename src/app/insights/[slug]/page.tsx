@@ -58,7 +58,7 @@ export default async function InsightDetail({
           ]}
         />
 
-        <div className="container-page py-24">
+        <div className="container-page py-14 lg:py-20">
           <div className="mx-auto max-w-3xl">
             <Reveal>
               <div className="flex flex-wrap items-center justify-between gap-4">

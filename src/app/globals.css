@@ -133,6 +133,21 @@ html {
   background: linear-gradient(155deg, var(--sky) 0%, var(--coral) 100%);
 }
 
+/* Per-rail tints, so imagery is colour-coded like everything else */
+.duo-mint::after {
+  background: linear-gradient(155deg, var(--mint) 0%, #0d6b53 100%);
+}
+
+.duo-saffron::after {
+  background: linear-gradient(155deg, var(--saffron) 0%, var(--coral) 100%);
+}
+
+/* Thumbnail use: dark source photos need luminance range or the tint
+   flattens them into a solid block. */
+.duo-lift img {
+  filter: grayscale(1) contrast(1.05) brightness(1.55);
+}
+
 /* Full-bleed usage: sit the photo down into the ground */
 .duo-deep img {
   filter: grayscale(1) contrast(1.18) brightness(0.42);

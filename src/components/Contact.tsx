@@ -16,7 +16,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="border-b border-rule py-24 lg:py-32">
+    <section id="contact" className="border-b border-rule py-14 lg:py-20">
       <div className="container-page">
         <div className="grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-4">

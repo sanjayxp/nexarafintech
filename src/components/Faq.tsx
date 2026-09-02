@@ -33,7 +33,7 @@ const faqs = [
 
 export default function Faq() {
   return (
-    <section className="border-b border-rule py-24 lg:py-32">
+    <section className="border-b border-rule py-14 lg:py-20">
       <div className="container-page">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
           <div className="lg:col-span-4">

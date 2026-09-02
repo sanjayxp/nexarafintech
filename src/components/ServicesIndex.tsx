@@ -14,7 +14,7 @@ const rail = {
 
 export default function ServicesIndex() {
   return (
-    <section id="services" className="py-24 lg:py-32">
+    <section id="services" className="py-14 lg:py-20">
       <div className="container-page">
         <div className="mb-14 flex flex-wrap items-end justify-between gap-6">
           <div>

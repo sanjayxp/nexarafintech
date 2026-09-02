@@ -29,7 +29,7 @@ export default async function PartnersPage() {
           breadcrumb={[{ label: "Partners" }]}
         />
 
-        <div className="container-page py-24">
+        <div className="container-page py-14 lg:py-20">
           {partners.length === 0 ? (
             <div className="rounded-2xl border border-dashed border-rule p-16 text-center">
               <p className="text-lg font-semibold text-bone">

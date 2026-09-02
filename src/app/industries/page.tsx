@@ -30,7 +30,7 @@ export default function IndustriesPage() {
           ]}
         />
 
-        <section className="border-b border-rule py-24 lg:py-32">
+        <section className="border-b border-rule py-14 lg:py-20">
           <div className="container-page">
             <div className="border-t border-rule-strong">
               {industries.map((industry, i) => (
