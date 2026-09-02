@@ -2,17 +2,17 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #241811;
+  --foreground: #0b1b3a;
 
-  --brand-navy: #2a1710;
-  --brand-navy-2: #40261a;
-  --brand-blue: #9a3412;
-  --brand-teal: #d2491f;
-  --brand-teal-light: #fbe4d6;
-  --brand-slate: #57534e;
-  --brand-slate-light: #78716c;
-  --brand-border: #ebe1d6;
-  --brand-surface: #fbf6f1;
+  --brand-navy: #0b1b3a;
+  --brand-navy-2: #16295c;
+  --brand-blue: #2563eb;
+  --brand-teal: #4f46e5;
+  --brand-teal-light: #e8e7fd;
+  --brand-slate: #475569;
+  --brand-slate-light: #64748b;
+  --brand-border: #e2e8f0;
+  --brand-surface: #f5f7fd;
 }
 
 @theme inline {
@@ -100,21 +100,21 @@ html {
 
 .bg-dot-grid {
   background-image: radial-gradient(
-    rgba(42, 23, 16, 0.12) 1px,
+    rgba(11, 27, 58, 0.1) 1px,
     transparent 1px
   );
   background-size: 22px 22px;
 }
 
 .bg-hero-gradient {
-  background: linear-gradient(115deg, #fff8f3 0%, #fdeee1 45%, #fbe0cc 100%);
+  background: linear-gradient(115deg, #ffffff 0%, #f2f5ff 45%, #e7edff 100%);
 }
 
 .bg-glow-teal {
   background: radial-gradient(
     circle at 30% 30%,
-    rgba(210, 73, 31, 0.28) 0%,
-    rgba(210, 73, 31, 0) 60%
+    rgba(79, 70, 229, 0.25) 0%,
+    rgba(79, 70, 229, 0) 60%
   );
   filter: blur(40px);
 }
@@ -122,8 +122,8 @@ html {
 .bg-glow-blue {
   background: radial-gradient(
     circle at 70% 40%,
-    rgba(154, 52, 18, 0.22) 0%,
-    rgba(154, 52, 18, 0) 60%
+    rgba(37, 99, 235, 0.2) 0%,
+    rgba(37, 99, 235, 0) 60%
   );
   filter: blur(40px);
 }

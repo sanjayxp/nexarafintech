@@ -77,7 +77,7 @@ export default function GlobalPresence() {
           <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 rounded-full bg-brand-teal px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#b23d19]"
+              className="inline-flex items-center gap-2 rounded-full bg-brand-teal px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#4338ca]"
             >
               Launching in a new market?
               <ArrowRight size={16} />

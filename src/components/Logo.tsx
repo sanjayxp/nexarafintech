@@ -1,6 +1,6 @@
 export default function Logo({ dark = false }: { dark?: boolean }) {
-  const mainColor = dark ? "#2a1710" : "#ffffff";
-  const accentColor = dark ? "#d2491f" : "#f7b28c";
+  const mainColor = dark ? "#0b1b3a" : "#ffffff";
+  const accentColor = dark ? "#4f46e5" : "#a5b4fc";
 
   return (
     <span className="inline-flex items-center gap-2.5">
@@ -24,7 +24,7 @@ export default function Logo({ dark = false }: { dark?: boolean }) {
         </span>
         <span
           className={`mt-1 text-[10px] font-semibold uppercase tracking-wider ${
-            dark ? "text-stone-400" : "text-brand-slate-light"
+            dark ? "text-slate-400" : "text-brand-slate-light"
           }`}
         >
           Technology. Payments. Inclusion.

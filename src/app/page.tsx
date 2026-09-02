@@ -7,7 +7,6 @@ import Stats from "@/components/Stats";
 import WhoWeServe from "@/components/WhoWeServe";
 import GlobalPresence from "@/components/GlobalPresence";
 import Capabilities from "@/components/Capabilities";
-import Process from "@/components/Process";
 import Testimonial from "@/components/Testimonial";
 import CtaBanner from "@/components/CtaBanner";
 import Footer from "@/components/Footer";
@@ -25,7 +24,6 @@ export default function Home() {
         <WhoWeServe />
         <GlobalPresence />
         <Capabilities />
-        <Process />
         <Testimonial />
         <CtaBanner />
       </main>

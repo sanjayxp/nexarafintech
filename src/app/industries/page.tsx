@@ -115,7 +115,7 @@ export default function IndustriesPage() {
                               Six institution types. One platform built to
                               meet each of them where they are.
                             </p>
-                            <p className="mt-4 text-sm leading-6 text-stone-300">
+                            <p className="mt-4 text-sm leading-6 text-slate-300">
                               Whether it&apos;s a district cooperative bank or
                               a national payments program, our teams work
                               directly with yours on rollout, compliance, and

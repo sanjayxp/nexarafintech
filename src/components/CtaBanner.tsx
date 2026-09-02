@@ -3,22 +3,15 @@ import { ArrowRight } from "@phosphor-icons/react/ssr";
 
 export default function CtaBanner() {
   return (
-    <section className="bg-white">
+    <section className="bg-white pb-24">
       <div className="container-page">
-        <div className="rounded-2xl bg-gradient-to-br from-brand-navy to-brand-navy-2 px-8 py-14 text-center sm:px-16">
-          <p className="font-heading text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            Ready to talk about your banking infrastructure?
-          </p>
-          <p className="mx-auto mt-3 max-w-xl text-stone-300">
-            Tell us what you&apos;re building and we&apos;ll connect you with
-            a solutions engineer within one business day.
-          </p>
+        <div className="flex justify-center rounded-2xl bg-gradient-to-br from-brand-navy to-brand-navy-2 px-8 py-12">
           <Link
             href="/contact"
-            className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-brand-teal px-6 py-3.5 text-sm font-semibold text-white hover:bg-[#b23d19] transition-colors"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-teal px-8 py-4 text-base font-semibold text-white transition-colors hover:bg-[#4338ca]"
           >
             Talk to our experts
-            <ArrowRight size={16} />
+            <ArrowRight size={18} />
           </Link>
         </div>
       </div>

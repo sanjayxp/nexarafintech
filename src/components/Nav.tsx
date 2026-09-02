@@ -78,7 +78,7 @@ export default function Nav() {
           <div className="hidden lg:block">
             <Link
               href="/contact"
-              className="inline-flex items-center rounded-full bg-brand-teal px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#b23d19] transition-colors"
+              className="inline-flex items-center rounded-full bg-brand-teal px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#4338ca] transition-colors"
             >
               Request a Demo
             </Link>

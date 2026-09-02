@@ -10,24 +10,24 @@ export const team: TeamMember[] = [
     name: "Arjun Mehta",
     title: "Co-Founder & CEO",
     initials: "AM",
-    color: "#d2491f",
+    color: "#4f46e5",
   },
   {
     name: "Kavya Reddy",
     title: "Co-Founder & CTO",
     initials: "KR",
-    color: "#9a3412",
+    color: "#2563eb",
   },
   {
     name: "Rohan Kapoor",
     title: "Co-Founder & COO",
     initials: "RK",
-    color: "#d97706",
+    color: "#7c3aed",
   },
   {
     name: "Divya Nair",
     title: "Head of Compliance",
     initials: "DN",
-    color: "#7c2d12",
+    color: "#0891b2",
   },
 ];

@@ -10,7 +10,7 @@ const audiences = [
       "Extend branch-equivalent service through an agent network without branch economics. Add channels on top of your existing core, with reporting your regulator already expects.",
     points: ["Agent onboarding & hierarchy", "Cash in / cash out", "Audit-ready reporting"],
     href: "/solutions/agency-banking-solutions",
-    color: "#9a3412",
+    color: "#2563eb",
   },
   {
     icon: HandCoins,
@@ -19,7 +19,7 @@ const audiences = [
       "Collect repayments at the last mile and disburse at volume. Verified beneficiaries, escrow-backed flows, and reconciliation that closes without manual effort.",
     points: ["Loan collections", "Bulk disbursal", "Penny-drop verification"],
     href: "/solutions/connected-banking-platform",
-    color: "#d2491f",
+    color: "#4f46e5",
   },
   {
     icon: Rocket,
@@ -28,7 +28,7 @@ const audiences = [
       "Launch regulated financial products without holding the licence yourself. One integration for payouts, collections, virtual accounts, and settlement.",
     points: ["Payout & PayIn APIs", "Virtual accounts", "Webhooks & dashboards"],
     href: "/solutions/connected-banking-platform",
-    color: "#d97706",
+    color: "#7c3aed",
   },
 ];
 

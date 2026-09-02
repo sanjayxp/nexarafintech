@@ -29,7 +29,7 @@ export default function Hero() {
       <div className="pointer-events-none absolute inset-y-0 right-0 z-10 hidden w-[46%] lg:block">
         <div className="relative h-full w-full">
           <Image
-            src="/images/hero-warm-workspace.jpg"
+            src="/images/hero-corporate-glass.jpg"
             alt=""
             fill
             priority
@@ -40,15 +40,14 @@ export default function Hero() {
             className="absolute inset-0"
             style={{
               background:
-                "linear-gradient(115deg, rgba(42,23,16,0.18) 0%, rgba(210,73,31,0.12) 55%, transparent 100%)",
-              mixBlendMode: "multiply",
+                "linear-gradient(115deg, rgba(11,27,58,0.30) 0%, rgba(79,70,229,0.18) 55%, rgba(79,70,229,0.04) 100%)",
             }}
           />
           <div
             className="absolute inset-0"
             style={{
               background:
-                "linear-gradient(90deg, #fff8f3 0%, transparent 18%)",
+                "linear-gradient(90deg, rgba(247,249,255,1) 0%, rgba(247,249,255,0) 20%, rgba(247,249,255,0) 100%)",
             }}
           />
         </div>
@@ -96,7 +95,7 @@ export default function Hero() {
           <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-teal px-6 py-3.5 text-sm font-semibold text-white hover:bg-[#b23d19] transition-colors"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-teal px-6 py-3.5 text-sm font-semibold text-white hover:bg-[#4338ca] transition-colors"
             >
               Talk to our team
               <ArrowRight size={16} />

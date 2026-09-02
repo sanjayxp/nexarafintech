@@ -16,7 +16,7 @@ export default function Stats() {
               <p className="font-heading mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl">
                 One platform for every financial need
               </p>
-              <p className="mt-4 leading-7 text-stone-300">
+              <p className="mt-4 leading-7 text-slate-300">
                 Built for institutions serving urban, semi-urban, and rural
                 customers — where reliability matters more than novelty.
               </p>
@@ -30,7 +30,7 @@ export default function Stats() {
                   <p className="font-heading text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
                     {stat.value}
                   </p>
-                  <p className="mt-2 text-sm leading-6 text-stone-400">
+                  <p className="mt-2 text-sm leading-6 text-slate-400">
                     {stat.label}
                   </p>
                 </div>

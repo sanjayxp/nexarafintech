@@ -37,14 +37,13 @@ export default function PageHero({
               className="absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(115deg, rgba(42,23,16,0.18) 0%, rgba(210,73,31,0.12) 55%, transparent 100%)",
-                mixBlendMode: "multiply",
+                  "linear-gradient(115deg, rgba(11,27,58,0.70) 0%, rgba(30,64,175,0.55) 50%, rgba(79,70,229,0.48) 100%)",
               }}
             />
             <div
               className="absolute inset-0"
               style={{
-                background: "linear-gradient(90deg, #fff8f3 0%, transparent 18%)",
+                background: "linear-gradient(90deg, rgba(247,249,255,1) 0%, rgba(247,249,255,0) 20%, rgba(247,249,255,0) 100%)",
               }}
             />
           </div>

@@ -163,7 +163,7 @@ export default function Contact({ compact = false }: { compact?: boolean }) {
               </div>
               <button
                 type="submit"
-                className="mt-6 inline-flex items-center justify-center rounded-full bg-brand-teal px-6 py-3 text-sm font-semibold text-white hover:bg-[#b23d19] transition-colors"
+                className="mt-6 inline-flex items-center justify-center rounded-full bg-brand-teal px-6 py-3 text-sm font-semibold text-white hover:bg-[#4338ca] transition-colors"
               >
                 Send message
               </button>
