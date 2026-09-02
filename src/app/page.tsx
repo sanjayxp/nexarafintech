@@ -4,7 +4,6 @@ import Platforms from "@/components/Platforms";
 import ServicesIndex from "@/components/ServicesIndex";
 import Stats from "@/components/Stats";
 import Audiences from "@/components/Audiences";
-import Markets from "@/components/Markets";
 import Approach from "@/components/Approach";
 import Quote from "@/components/Quote";
 import ClosingCta from "@/components/ClosingCta";
@@ -14,13 +13,12 @@ export default function Home() {
   return (
     <>
       <Nav />
-      <main className="flex-1">
+      <main className="flex flex-1 flex-col">
         <Hero />
         <Platforms />
         <ServicesIndex />
         <Stats />
         <Audiences />
-        <Markets />
         <Approach />
         <Quote />
         <ClosingCta />

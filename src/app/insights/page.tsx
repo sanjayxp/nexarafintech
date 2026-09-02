@@ -23,7 +23,7 @@ export default async function InsightsIndex() {
   return (
     <>
       <Nav />
-      <main className="flex-1">
+      <main className="flex flex-1 flex-col">
         <PageHero
           eyebrow="Insights"
           title="Perspectives from the field"

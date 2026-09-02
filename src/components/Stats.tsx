@@ -9,7 +9,7 @@ const blocks = [
 
 export default function Stats() {
   return (
-    <section className="container-page">
+    <section className="container-page my-24 lg:my-32">
       <dl className="grid grid-cols-2 gap-0.5 lg:grid-cols-4">
         {stats.map((stat, i) => {
           const b = blocks[i % blocks.length];

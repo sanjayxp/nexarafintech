@@ -41,7 +41,7 @@ export default async function VerticalDetail({
   return (
     <>
       <Nav />
-      <main className="flex-1">
+      <main className="flex flex-1 flex-col">
         <PageHero
           eyebrow={`Platform ${String(index + 1).padStart(2, "0")}`}
           title={vertical.name}
@@ -64,7 +64,7 @@ export default async function VerticalDetail({
 
         {/* Vision / value proposition set as an editorial statement */}
         {(vertical.vision || vertical.valueProposition) && (
-          <section className="border-b border-rule py-20 lg:py-24">
+          <section className="border-b border-rule py-24 lg:py-32">
             <div className="container-page">
               <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
                 {vertical.vision && (
@@ -89,7 +89,7 @@ export default async function VerticalDetail({
         )}
 
         {/* Capability groups, set as an index rather than cards */}
-        <section className="border-b border-rule py-20 lg:py-28">
+        <section className="border-b border-rule py-24 lg:py-32">
           <div className="container-page">
             <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
               <div className="lg:col-span-4">
@@ -126,7 +126,7 @@ export default async function VerticalDetail({
 
         {/* Markets & customers */}
         {(vertical.regions || vertical.targetCustomers) && (
-          <section className="border-b border-rule bg-ground-2 py-20 lg:py-24">
+          <section className="border-b border-rule bg-ground-2 py-24 lg:py-32">
             <div className="container-page">
               {vertical.regions && (
                 <>
@@ -172,7 +172,7 @@ export default async function VerticalDetail({
 
         {/* Benefits + revenue model */}
         {(vertical.benefits || vertical.revenueModel) && (
-          <section className="border-b border-rule py-20 lg:py-24">
+          <section className="border-b border-rule py-24 lg:py-32">
             <div className="container-page grid grid-cols-1 gap-14 lg:grid-cols-2">
               {vertical.benefits && (
                 <div>
@@ -209,7 +209,7 @@ export default async function VerticalDetail({
         )}
 
         {related.length > 0 && (
-          <section className="border-b border-rule py-16">
+          <section className="border-b border-rule py-24 lg:py-32">
             <div className="container-page">
               <p className="label">
                 {related.length > 1 ? "Other platforms" : "The other platform"}

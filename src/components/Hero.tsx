@@ -4,7 +4,7 @@ import Ticker from "./Ticker";
 
 export default function Hero() {
   return (
-    <section className="pt-16 lg:pt-20">
+    <section className="pt-16 pb-24 lg:pt-20 lg:pb-32">
       <div className="container-page">
         <div className="grid grid-cols-1 items-end gap-12 lg:grid-cols-12 lg:gap-14">
           <div className="lg:col-span-7">

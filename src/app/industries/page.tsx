@@ -17,7 +17,7 @@ export default function IndustriesPage() {
   return (
     <>
       <Nav />
-      <main className="flex-1">
+      <main className="flex flex-1 flex-col">
         <PageHero
           eyebrow="Industries"
           title="Every tier of the financial system."
@@ -30,7 +30,7 @@ export default function IndustriesPage() {
           ]}
         />
 
-        <section className="border-b border-rule py-20 lg:py-28">
+        <section className="border-b border-rule py-24 lg:py-32">
           <div className="container-page">
             <div className="border-t border-rule-strong">
               {industries.map((industry, i) => (

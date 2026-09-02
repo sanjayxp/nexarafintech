@@ -22,7 +22,7 @@ export default function SolutionsIndex() {
   return (
     <>
       <Nav />
-      <main className="flex-1">
+      <main className="flex flex-1 flex-col">
         <PageHero
           eyebrow="Products"
           title="Two platforms, one integration."

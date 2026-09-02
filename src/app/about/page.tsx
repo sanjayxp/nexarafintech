@@ -19,7 +19,7 @@ export default function AboutPage() {
   return (
     <>
       <Nav />
-      <main className="flex-1">
+      <main className="flex flex-1 flex-col">
         <PageHero
           eyebrow="About"
           title="Infrastructure for the next billion banking relationships."

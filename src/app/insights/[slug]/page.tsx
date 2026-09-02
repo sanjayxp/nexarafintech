@@ -48,7 +48,7 @@ export default async function InsightDetail({
   return (
     <>
       <Nav />
-      <main className="flex-1">
+      <main className="flex flex-1 flex-col">
         <PageHero
           eyebrow={`${article.tag} · ${formatArticleDate(article.published_at)}`}
           title={article.title}

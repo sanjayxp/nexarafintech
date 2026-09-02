@@ -21,7 +21,7 @@ export default async function PartnersPage() {
   return (
     <>
       <Nav />
-      <main className="flex-1">
+      <main className="flex flex-1 flex-col">
         <PageHero
           eyebrow="Partners"
           title="Built together with the institutions we serve"

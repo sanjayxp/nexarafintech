@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function ClosingCta() {
   return (
-    <section className="bg-mint py-20 text-mint-deep lg:py-24">
+    <section className="bg-mint py-24 text-mint-deep lg:py-32">
       <div className="container-page">
         <p className="mono text-[0.75rem] uppercase tracking-[0.14em] text-[#0d3a2e]">
           Next step
