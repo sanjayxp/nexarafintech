@@ -8,27 +8,27 @@ export default function AdminHeader() {
       <div className="container-page flex h-16 items-center justify-between">
         <div className="flex items-center gap-6">
           <Logo />
-          <span className="rounded-full bg-ink/5 px-2.5 py-1 text-xs font-semibold uppercase tracking-wide text-ink">
+          <span className="rounded-full bg-bone/5 px-2.5 py-1 text-xs font-semibold uppercase tracking-wide text-bone">
             Admin
           </span>
         </div>
         <nav className="flex items-center gap-6">
           <Link
             href="/admin/insights"
-            className="text-sm font-medium text-ink-soft hover:text-ink transition-colors"
+            className="text-sm font-medium text-bone-dim hover:text-bone transition-colors"
           >
             Insights
           </Link>
           <Link
             href="/admin/partners"
-            className="text-sm font-medium text-ink-soft hover:text-ink transition-colors"
+            className="text-sm font-medium text-bone-dim hover:text-bone transition-colors"
           >
             Partners
           </Link>
           <form action={logout}>
             <button
               type="submit"
-              className="text-sm font-medium text-ink-soft hover:text-ink transition-colors"
+              className="text-sm font-medium text-bone-dim hover:text-bone transition-colors"
             >
               Sign out
             </button>

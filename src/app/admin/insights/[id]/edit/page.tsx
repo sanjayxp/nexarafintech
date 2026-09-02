@@ -32,12 +32,12 @@ export default async function EditArticlePage({
       <main className="container-page py-12">
         <Link
           href="/admin/insights"
-          className="inline-flex items-center gap-1.5 text-sm font-medium text-ink-soft hover:text-ink"
+          className="inline-flex items-center gap-1.5 text-sm font-medium text-bone-dim hover:text-bone"
         >
           <ArrowLeft size={14} />
           Back to insights
         </Link>
-        <h1 className="mt-4 text-2xl font-semibold tracking-tight text-ink">
+        <h1 className="mt-4 text-2xl font-semibold tracking-tight text-bone">
           Edit {article.title}
         </h1>
         <ArticleForm

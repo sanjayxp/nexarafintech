@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 80" width="600" height="160">
   <g transform="translate(6,17) scale(1.15)">
-    <polyline points="9,7 21,20 9,33" stroke="#16171b" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-    <polyline points="22,7 34,20 22,33" stroke="#14563c" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <polyline points="9,7 21,20 9,33" stroke="#08201c" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <polyline points="22,7 34,20 22,33" stroke="#2ae0a4" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
   </g>
-  <text x="58" y="53" font-family="Georgia, 'Times New Roman', serif" font-size="42" fill="#16171b">Nexara</text>
+  <text x="58" y="53" font-family="Georgia, 'Times New Roman', serif" font-size="42" fill="#08201c">Nexara</text>
 </svg>

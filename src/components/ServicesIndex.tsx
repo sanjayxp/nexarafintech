@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { services } from "@/lib/services";
+import { services, railFor } from "@/lib/services";
 import { verticals } from "@/lib/verticals";
 
 const totalCapabilities = verticals.reduce(
@@ -7,65 +7,69 @@ const totalCapabilities = verticals.reduce(
   0
 );
 
+const rail = {
+  mint: { bar: "bg-mint", text: "text-mint" },
+  saffron: { bar: "bg-saffron", text: "text-saffron" },
+} as const;
+
 export default function ServicesIndex() {
   return (
-    <section id="services" className="border-b border-rule py-24 lg:py-32">
+    <section id="services" className="py-24 lg:py-32">
       <div className="container-page">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
-          <div className="lg:col-span-4">
-            <div className="lg:sticky lg:top-28">
-              <p className="label">Index of services</p>
-              <h2 className="display mt-6 text-[clamp(2.1rem,4vw,3.2rem)]">
-                Everything runs on
-                <br />
-                one ledger.
-              </h2>
-              <p className="mt-6 max-w-sm text-[1rem] leading-7 text-ink-soft">
-                Take a single module or the whole stack. Compliance,
-                reconciliation and settlement are shared underneath, so nothing
-                has to be stitched together afterwards.
-              </p>
-              <p className="mono mt-8 text-[0.875rem] text-ink-faint">
-                {totalCapabilities} capabilities · 2 platforms
-              </p>
-            </div>
+        <div className="mb-14 flex flex-wrap items-end justify-between gap-6">
+          <div>
+            <p className="label">What you can build</p>
+            <h2 className="display mt-5 text-[clamp(2rem,4.4vw,3.5rem)]">
+              {services.length} services,
+              <br />
+              one ledger.
+            </h2>
           </div>
+          <p className="max-w-md text-[1.06rem] leading-[1.6] text-bone-dim">
+            Colour tracks the rail each service runs on —{" "}
+            <span className="text-mint">mint for connected banking</span>,{" "}
+            <span className="text-saffron">saffron for the agent network</span>.
+            Take one module or the whole stack.
+          </p>
+        </div>
 
-          <div className="lg:col-span-8">
-            <div className="border-t border-rule">
-              {services.map((service, i) => (
-                <Link
-                  key={service.name}
-                  href={`/solutions/${service.platformSlug}`}
-                  className="index-row group grid grid-cols-12 items-baseline gap-4 border-b border-rule py-6"
+        <div className="grid grid-cols-1 gap-0.5 sm:grid-cols-2 lg:grid-cols-4">
+          {services.map((service) => {
+            const tone = rail[railFor(service.platformSlug)];
+            return (
+              <Link
+                key={service.name}
+                href={`/solutions/${service.platformSlug}`}
+                className="group flex min-h-[236px] flex-col gap-3 bg-ground-2 p-7 transition-colors hover:bg-ground-3"
+              >
+                <span className={`h-1 w-11 rounded-sm ${tone.bar}`} />
+                <h3 className="display mt-1 text-[1.3rem] leading-tight">
+                  {service.name}
+                </h3>
+                <p className="text-[0.94rem] leading-[1.6] text-bone-dim">
+                  {service.description}
+                </p>
+                <span
+                  className={`mono mt-auto text-[0.75rem] uppercase tracking-[0.08em] ${tone.text}`}
                 >
-                  <span className="mono col-span-2 text-[0.85rem] text-ink-faint sm:col-span-1">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
+                  {service.platform}
+                </span>
+              </Link>
+            );
+          })}
+        </div>
 
-                  <div className="col-span-10 sm:col-span-4">
-                    <h3 className="text-[1.1rem] font-medium leading-snug text-ink">
-                      {service.name}
-                    </h3>
-                    <p className="mono mt-1.5 text-[0.8rem] text-ink-faint">
-                      {service.platform}
-                    </p>
-                  </div>
-
-                  <p className="col-span-12 text-[0.96rem] leading-7 text-ink-soft sm:col-span-6 sm:col-start-6">
-                    {service.description}
-                  </p>
-
-                  <span
-                    aria-hidden
-                    className="col-span-1 hidden text-right text-ink-faint transition-all group-hover:translate-x-1 group-hover:text-accent sm:block"
-                  >
-                    →
-                  </span>
-                </Link>
-              ))}
-            </div>
-          </div>
+        <div className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-3">
+          <Link
+            href="/solutions"
+            className="inline-flex items-center gap-2.5 rounded-full border border-rule-strong px-6 py-3 text-[0.95rem] font-medium text-bone transition-colors hover:border-bone"
+          >
+            See the full service list
+            <span aria-hidden>→</span>
+          </Link>
+          <p className="mono text-[0.84rem] text-bone-faint">
+            {totalCapabilities} capabilities · 2 platforms
+          </p>
         </div>
       </div>
     </section>

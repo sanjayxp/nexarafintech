@@ -2,35 +2,25 @@ import Link from "next/link";
 
 export default function ClosingCta() {
   return (
-    <section className="py-24 lg:py-32">
+    <section className="bg-mint py-20 text-mint-deep lg:py-24">
       <div className="container-page">
-        <div className="grid grid-cols-1 items-end gap-10 lg:grid-cols-12">
-          <div className="lg:col-span-8">
-            <h2 className="display text-[clamp(2.3rem,5.5vw,4.2rem)] leading-[1.05]">
-              Tell us the market
-              <br />
-              and the segment.
-            </h2>
-          </div>
-          <div className="lg:col-span-4 lg:pb-3">
-            <Link
-              href="/contact"
-              className="group inline-flex items-center gap-2 text-lg font-medium text-ink"
-            >
-              <span className="border-b border-ink pb-1 transition-colors group-hover:border-accent group-hover:text-accent">
-                Talk to our experts
-              </span>
-              <span
-                aria-hidden
-                className="transition-transform group-hover:translate-x-1"
-              >
-                →
-              </span>
-            </Link>
-            <p className="mono mt-4 text-[0.83rem] text-ink-faint">
-              hello@nexarafintech.com · +91 9971886999
-            </p>
-          </div>
+        <p className="mono text-[0.75rem] uppercase tracking-[0.14em] text-[#0d3a2e]">
+          Next step
+        </p>
+        <h2 className="display mt-5 max-w-[12em] text-[clamp(2.2rem,6vw,4.4rem)] font-extrabold">
+          Tell us the market and the segment.
+        </h2>
+        <div className="mt-8 flex flex-wrap items-center gap-6">
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-2.5 rounded-full bg-mint-deep px-7 py-4 text-[1rem] font-semibold text-mint transition-opacity hover:opacity-90"
+          >
+            Talk to our experts
+            <span aria-hidden>→</span>
+          </Link>
+          <p className="mono text-[0.88rem] text-[#0d3a2e]">
+            hello@nexarafintech.com · +91 9971886999
+          </p>
         </div>
       </div>
     </section>

@@ -23,12 +23,12 @@ export default async function NewPartnerPage({
       <main className="container-page py-12">
         <Link
           href="/admin/partners"
-          className="inline-flex items-center gap-1.5 text-sm font-medium text-ink-soft hover:text-ink"
+          className="inline-flex items-center gap-1.5 text-sm font-medium text-bone-dim hover:text-bone"
         >
           <ArrowLeft size={14} />
           Back to partners
         </Link>
-        <h1 className="mt-4 text-2xl font-semibold tracking-tight text-ink">
+        <h1 className="mt-4 text-2xl font-semibold tracking-tight text-bone">
           Add partner
         </h1>
         <PartnerForm

@@ -1,77 +1,82 @@
 import Link from "next/link";
 import { verticals } from "@/lib/verticals";
+import { railFor } from "@/lib/services";
+
+const rail = {
+  mint: { bar: "bg-mint", text: "text-mint", chip: "bg-mint text-mint-deep" },
+  saffron: {
+    bar: "bg-saffron",
+    text: "text-saffron",
+    chip: "bg-saffron text-saffron-deep",
+  },
+} as const;
 
 export default function Platforms() {
   return (
-    <section id="platforms" className="border-b border-rule bg-paper-2">
-      <div className="container-page py-24 lg:py-32">
+    <section id="platforms" className="py-24 lg:py-32">
+      <div className="container-page">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div>
             <p className="label">What we build</p>
-            <h2 className="display mt-6 max-w-2xl text-[clamp(2.1rem,4.4vw,3.4rem)]">
+            <h2 className="display mt-5 max-w-2xl text-[clamp(2rem,4.4vw,3.5rem)]">
               Two platforms. One integration.
             </h2>
           </div>
           <Link
             href="/solutions"
-            className="text-[1rem] text-ink-soft underline decoration-rule-strong underline-offset-4 transition-colors hover:text-ink hover:decoration-ink"
+            className="text-[1rem] text-bone-dim underline decoration-rule-strong underline-offset-4 transition-colors hover:text-bone hover:decoration-bone"
           >
             All products
           </Link>
         </div>
 
-        <div className="mt-16 border-t border-rule-strong">
+        <div className="mt-14 border-t border-rule">
           {verticals.map((vertical, i) => {
             const capabilities = vertical.groups.flatMap((g) => g.items);
+            const tone = rail[railFor(vertical.slug)];
             return (
               <div
                 key={vertical.slug}
                 className="grid grid-cols-1 gap-8 border-b border-rule py-12 lg:grid-cols-12 lg:gap-10 lg:py-16"
               >
                 <div className="lg:col-span-4">
-                  <p className="mono text-[0.85rem] text-ink-faint">
+                  <span className={`block h-1 w-11 rounded-sm ${tone.bar}`} />
+                  <p className="mono mt-5 text-[0.84rem] text-bone-faint">
                     Platform {String(i + 1).padStart(2, "0")}
                   </p>
-                  <h3 className="display mt-4 text-[clamp(1.8rem,3vw,2.5rem)]">
+                  <h3 className="display mt-3 text-[clamp(1.7rem,3vw,2.4rem)]">
                     {vertical.name}
                   </h3>
-                  <p className="mt-3 text-[1rem] italic text-accent">
+                  <p className={`mt-3 text-[1rem] ${tone.text}`}>
                     {vertical.tagline}
                   </p>
                 </div>
 
                 <div className="lg:col-span-8">
-                  <p className="max-w-2xl text-[1.08rem] leading-8 text-ink-soft">
+                  <p className="max-w-2xl text-[1.08rem] leading-8 text-bone-dim">
                     {vertical.summary}
                   </p>
 
-                  <ul className="mt-8 grid grid-cols-1 gap-x-10 gap-y-0 sm:grid-cols-2">
+                  <ul className="mt-8 grid grid-cols-1 gap-x-10 sm:grid-cols-2">
                     {capabilities.slice(0, 10).map((item) => (
                       <li
                         key={item}
-                        className="border-b border-rule py-2.5 text-[0.96rem] text-ink"
+                        className="border-b border-rule py-2.5 text-[0.96rem] text-bone"
                       >
                         {item}
                       </li>
                     ))}
                   </ul>
 
-                  <div className="mt-8 flex items-center gap-6">
+                  <div className="mt-8 flex flex-wrap items-center gap-6">
                     <Link
                       href={`/solutions/${vertical.slug}`}
-                      className="group inline-flex items-center gap-2 text-[1rem] font-medium text-ink"
+                      className={`inline-flex items-center gap-2.5 rounded-full px-6 py-3 text-[0.95rem] font-semibold transition-opacity hover:opacity-90 ${tone.chip}`}
                     >
-                      <span className="border-b border-ink pb-0.5 transition-colors group-hover:border-accent group-hover:text-accent">
-                        Explore {vertical.shortName}
-                      </span>
-                      <span
-                        aria-hidden
-                        className="transition-transform group-hover:translate-x-1"
-                      >
-                        →
-                      </span>
+                      Explore {vertical.shortName}
+                      <span aria-hidden>→</span>
                     </Link>
-                    <span className="mono text-[0.85rem] text-ink-faint">
+                    <span className="mono text-[0.84rem] text-bone-faint">
                       {capabilities.length} capabilities
                     </span>
                   </div>

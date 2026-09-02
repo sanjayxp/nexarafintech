@@ -21,7 +21,7 @@ export default function PartnerForm({
       )}
 
       <div>
-        <label htmlFor="name" className="text-sm font-medium text-ink">
+        <label htmlFor="name" className="text-sm font-medium text-bone">
           Partner name
         </label>
         <input
@@ -31,14 +31,14 @@ export default function PartnerForm({
           required
           defaultValue={partner?.name}
           placeholder="e.g. Yes Bank"
-          className="mt-1.5 w-full rounded-md border border-rule px-3 py-2 text-sm text-ink focus:border-accent focus:outline-none"
+          className="mt-1.5 w-full rounded-md border border-rule px-3 py-2 text-sm text-bone focus:border-mint focus:outline-none"
         />
       </div>
 
       <div>
         <label
           htmlFor="website_url"
-          className="text-sm font-medium text-ink"
+          className="text-sm font-medium text-bone"
         >
           Website
         </label>
@@ -49,12 +49,12 @@ export default function PartnerForm({
           required
           defaultValue={partner?.website_url}
           placeholder="https://partner-website.com"
-          className="mt-1.5 w-full rounded-md border border-rule px-3 py-2 text-sm text-ink focus:border-accent focus:outline-none"
+          className="mt-1.5 w-full rounded-md border border-rule px-3 py-2 text-sm text-bone focus:border-mint focus:outline-none"
         />
       </div>
 
       <div>
-        <label htmlFor="logo" className="text-sm font-medium text-ink">
+        <label htmlFor="logo" className="text-sm font-medium text-bone">
           Logo
         </label>
         {partner?.logo_url && (
@@ -72,9 +72,9 @@ export default function PartnerForm({
           name="logo"
           type="file"
           accept="image/*"
-          className="mt-1.5 block w-full text-sm text-ink-soft file:mr-4 file:rounded-md file:border-0 file:bg-ink file:px-3 file:py-1.5 file:text-sm file:font-semibold file:text-white hover:file:bg-ink-2"
+          className="mt-1.5 block w-full text-sm text-bone-dim file:mr-4 file:rounded-md file:border-0 file:bg-bone file:px-3 file:py-1.5 file:text-sm file:font-semibold file:text-white hover:file:bg-ground-3"
         />
-        <p className="mt-1 text-xs text-ink-faint">
+        <p className="mt-1 text-xs text-bone-faint">
           Square logo, transparent background works best.
           {partner ? " Leave blank to keep the current logo." : ""}
         </p>
@@ -83,7 +83,7 @@ export default function PartnerForm({
       <div>
         <label
           htmlFor="picture"
-          className="text-sm font-medium text-ink"
+          className="text-sm font-medium text-bone"
         >
           Picture
         </label>
@@ -102,9 +102,9 @@ export default function PartnerForm({
           name="picture"
           type="file"
           accept="image/*"
-          className="mt-1.5 block w-full text-sm text-ink-soft file:mr-4 file:rounded-md file:border-0 file:bg-ink file:px-3 file:py-1.5 file:text-sm file:font-semibold file:text-white hover:file:bg-ink-2"
+          className="mt-1.5 block w-full text-sm text-bone-dim file:mr-4 file:rounded-md file:border-0 file:bg-bone file:px-3 file:py-1.5 file:text-sm file:font-semibold file:text-white hover:file:bg-ground-3"
         />
-        <p className="mt-1 text-xs text-ink-faint">
+        <p className="mt-1 text-xs text-bone-faint">
           Optional. A wider photo shown on the partner&apos;s card.
           {partner ? " Leave blank to keep the current picture." : ""}
         </p>
@@ -112,7 +112,7 @@ export default function PartnerForm({
 
       <button
         type="submit"
-        className="inline-flex w-fit items-center justify-center rounded-md bg-ink px-6 py-2.5 text-sm font-semibold text-white hover:bg-ink-2 transition-colors"
+        className="inline-flex w-fit items-center justify-center rounded-md bg-bone px-6 py-2.5 text-sm font-semibold text-white hover:bg-ground-3 transition-colors"
       >
         {submitLabel}
       </button>

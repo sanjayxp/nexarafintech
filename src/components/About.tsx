@@ -20,7 +20,7 @@ export default function About() {
               customer — with infrastructure that is secure, compliant and
               genuinely operable.
             </p>
-            <p className="mt-8 max-w-2xl text-[1.06rem] leading-8 text-ink-soft">
+            <p className="mt-8 max-w-2xl text-[1.06rem] leading-8 text-bone-dim">
               We build from India and deploy across Africa, the Middle East and
               Asia Pacific, adapting to each market&apos;s regulators and rails
               rather than exporting a single template. Digital payments,
@@ -32,7 +32,7 @@ export default function About() {
           <div className="lg:col-span-5">
             <div className="border-t border-rule-strong pt-7">
               <p className="label">Vision</p>
-              <p className="mt-4 text-[1.1rem] leading-8 text-ink">
+              <p className="mt-4 text-[1.1rem] leading-8 text-bone">
                 To become the most trusted fintech infrastructure partner across
                 emerging markets — through innovation, technology, governance
                 and last-mile distribution.
@@ -45,9 +45,9 @@ export default function About() {
                 {mission.map((item, i) => (
                   <li
                     key={item}
-                    className="flex gap-4 border-b border-rule py-3.5 text-[0.98rem] leading-6 text-ink-soft"
+                    className="flex gap-4 border-b border-rule py-3.5 text-[0.98rem] leading-6 text-bone-dim"
                   >
-                    <span className="mono shrink-0 text-[0.8rem] text-ink-faint">
+                    <span className="mono shrink-0 text-[0.8rem] text-bone-faint">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     {item}

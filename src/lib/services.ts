@@ -10,6 +10,8 @@ import {
   QrCode,
 } from "@phosphor-icons/react/ssr";
 
+export type Rail = "mint" | "saffron";
+
 export type Service = {
   name: string;
   description: string;
@@ -17,6 +19,9 @@ export type Service = {
   platform: string;
   platformSlug: string;
 };
+
+export const railFor = (slug: string): Rail =>
+  slug === "agency-banking-solutions" ? "saffron" : "mint";
 
 export const services: Service[] = [
   {

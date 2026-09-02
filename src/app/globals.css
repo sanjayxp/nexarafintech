@@ -1,67 +1,83 @@
 @import "tailwindcss";
 
 :root {
-  /* Surfaces — warm paper, not clinical white */
-  --paper: #faf8f4;
-  --paper-2: #f2efe8;
-  --ink: #16171b;
-  --ink-2: #2c2e34;
-  --ink-soft: #55575e;
-  --ink-faint: #8b8d94;
-  --rule: #e2ded4;
-  --rule-strong: #cec9bc;
+  /* Ground — deep green-black, rich rather than neutral */
+  --ground: #08201c;
+  --ground-2: #0f3129;
+  --ground-3: #16443a;
 
-  /* A single accent with a point of view */
-  --accent: #14563c;
-  --accent-hover: #0e412d;
-  --accent-soft: #e6ede8;
+  /* Text on ground */
+  --bone: #eef5f0;
+  --bone-dim: #a9c4b8;
+  --bone-faint: #6f9184;
 
-  --background: var(--paper);
-  --foreground: var(--ink);
+  /* Rules */
+  --rule: rgba(238, 245, 240, 0.14);
+  --rule-strong: rgba(238, 245, 240, 0.26);
+
+  /* Signals — colour carries meaning, not mood.
+     mint = connected banking · saffron = agency banking
+     coral and sky extend the set for regions. */
+  --mint: #2ae0a4;
+  --mint-deep: #0b2d24;
+  --saffron: #ffb020;
+  --saffron-deep: #2a1900;
+  --coral: #ff6a4d;
+  --coral-deep: #2e0b03;
+  --sky: #7fb2ff;
+  --sky-deep: #08213f;
+
+  --background: var(--ground);
+  --foreground: var(--bone);
 }
 
 @theme inline {
-  --color-paper: var(--paper);
-  --color-paper-2: var(--paper-2);
-  --color-ink: var(--ink);
-  --color-ink-2: var(--ink-2);
-  --color-ink-soft: var(--ink-soft);
-  --color-ink-faint: var(--ink-faint);
+  --color-ground: var(--ground);
+  --color-ground-2: var(--ground-2);
+  --color-ground-3: var(--ground-3);
+  --color-bone: var(--bone);
+  --color-bone-dim: var(--bone-dim);
+  --color-bone-faint: var(--bone-faint);
   --color-rule: var(--rule);
   --color-rule-strong: var(--rule-strong);
-  --color-accent: var(--accent);
-  --color-accent-hover: var(--accent-hover);
-  --color-accent-soft: var(--accent-soft);
+  --color-mint: var(--mint);
+  --color-mint-deep: var(--mint-deep);
+  --color-saffron: var(--saffron);
+  --color-saffron-deep: var(--saffron-deep);
+  --color-coral: var(--coral);
+  --color-coral-deep: var(--coral-deep);
+  --color-sky: var(--sky);
+  --color-sky-deep: var(--sky-deep);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  --font-sans: var(--font-inter);
-  --font-display: var(--font-instrument-serif);
-  --font-mono: var(--font-jetbrains);
+  --font-sans: var(--font-instrument-sans);
+  --font-display: var(--font-bricolage);
+  --font-mono: var(--font-dm-mono);
 }
 
 body {
-  background: var(--paper);
-  color: var(--ink);
-  font-family: var(--font-sans), Helvetica, Arial, sans-serif;
+  background: var(--ground);
+  color: var(--bone);
+  font-family: var(--font-sans), "Helvetica Neue", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Display type carries the design — serif, tight, optically sized */
 .display {
-  font-family: var(--font-display), Georgia, "Times New Roman", serif;
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  line-height: 1.02;
+  font-family: var(--font-display), "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.03;
+  text-wrap: balance;
 }
 
-/* Small technical labels — the counterweight to the serif */
 .label {
   font-family: var(--font-mono), ui-monospace, SFMono-Regular, monospace;
   font-size: 0.75rem;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--ink-faint);
+  color: var(--bone-faint);
 }
 
 .mono {
@@ -77,34 +93,64 @@ html {
   max-width: 78rem;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
 }
 
 @media (min-width: 1024px) {
   .container-page {
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
+    padding-left: 2.75rem;
+    padding-right: 2.75rem;
   }
 }
 
-/* Hairline rules do the work that borders and cards used to */
-.rule-t {
-  border-top: 1px solid var(--rule);
-}
-.rule-b {
-  border-bottom: 1px solid var(--rule);
-}
-
-/* Editorial index rows */
-.index-row {
-  transition: background-color 180ms ease, padding-left 180ms ease;
-}
-.index-row:hover {
-  background-color: var(--paper-2);
+@layer components {
+/* Duotone photography — any photo set stays on-brand */
+.duo {
+  position: relative;
+  overflow: hidden;
+  background: var(--ground-2);
 }
 
-@keyframes marquee {
+.duo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.12) brightness(0.92);
+}
+
+.duo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(155deg, var(--mint) 0%, var(--saffron) 100%);
+  mix-blend-mode: color;
+  pointer-events: none;
+}
+
+.duo-cool::after {
+  background: linear-gradient(155deg, var(--sky) 0%, var(--coral) 100%);
+}
+
+/* Full-bleed usage: sit the photo down into the ground */
+.duo-deep img {
+  filter: grayscale(1) contrast(1.18) brightness(0.42);
+}
+
+/* Highlight rule under a word in a display line */
+.underline-saffron {
+  background-image: linear-gradient(
+    180deg,
+    transparent 84%,
+    var(--saffron) 84%,
+    var(--saffron) 97%,
+    transparent 97%
+  );
+}
+}
+
+@keyframes ticker-slide {
   from {
     transform: translateX(0);
   }
@@ -113,13 +159,23 @@ html {
   }
 }
 
-.animate-marquee {
-  animation: marquee 40s linear infinite;
+.animate-ticker {
+  animation: ticker-slide 44s linear infinite;
+}
+
+.index-row {
+  transition: background-color 180ms ease;
+}
+.index-row:hover {
+  background-color: var(--ground-2);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .animate-marquee {
+  .animate-ticker {
     animation: none;
+    flex-wrap: wrap;
+    white-space: normal;
+    width: auto;
   }
   .index-row {
     transition: none;

@@ -20,24 +20,24 @@ export default function PageHero({
           <nav className="flex flex-wrap items-center gap-2 pt-8">
             <Link
               href="/"
-              className="mono text-[0.8rem] text-ink-faint transition-colors hover:text-ink"
+              className="mono text-[0.8rem] text-bone-faint transition-colors hover:text-bone"
             >
               Home
             </Link>
             {breadcrumb.map((item) => (
               <span key={item.label} className="flex items-center gap-2">
-                <span aria-hidden className="text-ink-faint">
+                <span aria-hidden className="text-bone-faint">
                   /
                 </span>
                 {item.href ? (
                   <Link
                     href={item.href}
-                    className="mono text-[0.8rem] text-ink-faint transition-colors hover:text-ink"
+                    className="mono text-[0.8rem] text-bone-faint transition-colors hover:text-bone"
                   >
                     {item.label}
                   </Link>
                 ) : (
-                  <span className="mono text-[0.8rem] text-ink">
+                  <span className="mono text-[0.8rem] text-bone">
                     {item.label}
                   </span>
                 )}
@@ -55,7 +55,7 @@ export default function PageHero({
           </div>
           {description && (
             <div className="lg:col-span-4 lg:pt-16">
-              <p className="text-[1.06rem] leading-8 text-ink-soft">
+              <p className="text-[1.06rem] leading-8 text-bone-dim">
                 {description}
               </p>
             </div>
@@ -73,7 +73,7 @@ export default function PageHero({
                   className="py-6 sm:px-8 sm:first:pl-0 sm:last:pr-0"
                 >
                   <dt className="label">{m.term}</dt>
-                  <dd className="mt-2 text-[1rem] text-ink">{m.value}</dd>
+                  <dd className="mt-2 text-[1rem] text-bone">{m.value}</dd>
                 </div>
               ))}
             </dl>

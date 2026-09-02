@@ -62,7 +62,7 @@ export default async function InsightDetail({
           <div className="mx-auto max-w-3xl">
             <Reveal>
               <div className="flex flex-wrap items-center justify-between gap-4">
-                <p className="text-xl leading-9 text-ink">
+                <p className="text-xl leading-9 text-bone">
                   {article.excerpt}
                 </p>
               </div>
@@ -76,13 +76,13 @@ export default async function InsightDetail({
                 <Reveal key={i} delay={i * 80}>
                   <div>
                     {block.heading && (
-                      <h2 className="text-xl font-semibold tracking-tight text-ink">
+                      <h2 className="text-xl font-semibold tracking-tight text-bone">
                         {block.heading}
                       </h2>
                     )}
                     <div className="mt-3 flex flex-col gap-4">
                       {block.paragraphs.map((p, j) => (
-                        <p key={j} className="text-ink-soft leading-8">
+                        <p key={j} className="text-bone-dim leading-8">
                           {p}
                         </p>
                       ))}
@@ -93,15 +93,15 @@ export default async function InsightDetail({
             </div>
 
             <Reveal>
-              <div className="mt-14 flex flex-col items-center gap-6 rounded-2xl border border-rule bg-paper-2 p-8 text-center">
+              <div className="mt-14 flex flex-col items-center gap-6 rounded-2xl border border-rule bg-ground-2 p-8 text-center">
                 <ShareLinks url={shareUrl} title={article.title} />
                 <div>
-                  <p className="text-lg font-semibold text-ink">
+                  <p className="text-lg font-semibold text-bone">
                     Want to talk through how this applies to your network?
                   </p>
                   <Link
                     href="/contact"
-                    className="mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-ink px-6 py-3 text-[0.95rem] font-semibold text-white hover:bg-ink-2 transition-colors"
+                    className="mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-bone px-6 py-3 text-[0.95rem] font-semibold text-white hover:bg-ground-3 transition-colors"
                   >
                     Talk to our team
                     <ArrowRight size={16} />
@@ -114,7 +114,7 @@ export default async function InsightDetail({
           {more.length > 0 && (
             <div className="mx-auto mt-20 max-w-5xl border-t border-rule pt-14">
               <Reveal>
-                <h2 className="text-2xl font-semibold tracking-tight text-ink">
+                <h2 className="text-2xl font-semibold tracking-tight text-bone">
                   More insights
                 </h2>
                 <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-3">
@@ -122,15 +122,15 @@ export default async function InsightDetail({
                     <Link
                       key={post.slug}
                       href={`/insights/${post.slug}`}
-                      className="group flex flex-col rounded-2xl border border-rule p-6 transition-colors hover:border-accent/50 hover:bg-paper-2"
+                      className="group flex flex-col rounded-2xl border border-rule p-6 transition-colors hover:border-mint/50 hover:bg-ground-2"
                     >
-                      <span className="text-[0.8rem] font-semibold text-accent">
+                      <span className="text-[0.8rem] font-semibold text-mint">
                         {post.tag}
                       </span>
-                      <h3 className="mt-3 text-[0.95rem] font-semibold leading-6 text-ink">
+                      <h3 className="mt-3 text-[0.95rem] font-semibold leading-6 text-bone">
                         {post.title}
                       </h3>
-                      <span className="mt-4 inline-flex items-center gap-1.5 text-[0.8rem] font-semibold text-accent group-hover:gap-2.5 transition-all">
+                      <span className="mt-4 inline-flex items-center gap-1.5 text-[0.8rem] font-semibold text-mint group-hover:gap-2.5 transition-all">
                         Read more
                         <ArrowRight size={12} />
                       </span>

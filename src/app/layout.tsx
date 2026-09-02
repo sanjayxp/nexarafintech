@@ -1,36 +1,35 @@
 import type { Metadata } from "next";
-import { Inter, Instrument_Serif, JetBrains_Mono } from "next/font/google";
+import { Bricolage_Grotesque, Instrument_Sans, DM_Mono } from "next/font/google";
 import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+const bricolage = Bricolage_Grotesque({
+  variable: "--font-bricolage",
+  subsets: ["latin"],
+  weight: ["500", "700", "800"],
+  display: "swap",
+});
+
+const instrumentSans = Instrument_Sans({
+  variable: "--font-instrument-sans",
   subsets: ["latin"],
   display: "swap",
 });
 
-const instrumentSerif = Instrument_Serif({
-  variable: "--font-instrument-serif",
-  subsets: ["latin"],
-  weight: "400",
-  display: "swap",
-});
-
-const jetbrains = JetBrains_Mono({
-  variable: "--font-jetbrains",
+const dmMono = DM_Mono({
+  variable: "--font-dm-mono",
   subsets: ["latin"],
   weight: ["400", "500"],
   display: "swap",
 });
 
 const description =
-  "Nexara Fintech builds agency banking and connected banking API infrastructure for banks, NBFCs, MFIs and fintechs across India, Africa, the Middle East, and Asia Pacific.";
+  "Nexara Fintech builds the payout rails, collection accounts and agent networks that banks, NBFCs and fintechs use to reach customers past the branch — across India, Africa, the Middle East and Asia Pacific.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default:
-      "Nexara Fintech — Banking infrastructure for the last mile",
+    default: "Nexara Fintech — Money that gets all the way there",
     template: "%s · Nexara Fintech",
   },
   description,
@@ -47,7 +46,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "Nexara Fintech",
-    title: "Nexara Fintech — Banking infrastructure for the last mile",
+    title: "Nexara Fintech — Money that gets all the way there",
     description,
     url: SITE_URL,
     locale: "en",
@@ -69,9 +68,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${instrumentSerif.variable} ${jetbrains.variable} h-full`}
+      className={`${bricolage.variable} ${instrumentSans.variable} ${dmMono.variable} h-full`}
     >
-      <body className="min-h-full flex flex-col bg-paper text-ink">
+      <body className="min-h-full flex flex-col bg-ground text-bone">
         {children}
       </body>
     </html>

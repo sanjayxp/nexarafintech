@@ -33,7 +33,7 @@ export default async function InsightsIndex() {
 
         <div className="container-page py-24">
           {articles.length === 0 ? (
-            <div className="rounded-2xl border border-dashed border-rule p-16 text-center text-[0.95rem] text-ink-soft">
+            <div className="rounded-2xl border border-dashed border-rule p-16 text-center text-[0.95rem] text-bone-dim">
               No articles published yet. Check back soon.
             </div>
           ) : (
@@ -42,9 +42,9 @@ export default async function InsightsIndex() {
                 <Reveal key={post.slug} delay={i * 60}>
                   <Link
                     href={`/insights/${post.slug}`}
-                    className="group flex h-full flex-col overflow-hidden rounded-2xl border border-rule transition-colors hover:border-accent/50 hover:bg-paper-2"
+                    className="group flex h-full flex-col overflow-hidden rounded-2xl border border-rule transition-colors hover:border-mint/50 hover:bg-ground-2"
                   >
-                    <div className="relative h-36 w-full bg-gradient-to-br from-ink to-ink-2">
+                    <div className="relative h-36 w-full bg-gradient-to-br from-bone to-ground-3">
                       {post.cover_image_url && (
                         <Image
                           src={post.cover_image_url}
@@ -57,20 +57,20 @@ export default async function InsightsIndex() {
                     </div>
                     <div className="flex flex-1 flex-col p-6">
                       <div className="flex items-center gap-3 text-[0.8rem]">
-                        <span className="rounded-full bg-accent-soft px-2.5 py-1 font-semibold text-accent">
+                        <span className="rounded-full bg-mint-soft px-2.5 py-1 font-semibold text-mint">
                           {post.tag}
                         </span>
-                        <span className="text-ink-faint">
+                        <span className="text-bone-faint">
                           {formatArticleDate(post.published_at)}
                         </span>
                       </div>
-                      <h2 className="mt-4 text-base font-semibold leading-6 text-ink">
+                      <h2 className="mt-4 text-base font-semibold leading-6 text-bone">
                         {post.title}
                       </h2>
-                      <p className="mt-2 flex-1 text-[0.95rem] leading-6 text-ink-soft">
+                      <p className="mt-2 flex-1 text-[0.95rem] leading-6 text-bone-dim">
                         {post.excerpt}
                       </p>
-                      <span className="mt-4 inline-flex items-center gap-1.5 text-[0.95rem] font-semibold text-accent group-hover:gap-2.5 transition-all">
+                      <span className="mt-4 inline-flex items-center gap-1.5 text-[0.95rem] font-semibold text-mint group-hover:gap-2.5 transition-all">
                         Read more
                         <ArrowRight size={14} />
                       </span>

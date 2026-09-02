@@ -27,7 +27,7 @@ export default function DeletePartnerButton({
 
   return (
     <span className="inline-flex items-center gap-3">
-      <span className="text-sm text-ink-soft">Delete {name}?</span>
+      <span className="text-sm text-bone-dim">Delete {name}?</span>
       <button
         type="button"
         disabled={pending}
@@ -39,7 +39,7 @@ export default function DeletePartnerButton({
       <button
         type="button"
         onClick={() => setConfirming(false)}
-        className="text-sm text-ink-soft hover:text-ink"
+        className="text-sm text-bone-dim hover:text-bone"
       >
         Cancel
       </button>

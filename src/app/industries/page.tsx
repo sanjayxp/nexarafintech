@@ -40,7 +40,7 @@ export default function IndustriesPage() {
                   className="grid scroll-mt-24 grid-cols-1 gap-8 border-b border-rule py-12 lg:grid-cols-12 lg:gap-10"
                 >
                   <div className="lg:col-span-4">
-                    <p className="mono text-[0.85rem] text-ink-faint">
+                    <p className="mono text-[0.85rem] text-bone-faint">
                       {String(i + 1).padStart(2, "0")}
                     </p>
                     <h2 className="display mt-3 text-[clamp(1.7rem,2.8vw,2.3rem)] leading-tight">
@@ -49,14 +49,14 @@ export default function IndustriesPage() {
                   </div>
 
                   <div className="lg:col-span-5">
-                    <p className="text-[1.06rem] leading-8 text-ink-soft">
+                    <p className="text-[1.06rem] leading-8 text-bone-dim">
                       {industry.summary}
                     </p>
                     <ul className="mt-6">
                       {industry.challenges.map((c) => (
                         <li
                           key={c}
-                          className="border-t border-rule py-3 text-[0.96rem] leading-6 text-ink"
+                          className="border-t border-rule py-3 text-[0.96rem] leading-6 text-bone"
                         >
                           {c}
                         </li>
@@ -74,14 +74,14 @@ export default function IndustriesPage() {
                           <li key={slug}>
                             <Link
                               href={`/solutions/${slug}`}
-                              className="group inline-flex items-center gap-2 text-[0.96rem] text-ink"
+                              className="group inline-flex items-center gap-2 text-[0.96rem] text-bone"
                             >
-                              <span className="border-b border-rule-strong pb-0.5 transition-colors group-hover:border-accent group-hover:text-accent">
+                              <span className="border-b border-rule-strong pb-0.5 transition-colors group-hover:border-mint group-hover:text-mint">
                                 {vertical.name}
                               </span>
                               <span
                                 aria-hidden
-                                className="text-ink-faint transition-transform group-hover:translate-x-1"
+                                className="text-bone-faint transition-transform group-hover:translate-x-1"
                               >
                                 →
                               </span>
