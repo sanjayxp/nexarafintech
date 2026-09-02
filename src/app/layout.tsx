@@ -17,7 +17,7 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 const description =
-  "Nexara Fintech builds agency banking, connected banking APIs, and market-entry advisory for banks, NBFCs, MFIs and fintechs across India, Africa, the Middle East, and Asia Pacific.";
+  "Nexara Fintech builds agency banking and connected banking API infrastructure for banks, NBFCs, MFIs and fintechs across India, Africa, the Middle East, and Asia Pacific.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     "banking as a service",
     "financial inclusion",
     "payment infrastructure",
-    "fintech advisory",
+    "AePS micro ATM",
     "market entry",
   ],
   openGraph: {

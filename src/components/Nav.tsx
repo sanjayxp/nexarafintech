@@ -11,7 +11,7 @@ import { industries } from "@/lib/industries";
 const dropdowns: Record<string, { label: string; href: string }[]> = {
   "/solutions": [
     ...verticals.map((v) => ({ label: v.name, href: `/solutions/${v.slug}` })),
-    { label: "All Business Units", href: "/solutions" },
+    { label: "All Products", href: "/solutions" },
   ],
   "/industries": [
     ...industries.map((i) => ({ label: i.name, href: `/industries#${i.slug}` })),

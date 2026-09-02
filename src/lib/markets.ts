@@ -41,7 +41,7 @@ export const markets: Market[] = [
   {
     region: "Asia Pacific",
     blurb:
-      "Platform deployments and market-entry advisory for banks and payment companies expanding across Southeast Asia.",
+      "Platform deployments for banks, payment companies, and rural financial institutions across Southeast Asia.",
     institutions: [
       "Banks",
       "Payment Companies",

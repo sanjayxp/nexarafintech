@@ -9,7 +9,7 @@ import { EnvelopeSimple } from "@phosphor-icons/react/ssr";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Talk to the Nexara Fintech solutions team about agency banking, connected banking APIs, or market-entry advisory across India, Africa, the Middle East, and Asia Pacific.",
+    "Talk to the Nexara Fintech solutions team about agency banking networks or connected banking APIs across India, Africa, the Middle East, and Asia Pacific.",
 };
 
 export default function ContactPage() {

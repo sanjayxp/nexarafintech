@@ -37,10 +37,10 @@ export default function About({ compact = false }: { compact?: boolean }) {
             Our objective is to bridge the gap between financial institutions
             and the last-mile customer through intelligent technology
             platforms, AI-powered solutions, digital banking infrastructure,
-            payment orchestration, and strategic consulting services. We build
-            from India and deploy across Africa, the Middle East, and Asia
-            Pacific — adapting to each market&apos;s regulators and rails
-            rather than exporting a single template.
+            and payment orchestration. We build from India and deploy across
+            Africa, the Middle East, and Asia Pacific — adapting to each
+            market&apos;s regulators and rails rather than exporting a single
+            template.
           </p>
         </Reveal>
 
@@ -50,10 +50,10 @@ export default function About({ compact = false }: { compact?: boolean }) {
               Vision
             </h3>
             <p className="mt-2 text-brand-navy leading-7">
-              To become the most trusted FinTech infrastructure and advisory
-              partner across emerging markets, empowering financial
-              institutions through innovation, technology, governance, and
-              last-mile digital distribution.
+              To become the most trusted FinTech infrastructure partner
+              across emerging markets, empowering financial institutions
+              through innovation, technology, governance, and last-mile
+              digital distribution.
             </p>
           </div>
 

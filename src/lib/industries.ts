@@ -45,7 +45,7 @@ export const industries: Industry[] = [
       "Connecting to account aggregator data for faster, better-informed decisions",
       "Servicing and collecting across a growing, geographically spread loan book",
     ],
-    relevantVerticals: ["connected-banking-platform", "consulting-advisory"],
+    relevantVerticals: ["connected-banking-platform"],
   },
   {
     slug: "mfis",

@@ -15,40 +15,41 @@ export default function Solutions() {
                 What we do
               </h2>
               <p className="font-heading mt-3 text-4xl font-bold tracking-tight text-brand-navy sm:text-5xl">
-                Three business units, one platform
+                Two platforms, one integration
               </p>
               <p className="mt-4 text-lg text-brand-slate">
-                From enterprise banking APIs to last-mile agency banking and
-                market-entry advisory — built to move fast without breaking
-                compliance.
+                Enterprise banking APIs and last-mile agency banking, on one
+                integration — built to move fast without breaking compliance.
               </p>
             </div>
             <Link
               href="/solutions"
               className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-blue hover:gap-2.5 transition-all shrink-0"
             >
-              See all business units
+              See all products
               <ArrowRight size={14} />
             </Link>
           </div>
         </Reveal>
 
-        <div className="mt-14 grid grid-cols-1 gap-6 lg:grid-cols-3">
+        <div className="mt-14 grid grid-cols-1 gap-6 lg:grid-cols-2">
           {verticals.map((vertical, i) => {
             const Icon = vertical.icon;
-            const highlights = vertical.groups[0]?.items.slice(0, 4) ?? [];
+            const highlights = vertical.groups
+              .flatMap((group) => group.items)
+              .slice(0, 6);
             return (
               <Reveal key={vertical.slug} delay={i * 80} className="h-full">
                 <Link
                   href={`/solutions/${vertical.slug}`}
                   className="group flex h-full flex-col overflow-hidden rounded-2xl border border-brand-border transition-colors hover:border-brand-teal/50"
                 >
-                  <div className="relative h-40 w-full overflow-hidden">
+                  <div className="relative h-52 w-full overflow-hidden">
                     <Image
                       src={vertical.photo}
                       alt=""
                       fill
-                      sizes="(min-width: 1024px) 33vw, 100vw"
+                      sizes="(min-width: 1024px) 50vw, 100vw"
                       className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
                     />
                     <div
@@ -65,21 +66,21 @@ export default function Solutions() {
                     </div>
                   </div>
 
-                  <div className="flex flex-1 flex-col p-6">
+                  <div className="flex flex-1 flex-col p-7">
                     <span
                       className="text-xs font-semibold uppercase tracking-wide"
                       style={{ color: vertical.color }}
                     >
-                      Business Unit {String(i + 1).padStart(2, "0")}
+                      Platform {String(i + 1).padStart(2, "0")}
                     </span>
-                    <h3 className="mt-2 text-lg font-semibold text-brand-navy">
+                    <h3 className="font-heading mt-2 text-2xl font-bold text-brand-navy">
                       {vertical.name}
                     </h3>
                     <p className="mt-2 text-sm leading-6 text-brand-slate">
                       {vertical.tagline}
                     </p>
 
-                    <ul className="mt-4 flex flex-col gap-2">
+                    <ul className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2">
                       {highlights.map((item) => (
                         <li
                           key={item}

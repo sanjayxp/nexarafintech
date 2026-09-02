@@ -10,7 +10,7 @@ const faqs = [
   {
     question: "Do we need our own banking licence?",
     answer:
-      "No. Most of our clients are already regulated institutions and we sit inside their licence as a technology provider. If you're a fintech or enterprise without one, we typically deploy alongside a sponsor bank, and our advisory team can help you find and negotiate that relationship.",
+      "No. Most of our clients are already regulated institutions and we sit inside their licence as a technology provider. If you're a fintech or enterprise without one, we typically deploy alongside a sponsor bank and integrate against their licence.",
   },
   {
     question: "How long does a deployment take?",

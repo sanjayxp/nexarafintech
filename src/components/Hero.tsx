@@ -82,15 +82,15 @@ export default function Hero() {
       <div className="container-page relative py-16 lg:py-24">
         <div className="max-w-2xl lg:max-w-xl">
           <p className="inline-flex items-center rounded-full border border-brand-teal/20 bg-brand-teal-light px-3 py-1 text-xs font-medium tracking-wide text-brand-teal uppercase">
-            Fintech Infrastructure &amp; Advisory
+            Banking &amp; Payments Infrastructure
           </p>
           <h1 className="mt-5 text-5xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
             Digital financial infrastructure for banks and enterprises.
           </h1>
           <p className="mt-5 text-lg leading-8 text-brand-slate">
-            Nexara Fintech builds banking APIs, agency banking networks, and
-            market-entry advisory that help financial institutions reach the
-            last mile — across India, Africa, and the Middle East.
+            Nexara Fintech builds the banking APIs and agent networks that
+            help financial institutions reach the last mile — across India,
+            Africa, the Middle East, and Asia Pacific.
           </p>
 
           <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
@@ -105,7 +105,7 @@ export default function Hero() {
               href="/solutions"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-brand-navy/20 px-6 py-3.5 text-sm font-semibold text-brand-navy hover:bg-brand-navy/5 transition-colors"
             >
-              Explore business units
+              Explore our products
             </Link>
           </div>
 

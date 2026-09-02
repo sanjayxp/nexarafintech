@@ -2,12 +2,13 @@ import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import TrustStrip from "@/components/TrustStrip";
 import Solutions from "@/components/Solutions";
+import ServicesGrid from "@/components/ServicesGrid";
+import Stats from "@/components/Stats";
+import WhoWeServe from "@/components/WhoWeServe";
 import GlobalPresence from "@/components/GlobalPresence";
 import Capabilities from "@/components/Capabilities";
 import Process from "@/components/Process";
-import Stats from "@/components/Stats";
 import Testimonial from "@/components/Testimonial";
-import Industries from "@/components/Industries";
 import CtaBanner from "@/components/CtaBanner";
 import Footer from "@/components/Footer";
 
@@ -19,12 +20,13 @@ export default function Home() {
         <Hero />
         <TrustStrip />
         <Solutions />
+        <ServicesGrid />
+        <Stats />
+        <WhoWeServe />
         <GlobalPresence />
         <Capabilities />
         <Process />
-        <Stats />
         <Testimonial />
-        <Industries />
         <CtaBanner />
       </main>
       <Footer />

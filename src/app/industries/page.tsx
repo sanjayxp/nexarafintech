@@ -72,7 +72,7 @@ export default function IndustriesPage() {
                         </div>
                         <div>
                           <h3 className="text-sm font-semibold uppercase tracking-wide text-brand-teal">
-                            Relevant business units
+                            Relevant platforms
                           </h3>
                           <ul className="mt-4 flex flex-col gap-3">
                             {industry.relevantVerticals.map((slug) => {

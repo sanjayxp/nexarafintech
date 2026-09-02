@@ -19,12 +19,11 @@ function TwitterIcon() {
 
 const columns = [
   {
-    title: "Business Units",
+    title: "Products",
     links: [
       { label: "Connected Banking Platform", href: "/solutions/connected-banking-platform" },
       { label: "Agency Banking Solutions", href: "/solutions/agency-banking-solutions" },
-      { label: "Consulting & Advisory", href: "/solutions/consulting-advisory" },
-      { label: "All business units", href: "/solutions" },
+      { label: "All products", href: "/solutions" },
     ],
   },
   {

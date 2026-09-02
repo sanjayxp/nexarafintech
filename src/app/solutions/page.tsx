@@ -11,7 +11,7 @@ import { verticals } from "@/lib/verticals";
 export const metadata: Metadata = {
   title: "What We Do",
   description:
-    "Nexara Fintech operates through three business units: Connected Banking Platform, Agency Banking Solutions, and Consulting & Advisory.",
+    "Nexara Fintech operates two platforms: the Connected Banking Platform for enterprise banking APIs and Agency Banking Solutions for last-mile distribution.",
 };
 
 export default function SolutionsIndex() {
@@ -21,8 +21,8 @@ export default function SolutionsIndex() {
       <main className="flex-1">
         <PageHero
           eyebrow="What we do"
-          title="Three business units, one platform"
-          description="Enterprise banking APIs, last-mile agency banking, and market-entry advisory — each built to help banks, fintechs and enterprises move faster."
+          title="Two platforms, one integration"
+          description="Enterprise banking APIs and last-mile agency banking — built to help banks, fintechs and enterprises move faster without breaking compliance."
           breadcrumb={[{ label: "Solutions" }]}
           icon={SquaresFour}
           photo="/images/hero-solutions-payment.jpg"
@@ -67,7 +67,7 @@ export default function SolutionsIndex() {
 
                     <div className="p-8 lg:col-span-4 lg:p-10">
                       <span className="text-xs font-semibold text-brand-slate-light">
-                        BUSINESS UNIT {String(i + 1).padStart(2, "0")} / {String(verticals.length).padStart(2, "0")}
+                        PLATFORM {String(i + 1).padStart(2, "0")} / {String(verticals.length).padStart(2, "0")}
                       </span>
                       <h2 className="mt-3 text-2xl font-semibold tracking-tight text-brand-navy">
                         {vertical.name}

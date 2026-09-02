@@ -1,5 +1,5 @@
 import type { Icon } from "@phosphor-icons/react";
-import { Plugs, Bank, Compass } from "@phosphor-icons/react/ssr";
+import { Plugs, Bank } from "@phosphor-icons/react/ssr";
 
 export type ContentGroup = { title: string; items: string[] };
 export type RegionGroup = { region: string; items?: string[] };
@@ -191,37 +191,6 @@ export const verticals: Vertical[] = [
       "Cloud Subscription",
       "Professional Services",
       "Custom Development",
-    ],
-  },
-  {
-    slug: "consulting-advisory",
-    name: "Consulting & Advisory",
-    shortName: "Consulting",
-    tagline: "Your way into new markets.",
-    summary:
-      "Helping software companies and financial institutions expand into new markets across Africa, the Middle East, and Southeast Asia.",
-    icon: Compass,
-    color: "#d97706",
-    photo: "/images/consulting-advisory.jpg",
-    groups: [
-      {
-        title: "Services",
-        items: [
-          "Market Entry Strategy",
-          "Banking Introductions",
-          "Sales Support",
-          "Product Positioning",
-          "Partnership Development",
-          "RFP Support",
-          "Business Development",
-          "Market Intelligence",
-        ],
-      },
-    ],
-    regions: [
-      { region: "Africa" },
-      { region: "Middle East" },
-      { region: "Southeast Asia" },
     ],
   },
 ];

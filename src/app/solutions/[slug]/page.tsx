@@ -44,7 +44,7 @@ export default async function VerticalDetail({
       <Nav />
       <main className="flex-1">
         <PageHero
-          eyebrow={`Business Unit ${String(verticalIndex + 1).padStart(2, "0")}`}
+          eyebrow={`Platform ${String(verticalIndex + 1).padStart(2, "0")}`}
           title={vertical.name}
           description={vertical.tagline}
           icon={vertical.icon}
@@ -261,9 +261,13 @@ export default async function VerticalDetail({
             <div className="mt-20 border-t border-brand-border pt-14">
               <Reveal>
                 <h2 className="text-2xl font-semibold tracking-tight text-brand-navy">
-                  Other business units
+                  {related.length > 1 ? "Other platforms" : "The other platform"}
                 </h2>
-                <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2">
+                <div
+                  className={`mt-8 grid grid-cols-1 gap-6 ${
+                    related.length > 1 ? "sm:grid-cols-2" : "max-w-2xl"
+                  }`}
+                >
                   {related.map((item) => {
                     const RelIcon = item.icon;
                     return (

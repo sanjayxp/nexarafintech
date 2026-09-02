@@ -76,15 +76,15 @@ export default function GlobalPresence() {
         <Reveal delay={200}>
           <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3">
             <Link
-              href="/solutions/consulting-advisory"
+              href="/contact"
               className="inline-flex items-center gap-2 rounded-full bg-brand-teal px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#b23d19]"
             >
-              Expanding into a new market?
+              Launching in a new market?
               <ArrowRight size={16} />
             </Link>
             <p className="text-sm text-brand-slate">
-              Our advisory practice handles market entry, banking
-              introductions, and partnership development.
+              Tell us the market and the segment — we&apos;ll map the platform
+              to your regulator and rails.
             </p>
           </div>
         </Reveal>
